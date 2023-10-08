@@ -6,6 +6,36 @@
     <title>Birtdei</title>
 </head>
 <body>
-    <img src="/static/img/gatito 1.jpg" alt="">
+    <img src="/static/img/gatito 1.jpg" alt="" width="20%">
+    <section class="container">
+        <h1>¿Cuándo naciste?</h1>
+        <form action="/ingreso2" method="POST">
+            <div class="input-box">
+                <label for="dia">Día:</label>
+                <input type="number" id="dia" name="dia" min="0" max="99" oninput="justTwoDigits(this)">
+            </div>
+            <div class="input-box">
+                <label for="mes">Mes:</label>
+                <input type="number" id="mes" name="mes" min="0" max="99" oninput="justTwoDigits(this)">
+            </div>
+            <div class="input-box">
+                <label for="anio">Año:</label>
+                <input type="number" id="anio" name="anio" min="0" max="99" oninput="justTwoDigits(this)">
+            </div>
+            <input type="submit" value="Continuar">
+        </form>
+    </section>
+
 </body>
+
+<!-- Limitar a dos digitos -->
+<script>
+    function justTwoDigits(input) {
+        const valor = input.value;
+        if (valor.length > 2) {
+            input.value = valor.slice(0, 2);
+        }
+    }
+</script>
+
 </html>
