@@ -49,10 +49,10 @@ def procesar_cumple():
         return render_template('s3.2.html', edad=edad, dias_para_cumple=dias_para_cumple)
     
     elif 32 <= dias_para_cumple <= 220:
-        return render_template('s3.3.html')
+        return render_template('s3.3.html', edad=edad, dias_para_cumple=dias_para_cumple)
     
     else:
-        return render_template('s3.4.html')
+        return render_template('s3.4.html', edad=edad, dias_para_cumple=dias_para_cumple)
     
 
 if __name__ == '__main__':

@@ -1,0 +1,122 @@
+html {
+    font-size: 100%;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Medium.otf);
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-SemiBold.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Bold.otf);
+    font-weight: 700;
+    font-style: normal;
+}
+:root {
+    --Orange01-Birt: #F84F39;
+    --Yellow-Birt: #FFDC40;
+    --Black-Birt: #0E0E0E;
+    --Soft-Yellow01-Birt: #FFF9E3;
+    --White-Birt: #FFFFFF;
+    --Blue02-Birt: #0094FF;
+}
+
+body {
+    background-color: var(--Soft-Yellow01-Birt);
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    width: 100vw;
+    background-color: #FFF9E3;
+}
+header img {
+    width: 91px;
+    margin-top: 27px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+main .sct1-container {
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+.sct1-container .content-part1 img {
+    margin-bottom: 12px;
+}
+.sct1-container .content-part1 h1 {
+    margin-bottom: 8px;
+    font-family: 'Causten Round';
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--Blue02-Birt)
+}
+.sct1-container .content-part1 p {
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 16px;
+}
+.sct1-container .content-part1 p span {
+    font-weight: 700;
+}
+
+.sct1-container .separator {
+    width: 55px;
+    height: 2px;
+    border-radius: 50px;
+    background: var(--Blue02-Birt)
+}
+
+.sct1-container .content-part2 p {
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.container-btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10.5px 30px;
+    border-radius: 18px;
+    background-color: var(--Blue02-Birt)
+}
+.btn-vregalos {
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--White-Birt);
+    text-decoration: none;
+}
+
+.btn-vregalos img {
+    margin-left: 6px;
+    margin-bottom: -1px;
+}
+
+
+
+
+
+
+
+
