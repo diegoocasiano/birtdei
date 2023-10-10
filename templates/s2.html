@@ -4,31 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birtdei</title>
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/s2.css">
 </head>
 <body>
-    <img src="/static/img/gatito 1.jpg" alt="" width="20%">
-    <section class="container">
-        <h1>¿Cuándo naciste?</h1>
-        <form action="/ingreso2" method="POST">
-            <div class="input-box">
-                <label for="dia">Día:</label>
-                <input type="number" id="dia" name="dia" min="0" max="99" oninput="justTwoDigits(this)">
-            </div>
-            <div class="input-box">
-                <label for="mes">Mes:</label>
-                <input type="number" id="mes" name="mes" min="0" max="99" oninput="justTwoDigits(this)">
-            </div>
-            <div class="input-box">
-                <label for="anio">Año:</label>
-                <input type="number" id="anio" name="anio" min="0" max="99" oninput="justTwoDigits(this)">
-            </div>
-            <input type="submit" value="Continuar">
-        </form>
-    </section>
-
+    <header>
+        <img src="/static/img/Posi-Wordmark-Birt.svg" alt="logo-birtdei">
+    </header>
+    <main>
+        <div class="main_titulo">
+            <h1>¿Cuándo naciste?</h1>
+            <hr class="borde-titulo">
+        </div>
+        <section class="sct1_container">
+            <form action="/ingreso2" method="POST">
+                <div class="main-container_box-input">
+                    <div class="container_boxes-input">
+                        <input class="input-box-dia" required type="number" id="dia" name="dia" min="0" max="99" placeholder="11" oninput="justTwoDigits(this)">
+                        <input class="input-box-mes" required type="number" id="mes" name="mes" min="0" max="99" placeholder="07" oninput="justTwoDigits(this)">
+                        <input class="input-box-anio" required type="number" id="anio" name="anio" min="0" max="99" placeholder="02"oninput="justTwoDigits(this)">
+                    </div>
+                    <div class="container_names-input">
+                        <p>Día</p>
+                        <p>Mes</p>
+                        <p>Año</p>
+                    </div>
+                </div>
+                <button type="submit" class="btn-continuar" id="btn-continuar" disabled>Continuar <img src="/static/icons/arrow-right.svg" alt="Flecha derecha"></button>
+                <!-- <input type="submit" value="Continuar" class="btn-continuar" > -->
+            </form>
+        </section>
+    </main>
 </body>
 
-<!-- Limitar a dos digitos -->
+<!-- Todos los scripts -->
+
+<!-- Limitar a dos digitos cada input -->
 <script>
     function justTwoDigits(input) {
         const valor = input.value;
@@ -36,6 +47,32 @@
             input.value = valor.slice(0, 2);
         }
     }
+
+<!-- Activar botón cuando se llenen todos los inputs -->
+    const diaInput = document.getElementById('dia');
+    const mesInput = document.getElementById('mes');
+    const anioInput = document.getElementById('anio');
+    const submitButton = document.getElementById('btn-continuar');
+
+    diaInput.addEventListener('input', checkInputs);
+    mesInput.addEventListener('input', checkInputs);
+    anioInput.addEventListener('input', checkInputs);
+
+    function checkInputs() {
+        const diaValue = diaInput.value.trim();
+        const mesValue = mesInput.value.trim();
+        const anioValue = anioInput.value.trim();
+
+        if (diaValue && mesValue && (anioValue.length >=2)) {
+            submitButton.removeAttribute('disabled');
+            submitButton.classList.add('btn-activo');
+        }
+        else {
+            submitButton.setAttribute('disabled', true);
+            submitButton.classList.remove('btn-activo');
+        }
+    }
+    
 </script>
 
 </html>
