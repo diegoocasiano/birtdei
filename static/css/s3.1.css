@@ -72,6 +72,9 @@ p {
     font-weight: 500;
     font-size: 18px;
 }
+.sct1-container p span {
+    font-weight: 600;
+}
 .container-btn{
     padding: 10.5px 28px;
     border-radius: 18px;
