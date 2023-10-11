@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 
@@ -9,7 +10,7 @@ def home():
 
 @app.route('/ingreso')
 def birthday():
-    return render_template('s2.html')
+    return render_template('s2_form.html')
 
 @app.route('/ingreso2', methods=['POST'])
 def procesar_cumple():
@@ -54,6 +55,7 @@ def procesar_cumple():
     else:
         return render_template('s3.4.html', edad=edad, dias_para_cumple=dias_para_cumple)
     
+
 
 if __name__ == '__main__':
     app.run(debug=True)
