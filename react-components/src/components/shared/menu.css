@@ -1,0 +1,107 @@
+html {
+    font-size: 100%;
+  }
+  
+:root {
+    --Orange01-Birt: #F84F39;
+    --Yellow-Birt: #FFDC40;
+  
+    --Blue01-Birt: #1D77FF;
+    --Blue02-Birt: #0094FF;
+    --Purple-Birt: #A430FF;
+    --Orange02-Birt: #FF7511;
+  
+    --Black-Birt: #0E0E0E;
+    --White-Birt: #FFFFFF;
+    --Gray-Birt: #555555;
+  
+    --Soft-Yellow01-Birt: #FFF9E3;
+    --Soft-Yellow02-Birt: #FFFCF0;
+}
+  
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Medium.otf);
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-SemiBold.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Bold.otf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Styles to menu */
+
+.drop-down-menu-container {
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 160px;
+
+    border-radius: 20px 20px 0px 0px;
+    background: rgba(255, 252, 240, 0.80);
+    backdrop-filter: blur(20px);
+}
+
+.handle-dd-menu {
+    width: 26px;
+    height: 2px;
+    margin-bottom: 130px;
+
+    border-radius: 50px;
+    background-color: #787878;
+}
+
+
+.btns-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btns-container .btn-bot {
+    width: 200px;
+    height: 35px;
+
+    font-family: 'Causten Round';
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--neutral-white-birt, #FFF);
+
+    border-radius: 18px;
+    background: var(--main-orange-01-birt, #F84F39);
+}
+.btns-container .btn-top {
+    width: 200px;
+    height: 35px;
+
+    font-family: 'Causten Round';
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--main-orange-01-birt, #F84F39);
+
+    border-radius: 18px;
+    background: none;
+    border: 2px solid var(--main-orange-01-birt, #F84F39);
+}
+
+.btns-container img {
+    margin-bottom: -1px;
+    margin-left: 4px;
+}
