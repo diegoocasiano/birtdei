@@ -1,0 +1,69 @@
+html {
+    font-size: 100%;
+  }
+  
+:root {
+    --Orange01-Birt: #F84F39;
+    --Yellow-Birt: #FFDC40;
+  
+    --Blue01-Birt: #1D77FF;
+    --Blue02-Birt: #0094FF;
+    --Purple-Birt: #A430FF;
+    --Orange02-Birt: #FF7511;
+  
+    --Black-Birt: #0E0E0E;
+    --White-Birt: #FFFFFF;
+    --Gray-Birt: #555555;
+  
+    --Soft-Yellow01-Birt: #FFF9E3;
+    --Soft-Yellow02-Birt: #FFFCF0;
+}
+  
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Medium.otf);
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-SemiBold.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Bold.otf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Styles to navbar */
+
+header {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.nav-imgs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    width: 100%;
+    min-width: 310px;
+    height: 61px;
+    margin: 0 20px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #D8D8D8;   
+}
+
+.nav-imgs-container .logo-birt {
+    width: 91px;
+    height: 22.932px;
+}
+.menu-icon{
+    padding-bottom: 3px;
+}

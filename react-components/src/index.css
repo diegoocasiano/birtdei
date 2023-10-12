@@ -1,0 +1,40 @@
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline; 
+}
+
+/* Reemplazamos la etiqueta br por clases */
+
+.clear {
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+}
