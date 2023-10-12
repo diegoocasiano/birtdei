@@ -41,9 +41,12 @@ html {
 /* Styles to navbar */
 
 header {
+    position: fixed;
+    top: 0;
     display: flex;
     justify-content: center;
     width: 100vw;
+    background-color: var(--Soft-Yellow02-Birt);
 }
 
 .nav-imgs-container {

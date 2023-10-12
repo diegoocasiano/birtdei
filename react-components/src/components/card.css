@@ -1,5 +1,120 @@
-.mc-card{
-    width: 200px;
-    height: 100px;
-    background-color: aqua;
+html {
+    font-size: 100%;
+  }
+  
+:root {
+    --Orange01-Birt: #F84F39;
+    --Yellow-Birt: #FFDC40;
+  
+    --Blue01-Birt: #1D77FF;
+    --Blue02-Birt: #0094FF;
+    --Purple-Birt: #A430FF;
+    --Orange02-Birt: #FF7511;
+  
+    --Black-Birt: #0E0E0E;
+    --White-Birt: #FFFFFF;
+    --Gray-Birt: #555555;
+  
+    --Soft-Yellow01-Birt: #FFF9E3;
+    --Soft-Yellow02-Birt: #FFFCF0;
+}
+
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Regular.otf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Medium.otf);
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-SemiBold.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Bold.otf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Styles to the card */
+
+.main-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 83px;
+}
+
+.card-container {
+    width: calc(50% - 30px);
+    min-width: 150px;
+    height: 262px;
+}
+
+.card-logo-marca {
+    width: 100%;
+    height: 168px;
+
+    border-radius: 10px;
+    background-color: #ffeba2
+}
+
+/* Styles to content */
+
+.card-content-container {
+    margin-top: 14px;
+    margin-left: 7px;
+}
+
+.card-container .h1-regalo-marca {
+    display: flex;
+    gap: 5px;
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--main-orange-01-birt, #F84F39);
+}
+.card-container img {
+    margin-bottom: 2px;
+}
+
+.card-container .nombre-marca {
+    margin-top: 4px;
+
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--neutral-black-birt, #0E0E0E);
+}
+
+.card-container .categoria-marca {
+    font-family: 'Causten Round';
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--neutral-gray-birt, #555);
+}
+
+.btn-detalles-regalo {
+    font-family: 'Causten Round';
+    font-weight: 400;
+    font-size: 13px;
+    padding: 5px 0;
+    margin-top: -5px;
+
+    color: var(--complementary-blue-01-birt, #1D77FF);
+    background-color: var(--Soft-Yellow02-Birt);
+}
+
+.btn-detalles-regalo img {
+    margin-bottom: 0;
+    padding-left: 1px;
 }
