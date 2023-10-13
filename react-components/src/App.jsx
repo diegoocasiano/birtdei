@@ -1,8 +1,10 @@
 import './App.css'
+import {useState } from 'react'
 import Card from './components/Card'
 import Menu from './components/shared/Menu'
 import NavBar from './components/shared/NavBar'
 import regalos from './data/regalos'
+
 
 function App() {
   const regalosList = regalos.map((r, index) => {
@@ -15,17 +17,23 @@ function App() {
               logoMarca={r.logoMarca}/>
   });
 
+  const [menuOpen, setMenuOpen] = useState(false)
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+  
+
   return (
     <>
       <header>
-        <NavBar/>
+        <NavBar toggleMenu={toggleMenu} />
       </header>
 
       <main>
           <div className="main-cards-container">
             {regalosList}
           </div>
-          <Menu/>
+          { menuOpen && <Menu setMenuOpen={setMenuOpen}/>}
       </main>
     </>
     

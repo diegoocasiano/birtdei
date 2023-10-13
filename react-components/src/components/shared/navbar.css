@@ -67,6 +67,12 @@ header {
     width: 91px;
     height: 22.932px;
 }
+
+.btn-toggle-menu {
+    margin-bottom: -2px;
+    background: none;
+}
+
 .menu-icon{
     padding-bottom: 3px;
 }
