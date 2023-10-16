@@ -4,6 +4,7 @@ import './menu.css'
 function Menu({setMenuOpen}) {
     const ArrowRightUp = '/public/arrow-right-up.svg'
     const ArrowRightUpWh = '/public/arrow-right-up-wh.svg'
+  
 
     {/* bgMenuActive activa un fondo con transparencia y bloquea el body */}
     const [bgMenuActive, setBgMenuActive] = useState(false)
@@ -18,6 +19,8 @@ function Menu({setMenuOpen}) {
       },
     []);
 
+    const [bgMenuOpacity, setBgMenuOpacity] = useState(1); 
+
     const [startY, setStartY] = useState(null)
     const [currentY, setCurrentY] = useState(null)
     const [originalY, setOriginalY] = useState(null)
@@ -29,6 +32,7 @@ function Menu({setMenuOpen}) {
         setOriginalY(parseInt(e.currentTarget.style.transform.replace('translateY(', '').replace('px)', '')) || 0);
         e.currentTarget.style.transition = 'none';
         setIsTouching(true)
+
     };
     
     const handleTouchMove = (e) => {
@@ -38,6 +42,10 @@ function Menu({setMenuOpen}) {
         setCurrentY(e.touches[0].clientY);
         const translateY = Math.max(0, currentY - startY + originalY);
         e.currentTarget.style.transform = `translateY(${translateY}px)`;
+
+        //animación de la opacidad del bg del menu según movimiento del menu en translateY
+        const newBgMenuOpacity = 1 - translateY / 160;
+        setBgMenuOpacity(newBgMenuOpacity);
     };
 
     const handleTouchEnd = (e) => {
@@ -45,6 +53,7 @@ function Menu({setMenuOpen}) {
           e.currentTarget.style.transition = 'transform 0.3s ease';
           e.currentTarget.style.transform = 'translateY(0px)';
           setBgMenuActive(true);
+          setBgMenuOpacity(1);
           
         } else if (currentY - startY <= 0) {
           // No hagas nada si el desplazamiento es menor o igual a 0px (swipe up).
@@ -52,9 +61,16 @@ function Menu({setMenuOpen}) {
         } else if (currentY - startY <= 60) {
           e.currentTarget.style.transition = 'transform 0.3s ease';
           e.currentTarget.style.transform = 'translateY(160px)'; // 160px == altura del elemento (menú)
-          setBgMenuActive(false)
-          setTimeout(() => {setMenuOpen(false)},300)
+          setBgMenuOpacity(0)
+          setTimeout(() => {
+            setBgMenuActive(false)
+          }, 250)
+
+          setTimeout(() => {
+            setMenuOpen(false)
+          },300)
           
+          setIsTouching(false)
 
         } else {
           // Si se hace cualquier otra cosa, el menú no se cerrará.
@@ -65,7 +81,7 @@ function Menu({setMenuOpen}) {
         setIsTouching(false);
       };
       
-
+      //Esto hace que no se pueda hacer scroll cuando el menu está activo
       useEffect(() => {
         
         if (bgMenuActive) {
@@ -78,7 +94,7 @@ function Menu({setMenuOpen}) {
 
   return (
     <>
-    <div className={`bg-dd-menu ${bgMenuActive ? 'active' : ''}`}></div>
+    <div className={`bg-dd-menu ${bgMenuActive ? 'active' : ''} ${isTouching ? 'touchMove' : '' } `} style={{ opacity: bgMenuOpacity }} ></div>
 
     <div className={`drop-down-menu-container ${bgMenuActive ? 'active' : ''}`}
         onTouchStart={handleTouchStart}

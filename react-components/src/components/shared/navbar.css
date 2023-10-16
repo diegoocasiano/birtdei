@@ -76,3 +76,13 @@ header {
 .menu-icon{
     padding-bottom: 3px;
 }
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 27px;
+    right: 16px;
+    background-color: var(--Orange01-Birt)
+}

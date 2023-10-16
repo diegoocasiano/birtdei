@@ -17,8 +17,10 @@ function App() {
               logoMarca={r.logoMarca}/>
   });
 
+  const [notifDotActive, setNotifDotActive] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
   const toggleMenu = () => {
+    setNotifDotActive(false)
     setMenuOpen(!menuOpen)
   }
   
@@ -26,7 +28,7 @@ function App() {
   return (
     <>
       <header>
-        <NavBar toggleMenu={toggleMenu} />
+        <NavBar toggleMenu={toggleMenu} notifDotActive={notifDotActive} />
       </header>
 
       <main>

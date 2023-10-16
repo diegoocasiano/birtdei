@@ -46,10 +46,13 @@ html {
     height: 100vh;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-in-out;
 }
 
+.bg-dd-menu.active.touchMove {
+    transition: none;
+}
 
 .drop-down-menu-container {
     position: fixed;
