@@ -97,6 +97,9 @@ html {
 }
 
 .btns-container .btn-bot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 35px;
 
@@ -104,11 +107,15 @@ html {
     font-weight: 600;
     font-size: 15px;
     color: var(--neutral-white-birt, #FFF);
-
+    
+    text-decoration: none;
     border-radius: 18px;
     background: var(--main-orange-01-birt, #F84F39);
 }
 .btns-container .btn-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 200px;
     height: 35px;
 
@@ -117,12 +124,13 @@ html {
     font-size: 15px;
     color: var(--main-orange-01-birt, #F84F39);
 
+    text-decoration: none;
     border-radius: 18px;
     background: none;
     border: 2px solid var(--main-orange-01-birt, #F84F39);
 }
 
 .btns-container img {
-    margin-bottom: -1px;
+    margin-bottom: 0dvh;
     margin-left: 4px;
 }

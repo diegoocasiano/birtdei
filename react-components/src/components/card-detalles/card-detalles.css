@@ -1,0 +1,194 @@
+html {
+    font-size: 100%;
+  }
+  
+:root {
+    --Orange01-Birt: #F84F39;
+    --Yellow-Birt: #FFDC40;
+  
+    --Blue01-Birt: #1D77FF;
+    --Blue02-Birt: #0094FF;
+    --Purple-Birt: #A430FF;
+    --Orange02-Birt: #FF7511;
+  
+    --Black-Birt: #0E0E0E;
+    --White-Birt: #FFFFFF;
+    --Gray-Birt: #555555;
+  
+    --Soft-Yellow01-Birt: #FFF9E3;
+    --Soft-Yellow02-Birt: #FFFCF0;
+}
+  
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Medium.otf);
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-SemiBold.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Bold.otf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* styles to card-detalles */
+.card-detalles-container {
+    position: fixed;
+    bottom: 0;
+    padding-top: 20px;
+
+    width: 100%;
+    min-height: 320px;
+
+    border-radius: 20px 20px 0px 0px;
+    background: rgba(255, 252, 240, 0.80);
+    backdrop-filter: blur(20px);
+
+    /* transition: all 0.3s ease-in-out; */
+}
+
+/* styles to marca-info */
+
+.marca-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.marca-info .logo-container {
+    width: 25px;
+    height: 26.5px;
+
+    border-radius: 4px;
+    background-color: #1D77FF;
+}
+.marca-info h1 {
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.line-top {
+    max-width: 100%;
+    height: 1px;
+    margin: 0 20px;
+    margin-top: 16px;
+
+    background: #B1B1B1;;
+}
+
+/* styles to regalo-detalles */
+.regalo-detalles-container {
+    height: 100%;
+    margin: 0 25px;
+    margin-top: 20px;
+}
+.regalo-container p {
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 15px;
+
+    color: var(--Black-Birt);
+}
+.regalo-container .h1-regalo-marca {
+    margin-top: 5px;
+
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 16px;
+
+    color: var(--Orange01-Birt);
+}
+.h1-regalo-marca img {
+    margin-right: 4px;
+    margin-bottom: -2px;
+}
+
+/* styles to condiciones */
+.condiciones-main-container {
+    margin-top: 16px;
+}
+.condiciones-main-container h2 {
+    margin-bottom: 5px;
+
+    font-family: 'Causten Round';
+    font-weight: 600;
+    font-size: 15px;
+
+    color: var(--Black-Birt);
+}
+.condiciones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.regalo-detalles-container .condicion {   
+    width: 100%;
+    display: flex;
+    gap: 6px;
+}
+.condicion .bullet {
+    width: 6px;
+    height: 6px;
+    margin-top: 5px;
+    /* esta propiedad hace que el bullet no se encoja */
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background-color: var(--Black-Birt);
+}
+.condicion p {
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 15px;
+
+    color: var(--Black-Birt);
+}
+
+/* styles to msj-important */
+.msj-important {
+    display: flex;
+    margin-top: 14px;
+
+    gap: 3px;
+}
+.msj-important p {
+    font-family: 'Causten Round';
+    font-weight: 500;
+    font-size: 14px;
+
+    color: var(--Black-Birt);
+}
+
+/* styles to btn close-detalles */
+.btn-close-container {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    
+    margin-bottom: 7px;
+}
+.close-detalles {
+    width: 126px;
+    height: 35px;
+
+    font-family: 'Causten Round';
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--main-orange-01-birt, #F84F39);
+
+    text-decoration: none;
+    border-radius: 18px;
+    background: none;
+    border: 2px solid var(--main-orange-01-birt, #F84F39);
+}

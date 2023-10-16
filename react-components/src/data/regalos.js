@@ -7,6 +7,10 @@ const regalos = [
         logoMarca: {
             url: "/public/logo-mcdonalds.png",
             size: "75%"
+        },
+        regaloDetalles: {
+            regalo: "",
+            condiciones: "",
         }
     },
     {
