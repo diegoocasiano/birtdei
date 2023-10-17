@@ -3,7 +3,7 @@ import {useState } from 'react'
 import Card from './components/Card'
 import Menu from './components/shared/Menu'
 import NavBar from './components/shared/NavBar'
-import regalos from './data/regalos'
+import dataRegalos from './data/dataRegalos'
 import CardDetalles from './components/card-detalles/CardDetalles'
 
 
@@ -17,7 +17,7 @@ function App() {
       setDetallesOpen(!detallesOpen);
     };
 
-  const regalosList = regalos.map((r, index) => {
+  const dataRegalosList = dataRegalos.map((r, index) => {
     return <Card 
               key={index}
               regalo={r.regalo}
@@ -46,7 +46,7 @@ function App() {
 
       <main>
           <div className="main-cards-container">
-            {regalosList}
+            {dataRegalosList}
           </div>
           { detallesOpen && <CardDetalles
             nombreMarca={marcaSeleccionada.nombreMarca}
