@@ -38,6 +38,28 @@ html {
     font-style: normal;
 }
 
+.bg-detallesWindow {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+.bg-detallesWindow.active {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+
 /* styles to card-detalles */
 .card-detalles-container {
     position: fixed;
@@ -51,9 +73,12 @@ html {
     background: rgba(255, 252, 240, 0.80);
     backdrop-filter: blur(20px);
 
-    /* transition: all 0.3s ease-in-out; */
+    transition: all 0.3s ease-in-out;
+    transform: translateY(100%);
 }
-
+.card-detalles-container.active {
+    transform: translateY(0%);
+}
 /* styles to marca-info */
 
 .marca-info {
@@ -65,11 +90,19 @@ html {
 }
 
 .marca-info .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 25px;
     height: 26.5px;
 
+    overflow: hidden;
     border-radius: 4px;
     background-color: #1D77FF;
+}
+.marca-info .logo-container img{
+    width: 80%;
 }
 .marca-info h1 {
     font-family: 'Causten Round';

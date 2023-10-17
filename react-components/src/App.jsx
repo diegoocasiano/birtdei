@@ -8,20 +8,27 @@ import CardDetalles from './components/card-detalles/CardDetalles'
 
 
 function App() {
+
   const [detallesOpen, setDetallesOpen] = useState(false)
-  const toggleDetalles = () => {
-      setDetallesOpen(!detallesOpen)
-    }
+  const [marcaSeleccionada, setMarcaSeleccionada] = useState(null);
+
+  const toggleDetalles = (nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca) => {
+      setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca});
+      setDetallesOpen(!detallesOpen);
+    };
+
   const regalosList = regalos.map((r, index) => {
     return <Card 
               key={index}
               regalo={r.regalo}
+              regaloFull={r.regaloFull}
               nombreMarca={r.nombreMarca}
               categoriaMarca={r.categoriaMarca}
               colorMarca={r.colorMarca}
               logoMarca={r.logoMarca}
+              condicionesRegalo={r.condicionesRegalo}
 
-              toggleDetalles={toggleDetalles}/>
+              toggleDetalles={() => toggleDetalles(r.nombreMarca, r.regaloFull, r.condicionesRegalo, r.colorMarca, r.logoMarca)} />
   });
 
   const [notifDotActive, setNotifDotActive] = useState(true)
@@ -29,7 +36,7 @@ function App() {
   const toggleMenu = () => {
     setNotifDotActive(false)
     setMenuOpen(!menuOpen)
-  }
+  };
 
   return (
     <>
@@ -41,13 +48,22 @@ function App() {
           <div className="main-cards-container">
             {regalosList}
           </div>
-          { detallesOpen && <CardDetalles/>}
-          { menuOpen && <Menu setMenuOpen={setMenuOpen}/>}
+          { detallesOpen && <CardDetalles
+            nombreMarca={marcaSeleccionada.nombreMarca}
+            regaloFull={marcaSeleccionada.regaloFull}
+            condicionesRegalo={marcaSeleccionada.condicionesRegalo}
+            colorMarca={marcaSeleccionada.colorMarca}
+            logoMarca={marcaSeleccionada.logoMarca}
+            toggleDetalles={toggleDetalles}/>
+          }
+          { menuOpen && <Menu
+            setMenuOpen={setMenuOpen}/>
+          }
           
       </main>
     </>
     
   )
-}
+};
 
 export default App

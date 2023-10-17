@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect, useRef } from 'react'
 import './menu.css'
 
 function Menu({setMenuOpen}) {
@@ -92,11 +92,47 @@ function Menu({setMenuOpen}) {
         };
       }, [bgMenuActive]);
 
+      // Inicio - Logica para que se cierre la ventanita cuando se toque fuera de la ventanita
+      const menuRef = useRef(null);
+
+      // Función que cerrará el menu cuando se haga click fuera del menu
+      const closeMenuAnimation = () => {
+        const menuElement = menuRef.current;
+        if (menuElement) {
+          menuElement.style.transition = 'transform 0.3s ease';
+          menuElement.style.transform = 'translateY(160px)';      
+        }
+      };
+      // Logica
+      const handleOutsideClick = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+          closeMenuAnimation(); // Función que cierra el menu
+          setBgMenuOpacity(0)
+          setTimeout(() => {
+            setMenuOpen(false)
+          },300)
+          setTimeout(() => {
+            setBgMenuActive(false)
+          },290)
+        }
+      };
+      
+      useEffect(() => {
+        if (bgMenuActive) {
+            document.addEventListener('click', handleOutsideClick);
+        }
+        //si el menu ya se cerró, se detiene el escuchador de click
+        return () => {
+            document.removeEventListener('click', handleOutsideClick);
+        };
+    }, [bgMenuActive]);
+
+
   return (
     <>
     <div className={`bg-dd-menu ${bgMenuActive ? 'active' : ''} ${isTouching ? 'touchMove' : '' } `} style={{ opacity: bgMenuOpacity }} ></div>
 
-    <div className={`drop-down-menu-container ${bgMenuActive ? 'active' : ''}`}
+    <div ref={menuRef} className={`drop-down-menu-container ${bgMenuActive ? 'active' : ''}`}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}>

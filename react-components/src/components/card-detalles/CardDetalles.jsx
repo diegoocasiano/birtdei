@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState} from 'react';
 import './card-detalles.css'
 
-function CardDetalles() {
+function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca}) {
     const GiftBrand = '/public/gift-card.svg'
     const ImportantIcon = '/public/important-icon.svg'
 
@@ -28,15 +28,62 @@ function CardDetalles() {
         return 280 + (numeroCondiciones * 20) + (numeroSaltosDeLinea * 18) + 'px';
       };
 
+      // Creamos un estado para saber cuando esta activo la ventana de detalles
+      const [detallesWindowActive, setDetallesWindowActive] = useState(false)
+      useEffect(() => {
+        const timeout = setTimeout(() => {
+          setDetallesWindowActive(true);
+        }, 0);
+        return () => {
+          clearTimeout(timeout);
+          };
+        },
+      []);
+
+      //Esto hace que no se pueda hacer scroll cuando la ventanita de detalles  esté activa
+      useEffect(() => {
+        if (detallesWindowActive) {
+            document.body.style.overflow = 'hidden';
+        }
+        else {
+            document.body.style.overflow = 'auto';
+        }
+      }, [detallesWindowActive]);
+
+      // Logica para que se cierre la ventanita cuando se toque fuera de la ventanita
+      const detallesRef = useRef(null);
+
+      const handleOutsideClick = (event) => {
+        if (detallesRef.current && !detallesRef.current.contains(event.target)) {
+            setDetallesWindowActive(false);
+            setTimeout(() => {
+                toggleDetalles();
+            }, 300);
+        }
+      };
+
+      useEffect(() => {
+        if (detallesWindowActive) {
+            document.addEventListener('click', handleOutsideClick);
+        }
+        //si la ventanita ya se cerró, se detiene el escuchador de click
+        return () => {
+            document.removeEventListener('click', handleOutsideClick);
+        };
+    }, [detallesWindowActive]);
+
 
   return (
-    <>
-        <section className="card-detalles-container" style={{ height: calcularAltoSection(numeroCondiciones, numeroSaltosDeLinea) }}>
+    <>  
+        <div className={`bg-detallesWindow ${detallesWindowActive ? 'active' : ''}`}></div>
+
+        <section ref={detallesRef} className={`card-detalles-container ${detallesWindowActive ? 'active' : ''}`}
+                style={{ height: calcularAltoSection(numeroCondiciones, numeroSaltosDeLinea) }}>
             <div className="marca-info">
-                <div className="logo-container">
-                    <img src="" />
+                <div className="logo-container" style={{ backgroundColor: colorMarca }}>
+                    <img src={logoMarca.url} />
                 </div>
-                <h1>McDonald's</h1>
+                <h1>{nombreMarca}</h1>
                 {/* <h1>N° saltosLineas: {numeroSaltosDeLinea}</h1>
                 <p> N° condiciones: {numeroCondiciones}</p> */}
             </div>
@@ -46,22 +93,19 @@ function CardDetalles() {
             <div className="regalo-detalles-container">
                 <div className="regalo-container">
                     <p>Te regala</p>
-                    <h1 className='h1-regalo-marca'><img src={GiftBrand} />1 Helado</h1>
+                    <h1 className='h1-regalo-marca'><img src={GiftBrand} />{regaloFull}</h1>
                 </div>
                 <div className="condiciones-main-container" >
                     <h2>Condiciones</h2>
                     <div className="condiciones-container" ref={paragraphRef} >
-                        <div className="condicion">
+                    {condicionesRegalo.map((condicion, index) => (
+                        <div className="condicion" key={index}>
                             <div className="bullet"></div>
-                            <p className='line-txt'>Presentar DNI</p>
+                            <p className='line-txt'>{condicion}</p>
                         </div>
-                        <div className="condicion">
-                            <div className="bullet"></div>
-                            <p className='line-txt'>Presentar DNI</p>
-                        </div>
-                       
-                                  
+                        ))}                       
                     </div>
+
                 </div>
                 <div className="msj-important">
                     <img src={ImportantIcon} />
@@ -69,7 +113,12 @@ function CardDetalles() {
                 </div>
             </div>
             <div className="btn-close-container">
-                <button className="close-detalles">
+                <button className="close-detalles" onClick={() => {
+                        setDetallesWindowActive(false);
+                        setTimeout(() => {
+                            toggleDetalles();
+                        }, 300);
+                    }} >
                     Todo claro
                 </button>
             </div>
@@ -78,5 +127,4 @@ function CardDetalles() {
     </>
   )
 }
-
 export default CardDetalles
