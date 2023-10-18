@@ -2,8 +2,11 @@ import React, {useState, useEffect, useRef } from 'react'
 import './menu.css'
 
 function Menu({setMenuOpen}) {
-    const ArrowRightUp = '/public/arrow-right-up.svg'
-    const ArrowRightUpWh = '/public/arrow-right-up-wh.svg'
+  // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
+  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/build/';   
+
+  const ArrowRightUp = `${imageBasePath}brand/arrow-right-up.svg`
+  const ArrowRightUpWh = `${imageBasePath}brand/arrow-right-up-wh.svg`
   
 
     {/* bgMenuActive activa un fondo con transparencia y bloquea el body */}

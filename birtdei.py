@@ -4,13 +4,19 @@ import os
 
 app = Flask(__name__)
 
+# Ruta para poder cargar archivos desde otro directorio: los componentes de react
+@app.route('/react-components/build/<path:filename>')
+def send_react_static(filename):
+    return send_from_directory('react-components/build', filename)
+
+
 @app.route('/')
 def inicio():
     return render_template('index.html')
 
 @app.route('/ingreso')
 def birthday():
-    return render_template('s2_form.html')
+    return render_template('s2_form.html')  
 
 @app.route('/ingreso2', methods=['POST'])
 def procesar_cumple():

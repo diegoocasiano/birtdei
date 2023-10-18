@@ -22,7 +22,10 @@
         "Noti",
         "notif",
         "Posi",
+        "procces",
         "starbucks",
+        "transpilador",
+        "transpilar",
         "ultimos",
         "ventanita",
         "vregalos",
@@ -47,5 +50,6 @@
         "titleBar.inactiveBackground": "#22140099",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#221400"
+    "peacock.color": "#221400",
+    "liveServer.settings.port": 5501
 }

@@ -1,3 +1,5 @@
+const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/build/';
+
 const dataRegalos = [
     {   
         id: 1,
@@ -7,7 +9,7 @@ const dataRegalos = [
         categoriaMarca: "FastFood",
         colorMarca: "#e50000",
         logoMarca: {
-            url: "/public/logo-mcdonalds.png",
+            url: `${imageBasePath}logos-marcas/logo-mcdonalds.png`,
             size: "75%"
         },
         condicionesRegalo: [
@@ -23,7 +25,7 @@ const dataRegalos = [
         categoriaMarca: "Cafetería",
         colorMarca: "#006341",
         logoMarca: {
-            url: "/public/logo-starbucks.png",
+            url: `${imageBasePath}logos-marcas/logo-starbucks.png`,
             size: "70%"
         },
         condicionesRegalo: [
@@ -39,7 +41,7 @@ const dataRegalos = [
         categoriaMarca: "Restaurante",
         colorMarca: "#F6EADE",
         logoMarca: {
-            url: "/public/logo-chillis.png",
+            url: `${imageBasePath}logos-marcas/logo-chillis.png`,
             size: "",
         },
         condicionesRegalo: [
@@ -55,7 +57,7 @@ const dataRegalos = [
         categoriaMarca: "Restaurante",
         colorMarca: "#E51937",
         logoMarca: {
-            url: "/public/logo-fridays.png",
+            url: `${imageBasePath}logos-marcas/logo-fridays.png`,
             size: "75%",
         },
         condicionesRegalo: [
@@ -71,7 +73,7 @@ const dataRegalos = [
         categoriaMarca: "FastFood",
         colorMarca: "#e50000",
         logoMarca: {
-            url: "/public/logo-mcdonalds.png",
+            url: `${imageBasePath}logos-marcas/logo-mcdonalds.png`,
             size: "75%"
         },
         condicionesRegalo: [
@@ -87,7 +89,7 @@ const dataRegalos = [
         categoriaMarca: "Cafetería",
         colorMarca: "#006341",
         logoMarca: {
-            url: "/public/logo-starbucks.png",
+            url: `${imageBasePath}logos-marcas/logo-starbucks.png`,
             size: "70%"
         },
         condicionesRegalo: [
@@ -103,7 +105,7 @@ const dataRegalos = [
         categoriaMarca: "Restaurante",
         colorMarca: "#F6EADE",
         logoMarca: {
-            url: "/public/logo-chillis.png",
+            url: `${imageBasePath}/logos-marcas/logo-chillis.png`,
             size: "",
         },
         condicionesRegalo: [
@@ -119,15 +121,12 @@ const dataRegalos = [
         categoriaMarca: "Restaurante",
         colorMarca: "#E51937",
         logoMarca: {
-            url: "/public/logo-fridays.png",
+            url: `${imageBasePath}/logos-marcas/logo-fridays.png`,
             size: "75%",
         },
         condicionesRegalo: [
-            "Presentar DNI", 
-            "Consumo previo",
-        ]
+            "Presentar DNI", "Consumo previo",
+        ],
     },
-    
-]
-
+];
 export default dataRegalos;

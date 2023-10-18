@@ -2,8 +2,11 @@ import React, { useEffect, useRef, useState} from 'react';
 import './card-detalles.css'
 
 function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca}) {
-    const GiftBrand = '/public/gift-card.svg'
-    const ImportantIcon = '/public/important-icon.svg'
+    // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
+    const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/build/';  
+
+    const GiftBrand = `${imageBasePath}brand/gift-card.svg`
+    const ImportantIcon = `${imageBasePath}brand/important-icon.svg`
 
     const [numeroCondiciones, setNumeroCondiciones] = useState(0);
     const [numeroSaltosDeLinea, setNumeroSaltosDeLinea] = useState(0);

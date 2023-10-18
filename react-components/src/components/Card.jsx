@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './card.css'
 
 function Card({toggleDetalles, logoMarca, colorMarca, regalo, nombreMarca, categoriaMarca}) {
-  const ArrowRightIcon = '/public/arrow-right-card.svg'
-  const GiftBrand = '/public/gift-card.svg'
+  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/build/'; 
+
+  const ArrowRightIcon = `${imageBasePath}brand/arrow-right-card.svg`
+  const GiftBrand = `${imageBasePath}brand/gift-card.svg`
 
 
   return (
