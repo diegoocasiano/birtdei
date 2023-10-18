@@ -112,7 +112,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
                 </div>
                 <div className="msj-important">
                     <img src={ImportantIcon} />
-                    <p>Regalo válido solo en Perú y sujeto a cambios.</p>
+                    <p>Disponible solo en Perú y sujeto a cambios.</p>
                 </div>
             </div>
             <div className="btn-close-container">
