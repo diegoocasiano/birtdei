@@ -3,7 +3,7 @@ import './navbar.css'
 
 function NavBar( {notifDotActive, toggleMenu} ) {
   // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
-  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/build/'; 
+  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
 
   const LogoBirtPosi = `${imageBasePath}brand/Posi-Wordmark-Birt.svg`
   const MenuIcon = `${imageBasePath}brand/menu-hamb.svg`

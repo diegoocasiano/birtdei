@@ -11,7 +11,7 @@ export default async () => {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV), // Variable que almacena el modo del entorno: development or production
     },
     build: {
-      outDir: 'build',
+      outDir: 'dist',
       rollupOptions: {
         output: {
           entryFileNames: `index-v${numberVersion}.js`, 

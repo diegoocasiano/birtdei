@@ -2,7 +2,7 @@ import React from 'react'
 import './card.css'
 
 function Card({toggleDetalles, logoMarca, colorMarca, regalo, nombreMarca, categoriaMarca}) {
-  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/build/'; 
+  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
 
   const ArrowRightIcon = `${imageBasePath}brand/arrow-right-card.svg`
   const GiftBrand = `${imageBasePath}brand/gift-card.svg`

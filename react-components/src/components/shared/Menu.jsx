@@ -3,7 +3,7 @@ import './menu.css'
 
 function Menu({setMenuOpen}) {
   // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
-  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/build/';   
+  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';   
 
   const ArrowRightUp = `${imageBasePath}brand/arrow-right-up.svg`
   const ArrowRightUpWh = `${imageBasePath}brand/arrow-right-up-wh.svg`

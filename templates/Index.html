@@ -14,16 +14,20 @@
         <img src="/static/img/Posi-Wordmark-Birt.svg" alt="logo-birtdei">
         <h1>Todos los regalos que las marcas<br> tienen para ti en tu cumple</h1>
         <canvas id="confetti"></canvas>
+        <img class="loader" src="/static/gif/loader.svg" alt="">
     </main>
 </body>
 
 
 <script>
-    <!-- Redirigir a segunda pantalla luego de 3s -->
-
+    <!-- Redirigir a segunda pantalla luego de 3s-->
+    setTimeout(function() {
+        window.location.href = "/ingreso";
+    }, 4000); 
+    
     var confettiSettings = {
             target: 'confetti',
-            size: '0.9',
+            size: '0.7',
             animate: true,
             clock: 35,
             props: ['circle','square'],

@@ -9,7 +9,7 @@ import CardDetalles from './components/card-detalles/CardDetalles'
 
 function App() {
 
-  // Logica para solo cargar 10 cards cuando se ingrese a la web por primera vez
+  // Lógica para solo cargar 10 cards cuando se ingrese a la web por primera vez
   // Luego se deberá hacer scroll (casi hasta el final) para volver a cargar otras 10 cards
   // Esto produce la ilusión de scroll infinito
   const[paginaActual, setPaginaActual] = useState(1);

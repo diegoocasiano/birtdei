@@ -1,4 +1,4 @@
-const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/build/';
+const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';
 
 const dataRegalos = [
     {   
