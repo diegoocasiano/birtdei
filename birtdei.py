@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+def inicio():
     return render_template('index.html')
 
 @app.route('/ingreso')
@@ -56,7 +56,7 @@ def procesar_cumple():
         return render_template('s3.4.html', edad=edad, dias_para_cumple=dias_para_cumple)
 
 @app.route('/regalos')
-def home2():
+def home():
     return render_template('home.html')
 
 
