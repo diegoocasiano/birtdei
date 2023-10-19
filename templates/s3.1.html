@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birtdei</title>
+    <link rel="icon" type="img/svg" href="/static/favicon/favicon.svg">
     <link rel="stylesheet" href="/static/css/reset.css">
     <link rel="stylesheet" href="/static/css/s3.1.css">
+    <script src="/static/js/confetti.js"></script>
 </head>
 <body>
     <header>
@@ -20,6 +22,26 @@
                 <a class="btn-vregalos" href="/regalos">Ver mis regalos<img src="/static/icons/arrow-right.svg"</a>
             </div>
         </section>
+        <canvas id="confetti"></canvas>
     </main>
+    
+    <script>
+        var confettiSettings = {
+            target: 'confetti',
+            size: '1.0',
+            animate: true,
+            clock: 45,
+            props: ['circle','square'],
+            colors: [[248,79,57],[255,220,64],[0,148,255],[164,48,255],[255,117,17]]
+        };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+
+        <!-- Animar confetti para que inicie con scale(0) y luego pase a scale(1) -->
+        document.addEventListener("DOMContentLoaded", function () {
+            const canvas = document.getElementById("confetti");
+            canvas.style.transform = "scale(1)";
+        });
+    </script>
 </body>
 </html>

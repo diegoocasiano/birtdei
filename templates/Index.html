@@ -4,20 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birtdei</title>
+    <link rel="icon" type="img/svg" href="/static/favicon/favicon.svg">
     <link rel="stylesheet" href="/static/css/index.css">
     <link rel="stylesheet" href="/static/css/reset.css">
+    <script src="/static/js/confetti.js"></script>
 </head>
 <body>
     <main>
         <img src="/static/img/Posi-Wordmark-Birt.svg" alt="logo-birtdei">
         <h1>Todos los regalos que las marcas<br> tienen para ti en tu cumple</h1>
+        <canvas id="confetti"></canvas>
     </main>
 </body>
 
-<!-- Redirigir a segunda pantalla luego de 3s -->
+
 <script>
-    setTimeout(function() {
-        window.location.href = "/ingreso";
-    }, 3000);
+    <!-- Redirigir a segunda pantalla luego de 3s -->
+
+    var confettiSettings = {
+            target: 'confetti',
+            size: '0.9',
+            animate: true,
+            clock: 35,
+            props: ['circle','square'],
+            colors: [[248,79,57],[255,220,64],[0,148,255],[164,48,255],[255,117,17]]
+        };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
 </script>
 </html>
