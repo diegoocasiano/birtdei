@@ -4,12 +4,6 @@ import os
 
 app = Flask(__name__)
 
-# Ruta para poder cargar archivos desde otro directorio: los componentes de react
-@app.route('/react-components/dist/<path:filename>')
-def send_react_static(filename):
-    return send_from_directory('react-components/dist', filename)
-
-
 @app.route('/')
 def inicio():
     return render_template('index.html')
@@ -65,6 +59,12 @@ def procesar_cumple():
 def home():
     return render_template('home.html')
 
+
+
+# Ruta para poder cargar archivos desde otro directorio: los componentes de react
+@app.route('/react-components/dist/<path:filename>')
+def send_react_static(filename):
+    return send_from_directory('react-components/dist', filename)
 
 if __name__ == '__main__':
     app.run(debug=True)
