@@ -94,13 +94,14 @@ html {
 .card-container .h1-regalo-marca {
     display: flex;
     gap: 2px;
+
     font-family: 'Causten Round';
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     color: var(--main-orange-01-birt, #F84F39);
 }
-.card-container img {
-    margin-top: -3px;
+.card-content-container img {
+    margin-top: -4px;
 }
 
 .card-container .nombre-marca {
@@ -116,7 +117,7 @@ html {
     margin-top: 2px;
 
     font-family: 'Causten Round';
-    font-weight: 400;
+    font-weight: 500;
     font-size: 15px;
     color: var(--neutral-gray-birt, #555);
 }
@@ -124,7 +125,7 @@ html {
 
 .btn-detallesRegalo {
     font-family: 'Causten Round';
-    font-weight: 400;
+    font-weight: 500;
     font-size: 15px;
     padding: 5px 0;
     margin-top: 0px;
