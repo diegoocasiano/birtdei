@@ -12,10 +12,6 @@
     ],  
     "routes": [
       {
-        "src": "/react-components/dist/(.*)",
-        "dest": "/react-components/dist/$1"
-      },
-      {
         "src": "/(.*)",
         "dest": "/birtdei.py"
       }
