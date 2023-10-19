@@ -84,7 +84,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
                 style={{ height: calcularAltoSection(numeroCondiciones, numeroSaltosDeLinea) }}>
             <div className="marca-info">
                 <div className="logo-container" style={{ backgroundColor: colorMarca }}>
-                    <img src={logoMarca.url} />
+                    <img src={logoMarca.url} style={{width: logoMarca.sizeLittle}} />
                 </div>
                 <h1>{nombreMarca}</h1>
                 {/* <h1>N° saltosLineas: {numeroSaltosDeLinea}</h1>
@@ -96,7 +96,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
             <div className="regalo-detalles-container">
                 <div className="regalo-container">
                     <p>Te regala</p>
-                    <h1 className='h1-regalo-marca'><img src={GiftBrand} />{regaloFull}</h1>
+                    <h1 className='h1-regalo-marca'><img src={GiftBrand}/>{regaloFull}</h1>
                 </div>
                 <div className="condiciones-main-container" >
                     <h2>Condiciones</h2>
@@ -112,7 +112,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
                 </div>
                 <div className="msj-important">
                     <img src={ImportantIcon} />
-                    <p>Disponible solo en Perú y sujeto a cambios.</p>
+                    <p>Disponible solo en Lima (Perú). Sujeto a cambios.</p>
                 </div>
             </div>
             <div className="btn-close-container">

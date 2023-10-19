@@ -46,7 +46,9 @@ header {
     display: flex;
     justify-content: center;
     width: 100vw;
-    background-color: var(--Soft-Yellow02-Birt);
+
+    background: rgba(255, 252, 240, 0.80);
+    backdrop-filter: blur(20px);
 }
 
 .nav-imgs-container {
