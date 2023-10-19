@@ -4,15 +4,15 @@
       {
         "src": "/birtdei.py",
         "use": "@vercel/python"
-      },
-      {
-        "src": "/react-components/dist/(.*)",
-        "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/react-components/dist/(.*)",
         "dest": "/react-components/dist/$1"
       },
       {
