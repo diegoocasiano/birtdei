@@ -60,7 +60,7 @@ html {
     max-width: 200px;
     width: calc(50% - 30px);
     min-width: 150px;
-    height: 262px;
+    height: auto;
 }
 
 .card-logo-marca {
@@ -69,11 +69,17 @@ html {
     align-items: center;
 
     width: 100%;
-    height: 168px;
+    min-height: 168px;
 
     border-radius: 10px;
     background-color: #ffeba2
 }
+/* el pseudoelemento before ayuda a que pueda crecer manteniendo una relacion de aspecto 158px/168px */
+.card-logo-marca::before {
+    content: "";
+    padding-top: 106.33%;
+}
+
 .card-logo-marca img {
     width: 80%;
 }
@@ -90,7 +96,7 @@ html {
     gap: 2px;
     font-family: 'Causten Round';
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
     color: var(--main-orange-01-birt, #F84F39);
 }
 .card-container img {
@@ -98,7 +104,7 @@ html {
 }
 
 .card-container .nombre-marca {
-    margin-top: 4px;
+    margin-top: 5px;
 
     font-family: 'Causten Round';
     font-weight: 500;
@@ -107,9 +113,11 @@ html {
 }
 
 .card-container .categoria-marca {
+    margin-top: 2px;
+
     font-family: 'Causten Round';
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
     color: var(--neutral-gray-birt, #555);
 }
 
@@ -117,9 +125,9 @@ html {
 .btn-detallesRegalo {
     font-family: 'Causten Round';
     font-weight: 400;
-    font-size: 13px;
+    font-size: 15px;
     padding: 5px 0;
-    margin-top: -5px;
+    margin-top: 0px;
 
     color: var(--complementary-blue-01-birt, #1D77FF);
     background-color: var(--Soft-Yellow02-Birt);

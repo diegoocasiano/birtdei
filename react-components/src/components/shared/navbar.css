@@ -66,8 +66,8 @@ header {
 }
 
 .nav-imgs-container .logo-birt {
-    width: 91px;
-    height: 22.932px;
+    width: 99px;
+    height: 25px;
 }
 
 .btn-toggle-menu {
@@ -76,7 +76,7 @@ header {
 }
 
 .menu-icon{
-    padding-bottom: 3px;
+    padding-bottom: 2px;
 }
 
 .dot {
@@ -85,6 +85,6 @@ header {
     border-radius: 50%;
     position: absolute;
     top: 27px;
-    right: 16px;
+    right: 17px;
     background-color: var(--Orange01-Birt)
 }
