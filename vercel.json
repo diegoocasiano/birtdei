@@ -4,6 +4,10 @@
       {
         "src": "/birtdei.py",
         "use": "@vercel/python"
+      },
+      {
+        "src": "/react-components/dist/(.*)",
+        "dest": "/react-components/dist/$1"
       }
     ],  
     "routes": [
