@@ -47,14 +47,9 @@ html {
 /* Styles to the card */
 
 .main-cards-container {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 
     margin-top: 83px;
@@ -69,15 +64,9 @@ html {
 }
 
 .card-logo-marca {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    justify-content: center;
+    align-items: center;
 
     width: 100%;
     min-height: 168px;
@@ -103,15 +92,13 @@ html {
 }
 
 .card-container .h1-regalo-marca {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    /* display: flex;
     gap: 2px;
 
     font-family: 'Causten Round';
     font-weight: 600;
     font-size: 16px;
-    color: var(--main-orange-01-birt, #F84F39);
+    color: var(--main-orange-01-birt, #F84F39); */
 }
 .card-content-container img {   
     margin-top: -4px;
