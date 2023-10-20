@@ -92,11 +92,9 @@ html {
 }
 
 .card-container .h1-regalo-marca {
-    display: flex;
-
     font-family: 'Causten Round';
-    font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 600;
     color: var(--main-orange-01-birt, #F84F39);
 }
 .card-content-container img {   
