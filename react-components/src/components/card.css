@@ -60,25 +60,10 @@ html {
     max-width: 200px;
     width: calc(50% - 30px);
     min-width: 150px;
-    height: 100%;
+    height: auto;
 }
 
-.card-logo-marca {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    width: 100%;
-    min-height: 168px;
-
-    border-radius: 10px;
-    background-color: #ffeba2
-}
-/* el pseudoelemento before ayuda a que pueda crecer manteniendo una relacion de aspecto 158px/168px */
-.card-logo-marca::before {
-    content: "";
-    padding-top: 106.33%;
-} 
 
 .card-logo-marca img {
     width: 80%;
@@ -96,7 +81,7 @@ html {
     gap: 2px;
 
     font-family: 'Causten Round';
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--main-orange-01-birt, #F84F39);
 }
