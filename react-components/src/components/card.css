@@ -87,22 +87,22 @@ html {
 /* Styles to content */
 
 .card-content-container {
-    margin-top: 0.7rem;
+    margin-top: 14px;
     margin-left: 7px;
-    top: 50px;
 }
 
-.card-container .h1-regalo-marca {
+.regalo-marca {
     display: flex;
-    gap: 2px;
-
+    gap: 6px;
+}
+.card-container .h1-regalo-marca {
     font-family: 'Causten Round';
     font-size: 16px;
     font-weight: 600;
     color: var(--main-orange-01-birt, #F84F39);
 }
 .card-content-container img {   
-    margin-top: -4px;
+    margin-top: -3px;
 }
 
 .card-container .nombre-marca {

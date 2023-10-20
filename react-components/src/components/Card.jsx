@@ -16,7 +16,10 @@ function Card({toggleDetalles, logoMarca, colorMarca, regalo, nombreMarca, categ
           <img src={logoMarca.url} style={{ width: logoMarca.size }} />
       </button>
       <div className='card-content-container'>
-        <h1 className='h1-regalo-marca'><img src={GiftBrand} />{regalo}</h1>
+        <div className="regalo-marca">
+          <img src={GiftBrand}/>
+          <h1 className='h1-regalo-marca'>{regalo}</h1>
+        </div>
         <p className='nombre-marca'>{nombreMarca}</p>
         <p className='categoria-marca'>{categoriaMarca}</p>
         <button
