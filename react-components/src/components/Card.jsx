@@ -10,11 +10,11 @@ function Card({toggleDetalles, logoMarca, colorMarca, regalo, nombreMarca, categ
 
   return (
     <div className="card-container" >
-      <button className='btn card-logo-marca'
+      <div className='btn card-logo-marca'
         onClick={toggleDetalles}
         style={{ backgroundColor: colorMarca }}>
           <img src={logoMarca.url} style={{ width: logoMarca.size }} />
-      </button>
+      </div>
       <div className='card-content-container'>
         <h1 className='h1-regalo-marca'><img src={GiftBrand} />{regalo}</h1>
         <p className='nombre-marca'>{nombreMarca}</p>

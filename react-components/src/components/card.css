@@ -96,7 +96,7 @@ html {
     gap: 2px;
 
     font-family: 'Causten Round';
-
+    font-size: 16px;
     font-weight: 600;
     color: var(--main-orange-01-birt, #F84F39);
 }
