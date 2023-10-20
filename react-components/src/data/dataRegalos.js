@@ -3,7 +3,7 @@ const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/re
 const dataRegalos = [
     {   
         id: 1,
-        regalo: "HELADO",
+        regalo: "1 Helado",
         regaloFull: "1 Helado",
         nombreMarca: "McDonald's",
         categoriaMarca: "Comida Rápida",
