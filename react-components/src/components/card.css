@@ -75,10 +75,10 @@ html {
     background-color: #ffeba2
 }
 /* el pseudoelemento before ayuda a que pueda crecer manteniendo una relacion de aspecto 158px/168px */
-.card-logo-marca::before {
+/* .card-logo-marca::before {
     content: "";
     padding-top: 106.33%;
-}
+} */
 
 .card-logo-marca img {
     width: 80%;
