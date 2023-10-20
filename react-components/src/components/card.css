@@ -93,9 +93,12 @@ html {
 
 .regalo-marca {
     display: flex;
+    flex-direction: row;
     gap: 6px;
 }
 .card-container .h1-regalo-marca {
+    top: 50px;
+
     font-family: 'Causten Round';
     font-size: 16px;
     font-weight: 600;
