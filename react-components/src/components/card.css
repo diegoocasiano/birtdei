@@ -50,16 +50,16 @@ html {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25rem;
 
-    margin-top: 83px;
-    margin-bottom: 40px;
+    margin-top: 5.1875rem;
+    margin-bottom: 2.5rem;
 }
 
 .card-container {
-    max-width: 200px;
-    width: calc(50% - 30px);
-    min-width: 150px;
+    max-width: 12.5rem;
+    width: calc(50% - 1.875rem);
+    min-width: 9.375rem;
     height: auto;
 }
 
@@ -69,12 +69,12 @@ html {
     align-items: center;
 
     width: 100%;
-    min-height: 168px;
+    min-height: 10.5rem;
 
-    border-radius: 10px;
+    border-radius: .625rem;
     background-color: #ffeba2
 }
-/* el pseudoelemento before ayuda a que pueda crecer manteniendo una relacion de aspecto 158px/168px */
+/* el pseudoelemento before ayuda a que pueda crecer manteniendo una relacion de aspecto 9.875rem/10.5rem */
 .card-logo-marca::before {
     content: "";
     padding-top: 106.33%;
@@ -87,39 +87,38 @@ html {
 /* Styles to content */
 
 .card-content-container {
-    margin-top: 14px;
-    margin-left: 7px;
+    margin-top: .875rem;
+    margin-left: .4375rem;
 }
 
 .card-container .h1-regalo-marca {
     display: flex;
-    align-items: center;
-    gap: 2px;
+    gap: .125rem;
 
     font-family: 'Causten Round';
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--main-orange-01-birt, #F84F39);
 }
 .card-content-container img {   
-    margin-top: -4px;
+    margin-top: -0.25rem;
 }
 
 .card-container .nombre-marca {
-    margin-top: 5px;
+    margin-top: .3125rem;
 
     font-family: 'Causten Round';
     font-weight: 500;
-    font-size: 15px;
+    font-size: .9375rem;
     color: var(--neutral-black-birt, #0E0E0E);
 }
 
 .card-container .categoria-marca {
-    margin-top: 2px;
+    margin-top: .125rem;
 
     font-family: 'Causten Round';
     font-weight: 500;
-    font-size: 15px;
+    font-size: .9375rem;
     color: var(--neutral-gray-birt, #555);
 }
 
@@ -127,15 +126,15 @@ html {
 .btn-detallesRegalo {
     font-family: 'Causten Round';
     font-weight: 500;
-    font-size: 15px;
-    padding: 5px 0;
-    margin-top: 0px;
+    font-size: .9375rem;
+    padding: .3125rem 0;
+    margin-top: 0rem;
 
     color: var(--Blue01-Birt);
     background-color: var(--Soft-Yellow02-Birt);
 }
 
 .btn-detallesRegalo img {
-    margin-bottom: -1px;
-    padding-left: 5px;
+    margin-bottom: -0.0625rem;
+    padding-left: .3125rem;
 }
