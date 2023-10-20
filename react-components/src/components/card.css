@@ -87,8 +87,9 @@ html {
 /* Styles to content */
 
 .card-content-container {
-    margin-top: 14px;
+    margin-top: 0.7rem;
     margin-left: 7px;
+    top: 50px;
 }
 
 .card-container .h1-regalo-marca {
