@@ -85,11 +85,11 @@ html {
 }
 
 /* Styles to content */
-/* 
+
 .card-content-container {
    padding-top: 12px;
    padding-left: 7px;
-} */
+}
 
 .regalo-marca {
     display: flex;
@@ -97,7 +97,7 @@ html {
     gap: 6px;
 }
 .card-container .h1-regalo-marca {
-    padding-top: 2px;
+    line-height: 13px;
     font-family: 'Causten Round';
     font-size: 16px;
     font-weight: 600;
