@@ -21,19 +21,19 @@ html {
   
 @font-face {
     font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Medium.otf);
+    src: url(/assets/fonts/CaustenRound-Medium.otf);
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-SemiBold.otf);
+    src: url(/assets/fonts/CaustenRound-SemiBold.otf);
     font-weight: 600;
     font-style: normal;
 }
 @font-face {
     font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Bold.otf);
+    src: url(/assets/fonts/CaustenRound-Bold.otf);
     font-weight: 700;
     font-style: normal;
 }

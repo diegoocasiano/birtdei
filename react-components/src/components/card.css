@@ -19,30 +19,6 @@ html {
     --Soft-Yellow02-Birt: #FFFCF0;
 }
 
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Regular.otf);
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Medium.otf);
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-SemiBold.otf);
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Bold.otf);
-    font-weight: 700;
-    font-style: normal;
-}
 
 /* Styles to the card */
 
@@ -97,6 +73,7 @@ html {
     gap: 6px;
 }
 .card-container .h1-regalo-marca {
+    /* uso line-height para nivelar la altura de la caja del h1 y asi poder centrarlo verticalmente con el icon */
     line-height: 13px;
     font-family: 'Causten Round';
     font-size: 16px;
