@@ -58,6 +58,10 @@ main .sct1-container {
     align-items: center;
     margin-bottom: 70px;
 }
+.sct1-container img {
+    margin-left: 3px;
+    margin-bottom: 20px;
+}
 
 h1 {
     margin-bottom: 8px;

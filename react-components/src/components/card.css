@@ -71,6 +71,10 @@ html {
     display: flex;
     align-items: center;
     gap: 6px;
+
+}
+.icon-regalo {
+    height: 16px;
 }
 .card-container .h1-regalo-marca {
     /* uso line-height para nivelar la altura de la caja del h1 y asi poder centrarlo verticalmente con el icon */
@@ -114,4 +118,28 @@ html {
 .btn-detallesRegalo img {
     margin-bottom: -1px;
     padding-left: 5px;
+}
+
+@media screen and (max-width: 390px) {
+    .regalo-marca {
+        display: flex;
+        align-items: center;
+    }
+    .icon-regalo {
+        height: 18px;
+    }
+    
+    .card-container .h1-regalo-marca {
+        font-size: 14px;
+    }
+    .card-container .nombre-marca {
+        font-size: 13.5px;
+    }
+    .card-container .categoria-marca {
+        font-size: 13.5px;
+    }
+    .btn-detallesRegalo {
+        font-size: 13.5px;
+    }
+
 }

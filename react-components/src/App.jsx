@@ -94,7 +94,7 @@ function App() {
             condicionesRegalo={marcaSeleccionada.condicionesRegalo}
             colorMarca={marcaSeleccionada.colorMarca}
             logoMarca={marcaSeleccionada.logoMarca}
-            toggleDetalles={toggleDetalles}/>
+            toggleDetalles={toggleDetalles} />
           }
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>

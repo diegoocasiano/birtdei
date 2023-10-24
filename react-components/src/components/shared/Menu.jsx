@@ -54,9 +54,11 @@ function Menu({setMenuOpen}) {
     const handleTouchEnd = (e) => {
         if (currentY - startY > 60) {
           e.currentTarget.style.transition = 'transform 0.3s ease';
-          e.currentTarget.style.transform = 'translateY(0px)';
-          setBgMenuActive(true);
-          setBgMenuOpacity(1);
+          e.currentTarget.style.transform = 'translateY(160px)';
+          setTimeout(() => {
+            setBgMenuActive(false)
+          }, 250)
+          setBgMenuOpacity(0);
           
         } else if (currentY - startY <= 0) {
           // No hagas nada si el desplazamiento es menor o igual a 0px (swipe up).
