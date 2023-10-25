@@ -14,16 +14,15 @@
         <img src="/static/img/Posi-Wordmark-Birt.svg" alt="logo-birtdei">
         <h1>Todos los regalos que las marcas<br> tienen para ti en tu cumple</h1>
         <canvas id="confetti"></canvas>
-        <img class="loader" src="/static/gif/loader.svg" alt="">
+        <span class="loader"></span>
     </main>
 </body>
-
 
 <script>
     <!-- Redirigir a segunda pantalla luego de 3s-->
     setTimeout(function() {
         window.location.href = "/ingreso";
-    }, 1600); 
+    }, 1800); 
     
     var confettiSettings = {
             target: 'confetti',
@@ -36,7 +35,7 @@
         var confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
 
-    //Detectar el viewport width del usuario y agregar un valor al width
+    //Detectar el tamaño del viewport width del usuario y guardar el valor
     var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
     if (viewportWidth > 500) {
         window.location.href = '/?width=' + viewportWidth;

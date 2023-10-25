@@ -35,6 +35,8 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    padding-bottom: 20px;
 }
 
 img {
@@ -44,7 +46,7 @@ img {
 
 h1 {
     margin-top: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-family: 'Causten Round';
     font-weight: 500;
     font-size: 16px;
@@ -53,8 +55,26 @@ h1 {
 }
 
 .loader {
-    width: 10%;
-}
+    display: inline-block;
+    box-sizing: border-box;
+
+    width: 35px;
+    height: 35px;
+
+    border: 4px solid #EDE6CD;
+    border-bottom-color: var(--Orange01-Birt);
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
 
 /* styles to confetti */
 #confetti {
