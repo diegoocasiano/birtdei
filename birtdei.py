@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request, send_from_directory
 from datetime import datetime
-import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def inicio():
-    return render_template('index.html')
+    width = int(request.args.get('width', 0))
+    if width > 500:
+        return render_template('desktop.html')
+    else:
+        return render_template('index.html')
 
 @app.route('/ingreso')
 def birthday():

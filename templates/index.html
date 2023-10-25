@@ -23,7 +23,7 @@
     <!-- Redirigir a segunda pantalla luego de 3s-->
     setTimeout(function() {
         window.location.href = "/ingreso";
-    }, 4000); 
+    }, 1600); 
     
     var confettiSettings = {
             target: 'confetti',
@@ -35,5 +35,11 @@
         };
         var confetti = new ConfettiGenerator(confettiSettings);
         confetti.render();
+
+    //Detectar el viewport width del usuario y agregar un valor al width
+    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    if (viewportWidth > 500) {
+        window.location.href = '/?width=' + viewportWidth;
+    }
 </script>
 </html>
