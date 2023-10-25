@@ -41,25 +41,25 @@ body {
 
 @font-face {
   font-family: 'Causten Round';
-  src: url(/fonts/CaustenRound-Regular.otf);
+  src: url(react-components/dist/fonts/CaustenRound-Regular.otf);
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: 'Causten Round';
-  src: url(/fonts/CaustenRound-Medium.otf);
+  src: url(react-components/dist/fonts/CaustenRound-Medium.otf);
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: 'Causten Round';
-  src: url(/fonts/CaustenRound-SemiBold.otf);
+  src: url(react-components/dist/fonts/CaustenRound-SemiBold.otf);
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: 'Causten Round';
-  src: url(/fonts/CaustenRound-Bold.otf);
+  src: url(react-components/dist/fonts/CaustenRound-Bold.otf);
   font-weight: 700;
   font-style: normal;
 }
