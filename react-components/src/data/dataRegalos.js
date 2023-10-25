@@ -33,7 +33,7 @@ const dataRegalos = [
         },
         // El cuadradito amarillo es un carácter invisible que ayuda a dar un salto de linea (alt + 255)
         condicionesRegalo: [
-            "Ser parte de Starbucks Rewards: adquiere la Starbucks Card en cualquiera de sus tiendas, regístrala en la app de Starbucks y realiza un depósito mínimo de 20 soles para activarla.   ¡Eso es todo!",
+            "Ser parte de Starbucks Rewards: adquiere la Starbucks Card en cualquiera de sus tiendas, regístrala en la app de Starbucks y realiza un depósito mínimo de 20 soles para activarla.  ¡Eso es todo!",
         ]
     },
     {   

@@ -4,13 +4,14 @@ import './card-detalles.css'
 function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca}) {
     // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
     const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';  
-
     const GiftBrand = `${imageBasePath}brand/gift-card.svg`
     const ImportantIcon = `${imageBasePath}brand/important-icon.svg`
 
+    const [numeroSaltosLineaRegalo, setNumeroSaltosLineaRegalo] = useState(0)
     const [numeroCondiciones, setNumeroCondiciones] = useState(0);
     const [numeroSaltosDeLinea, setNumeroSaltosDeLinea] = useState(0);
     const paragraphRef = useRef(null);
+    const h1Ref = useRef(null)
 
      // Aumentar el height de detallesVentana cuando aumenta el numero de condiciones
     useEffect(() => {
@@ -27,9 +28,18 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         }
       }, [numeroCondiciones]); // Ejecutar cuando el número de condiciones cambie - Cuando se abra el menu (ahi numeroCondiciones tendrá un valor)
 
-      const calcularAltoSection = (numeroCondiciones, numeroSaltosDeLinea) => {
-        return 280 + (numeroCondiciones * 20) + (numeroSaltosDeLinea * 18) + 'px';
-      };
+    useEffect(() => {
+        const h1 = h1Ref.current;
+        if (h1) {
+            const lines = h1.clientHeight / 18;
+            setNumeroSaltosLineaRegalo(Math.round(lines) - 1);
+        }
+      });
+
+    const calcularAltoSection = (numeroCondiciones, numeroSaltosDeLinea, numeroSaltosLineaRegalo) => {
+        return 280 + (numeroCondiciones * 20) + (numeroSaltosDeLinea * 18) + (numeroSaltosLineaRegalo * 19)+ 'px';
+    };
+
 
       // Creamos un estado para saber cuando esta activo la ventana de detalles
       const [detallesWindowActive, setDetallesWindowActive] = useState(false)
@@ -81,14 +91,12 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         <div className={`bg-detallesWindow ${detallesWindowActive ? 'active' : ''}`}></div>
 
         <section ref={detallesRef} className={`card-detalles-container ${detallesWindowActive ? 'active' : ''}`}
-                style={{ height: calcularAltoSection(numeroCondiciones, numeroSaltosDeLinea) }}>
+                style={{ height: calcularAltoSection(numeroCondiciones, numeroSaltosDeLinea, numeroSaltosLineaRegalo) }}>
             <div className="marca-info">
                 <div className="logo-container" style={{ backgroundColor: colorMarca }}>
                     <img src={logoMarca.url} style={{width: logoMarca.sizeLittle}} />
                 </div>
-                <h1>{nombreMarca}</h1>
-                {/* <h1>N° saltosLineas: {numeroSaltosDeLinea}</h1>
-                <p> N° condiciones: {numeroCondiciones}</p> */}
+                <h1>{nombreMarca}</h1>                 
             </div>
 
             <hr className="line-top" />
@@ -96,7 +104,10 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
             <div className="regalo-detalles-container">
                 <div className="regalo-container">
                     <p>Te regala</p>
-                    <h1 className='h1-regalo-marca'><img src={GiftBrand}/>{regaloFull}</h1>
+                    <div ref={h1Ref} className="txt-regalo">
+                        <img src={GiftBrand}/>
+                        <h1 className='h1-regalo-marca'>{regaloFull}</h1>
+                    </div>
                 </div>
                 <div className="condiciones-main-container" >
                     <h2>Condiciones</h2>
