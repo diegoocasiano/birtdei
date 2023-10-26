@@ -105,7 +105,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
                 <div className="regalo-container">
                     <p>Te regala</p>
                     <div ref={h1Ref} className="txt-regalo">
-                        <img src={GiftBrand}/>
+                        <div className="icon"></div>
                         <h1 className='h1-regalo-marca'>{regaloFull}</h1>
                     </div>
                 </div>

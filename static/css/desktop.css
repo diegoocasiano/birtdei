@@ -1,0 +1,89 @@
+html {
+    font-size: 100%;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Medium.otf);
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-SemiBold.otf);
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Causten Round';
+    src: url(/static/fonts/CaustenRound-Bold.otf);
+    font-weight: 700;
+    font-style: normal;
+}
+:root {
+    --Orange01-Birt: #F84F39;
+    --Yellow-Birt: #FFDC40;
+    --Black-Birt: #0E0E0E;
+    --Soft-Yellow01-Birt: #FFF9E3;
+}
+
+body {
+    background-color: var(--Soft-Yellow01-Birt);
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.sct1_content-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+
+    margin-bottom: 50px;
+    z-index: 2;
+}
+.img-container {
+    width: 130px;
+    height: 130px;
+    overflow: hidden;
+
+}
+.sct1_content-main img {
+    width: 130px;
+}
+.txt-container {
+    margin-top: 25px;
+}
+.txt-container h1 {
+    font-family: 'Causten Round';
+    font-size: 32px;
+    font-weight: 700;
+
+    color: var(--main-orange-01-birt, #F84F39);
+}
+.txt-container p {
+    margin-top: 6px;
+
+    font-family: 'Causten Round';
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 110%;
+}
+.txt-container p span {
+    font-weight: 600;
+}
+
+
+/* styles to bg glass */
+.sct-bg-glass {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}

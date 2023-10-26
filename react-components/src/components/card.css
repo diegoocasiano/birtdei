@@ -71,10 +71,6 @@ html {
     display: flex;
     align-items: center;
     gap: 6px;
-
-}
-.icon-regalo {
-    height: 16px;
 }
 .card-container .h1-regalo-marca {
     /* uso line-height para nivelar la altura de la caja del h1 y asi poder centrarlo verticalmente con el icon */

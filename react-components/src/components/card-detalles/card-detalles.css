@@ -106,29 +106,36 @@ html {
     margin: 0 25px;
     margin-top: 20px;
 }
-.regalo-container p {
-    font-family: 'Causten Round';
-    font-weight: 500;
-    font-size: 15px;
 
-    color: var(--Black-Birt);
-}
-.regalo-container .txt-regalo {
-    display: flex;
-    align-items: flex-start;
-    gap: 5px;
-    margin-top: 5px;
-    
-}
-.regalo-container .h1-regalo-marca {
+.regalo-container p {
     font-family: 'Causten Round';
     font-weight: 500;
     font-size: 16px;
 
+    color: var(--Black-Birt);
+}
+
+.regalo-container .txt-regalo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 5px;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    background-color: #0094FF;
+}
+.regalo-container .h1-regalo-marca {
+    font-family: 'Causten Round';
+    font-weight: 600;
+    font-size: 18px;
+
     color: var(--Orange01-Birt);
 }
 .txt-regalo img {
-    margin-top: 1px;
+    width: 18px;
+    height: 18px;
 }
 
 /* styles to condiciones */
@@ -209,4 +216,8 @@ html {
     border-radius: 18px;
     background: none;
     border: 2px solid var(--main-orange-01-birt, #F84F39);
+}
+
+@media screen and (min-width: 390px) {
+    
 }
