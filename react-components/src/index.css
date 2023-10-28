@@ -52,8 +52,8 @@ body {
   font-style: normal;
 }
 @font-face {
-  font-family: 'Causten Round';
-  src: url(fonts/CaustenRound-SemiBold.otf);
+  font-family: 'Greycliff';
+  src: url(fonts/GreycliffCF-DemiBold.woff2);
   font-weight: 600;
   font-style: normal;
 }

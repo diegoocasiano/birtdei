@@ -126,16 +126,18 @@ html {
     height: 20px;
     background-color: #0094FF;
 }
+
+
 .regalo-container .h1-regalo-marca {
     font-family: 'Causten Round';
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
 
     color: var(--Orange01-Birt);
 }
 .txt-regalo img {
-    width: 18px;
-    height: 18px;
+    width: 14px;
+    height: 14px;
 }
 
 /* styles to condiciones */
