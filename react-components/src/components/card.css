@@ -75,7 +75,7 @@ html {
 .card-container .h1-regalo-marca {
     /* uso line-height para nivelar la altura de la caja del h1 y asi poder centrarlo verticalmente con el icon */
     line-height: 13px;
-    font-family: 'Greycliff';
+    font-family: 'Causten Round';
     font-size: 16px;
     font-weight: 600;
     color: var(--main-orange-01-birt, #F84F39);
