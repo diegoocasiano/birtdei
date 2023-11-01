@@ -3,6 +3,8 @@ const btnError = document.getElementById("btnError");
 const tituloInput = document.getElementById("titulo");
 const detallesInput = document.getElementById("detalles");
 const feedbackForm = document.getElementById("feedbackForm");
+const currentDate = new Date().toLocaleString();
+
 const btnSubmit = document.getElementById("btnSubmit")
 const btnBackHome = document.getElementById("btnBackHome")
 
@@ -57,7 +59,8 @@ feedbackForm.addEventListener("submit", function (event) {
         body: JSON.stringify({
             tipoFeedback: tipoFeedback,
             tituloFeedback: tituloFeedback,
-            detallesFeedback: detallesFeedback
+            detallesFeedback: detallesFeedback,
+            currentDate: currentDate
         })
     })
     .then(response => {

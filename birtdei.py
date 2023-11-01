@@ -92,7 +92,7 @@ def send_email(tipoFeedback, tituloFeedback, detallesFeedback, currentDate):
         print(response.headers)
         return 'Email sent successfully'
     except Exception as e:
-        print(str(e))
+        print(str(e)) 
         return 'Error sending the email'
 
 @app.route('/send_mail', methods=['POST'])
@@ -102,7 +102,7 @@ def send_mail():
         tipoFeedback = data.get('tipoFeedback')
         tituloFeedback = data.get('tituloFeedback')
         detallesFeedback = data.get('detallesFeedback')
-        currentDate = datetime.now().strftime("%d-%m-%Y - %H:%M")
+        currentDate = data.get('currentDate')
 
         response = send_email(tipoFeedback, tituloFeedback, detallesFeedback, currentDate)
         if response == 'Email sent successfully':
