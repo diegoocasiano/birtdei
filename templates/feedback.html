@@ -16,12 +16,39 @@
         </header>
         <hr class="line--bot-header">
         <section class="sct1-buttons">
-            <p>¿Que quieres decirnos?</p>
+            <h2>¿Qué quieres decirnos?</h2>
             <div class="buttons-container">
-                <button>Idea <img src="/static/img/emoji-idea.png" alt="Emoji de foco"></button>
-                <button>Error <img src="/static/img/emoji-error.png" alt="Emoji de calavera"></button>
+                <button class="btns btn-idea" id="btnIdea">
+                    Idea<img src="/static/img/emoji-idea.png" alt="Emoji de foco">
+                </button>
+                <button class="btns btn-error" id="btnError">
+                    Error<img src="/static/img/emoji-error.png" alt="Emoji de calavera">
+                </button>
             </div>
+        </section>
+        <section class="sct2-form">
+            <form action="" class="form-container" id="feedbackForm">
+                <div class="inpt-title-container">
+                    <h3>Título</h3>
+                    <input class="inpt-title" id="titulo"
+                        type="text" name="titulo" placeholder="¿De qué se trata?" required>
+                </div>
+                <div class="inpt-details-container">
+                    <h3>Detalles</h3>
+                    <textarea class="inpt-details" id="detalles"
+                        type="text" name="detalles" placeholder="Cuéntanos más..." required></textarea>
+                </div>
+                    
+                <input class="btn-submit" id="btnSubmit"
+                    type="submit" value="Enviar feedback">
+            </form>
+            <a href="/home" class="backHome" id="btnBackHome">
+                <img src="/static/img/arrow-left.svg">
+                <p>Seguir viendo mis regalos</p>
+            </a>
         </section>
     </main>
 </body>
+
+<script src="/static/js/feedback.js"></script>
 </html>

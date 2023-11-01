@@ -1,7 +1,15 @@
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request, send_from_directory, jsonify
+from datetime import datetime
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from dotenv import load_dotenv
 from datetime import datetime
 
+
 app = Flask(__name__)
+
+load_dotenv('.env') 
 
 @app.route('/')
 def inicio():
@@ -62,7 +70,46 @@ def procesar_cumple():
 def home():
     return render_template('home.html')
 
+@app.route('/feedback')
+def feedback():
+    return render_template('feedback.html')
 
+
+sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+
+def send_email(tipoFeedback, tituloFeedback, detallesFeedback, currentDate):
+    message = Mail(
+        from_email=("biwerun@gmail.com", "Birtdei"),
+        to_emails="dianlonso02@gmail.com",
+        subject="Nuevo Feedback",
+        html_content=f"<h2>Nuevo Feedback para Birtdei</h2>\n\n<h3>Tipo de feedback:</h3>\n{tipoFeedback}\n\n<h3>Título del feedback:</h3>\n{tituloFeedback}\n\n<h3>Detalles del feedback:</h3>\n{detallesFeedback}\n\n<h3>Fecha y hora:</h3>\n{currentDate}"
+    )
+
+    try:
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
+        return 'Email sent successfully'
+    except Exception as e:
+        print(str(e))
+        return 'Error sending the email'
+
+@app.route('/send_mail', methods=['POST'])
+def send_mail():
+    if request.method == 'POST':
+        data = request.json
+        tipoFeedback = data.get('tipoFeedback')
+        tituloFeedback = data.get('tituloFeedback')
+        detallesFeedback = data.get('detallesFeedback')
+        currentDate = datetime.now().strftime("%d-%m-%Y - %H:%M")
+
+        response = send_email(tipoFeedback, tituloFeedback, detallesFeedback, currentDate)
+        if response == 'Email sent successfully':
+            return ('', 200) 
+        else:
+            return ('', 500) 
+     
 
 # Ruta para poder cargar archivos desde otro directorio: los componentes de react
 @app.route('/react-components/dist/<path:filename>')
