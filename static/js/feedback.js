@@ -48,7 +48,8 @@ feedbackForm.addEventListener("submit", function (event) {
 
     console.log("Tipo de feedback: " + tipoFeedback)
     console.log("Título del feedback: " + tituloFeedback)
-    console.log("Detalles del feedback: " + detallesFeedback)    
+    console.log("Detalles del feedback: " + detallesFeedback)
+    console.log("Fecha y hora: " + currentDate)    
 
     // Enviar datos al servidor Flask para procesar el envío del correo
     fetch('/send_mail', {
