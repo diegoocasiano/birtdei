@@ -102,7 +102,7 @@ def send_mail():
         tipoFeedback = data.get('tipoFeedback')
         tituloFeedback = data.get('tituloFeedback')
         detallesFeedback = data.get('detallesFeedback')
-        currentDate = data.get('currentDate')
+        currentDate = datetime.now().strftime("%d-%m-%Y - %H:%M")
 
         response = send_email(tipoFeedback, tituloFeedback, detallesFeedback, currentDate)
         if response == 'Email sent successfully':

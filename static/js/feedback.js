@@ -3,8 +3,6 @@ const btnError = document.getElementById("btnError");
 const tituloInput = document.getElementById("titulo");
 const detallesInput = document.getElementById("detalles");
 const feedbackForm = document.getElementById("feedbackForm");
-const currentDate = new Date().toLocaleString();
-
 const btnSubmit = document.getElementById("btnSubmit")
 const btnBackHome = document.getElementById("btnBackHome")
 
@@ -48,8 +46,7 @@ feedbackForm.addEventListener("submit", function (event) {
 
     console.log("Tipo de feedback: " + tipoFeedback)
     console.log("Título del feedback: " + tituloFeedback)
-    console.log("Detalles del feedback: " + detallesFeedback)
-    console.log("Fecha y hora: " + currentDate)    
+    console.log("Detalles del feedback: " + detallesFeedback)    
 
     // Enviar datos al servidor Flask para procesar el envío del correo
     fetch('/send_mail', {
@@ -60,8 +57,7 @@ feedbackForm.addEventListener("submit", function (event) {
         body: JSON.stringify({
             tipoFeedback: tipoFeedback,
             tituloFeedback: tituloFeedback,
-            detallesFeedback: detallesFeedback,
-            currentDate: currentDate
+            detallesFeedback: detallesFeedback
         })
     })
     .then(response => {
