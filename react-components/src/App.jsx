@@ -6,7 +6,6 @@ import NavBar from './components/shared/NavBar'
 import dataRegalos from './data/DataRegalos'
 import CardDetalles from './components/card-detalles/CardDetalles'
 
-
 function App() {
 
   // Lógica para solo cargar 10 cards cuando se ingrese a la web por primera vez
