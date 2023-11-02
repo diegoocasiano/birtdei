@@ -7,12 +7,6 @@ const btnSubmit = document.getElementById("btnSubmit")
 const btnBackHome = document.getElementById("btnBackHome")
 
 
-
-// Variables para almacenar los datos del feedback
-let tipoFeedback = "";
-let tituloFeedback = "";
-let detallesFeedback = "";
-
 btnSubmit.addEventListener("click", function() {
     setTimeout(function() {
         btnBackHome.classList.add("active");
@@ -36,6 +30,11 @@ btnError.addEventListener("click", function() {
     btnSubmit.classList.remove("sent");
     btnSubmit.value = "Enviar feedback";
 })
+
+// Variables para almacenar los datos del feedback
+let tipoFeedback = "";
+let tituloFeedback = "";
+let detallesFeedback = "";
 
 feedbackForm.addEventListener("submit", function (event) {
     event.preventDefault();
