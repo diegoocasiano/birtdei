@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, send_from_directory, session
 from datetime import datetime
 import os
-import random
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from dotenv import load_dotenv
@@ -11,7 +10,11 @@ from flask_session import Session
 
 app = Flask(__name__)
 
+#Carga el file .env
 load_dotenv('.env') 
+
+#llave secreta para manejar las sessions
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 # Las sessions se guardaran como archivos en el sistemas de archivos del servidor
 app.config['SESSION_TYPE'] = 'filesystem'
