@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, send_from_directory, session
 from datetime import datetime
-import redis
 import os
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
