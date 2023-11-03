@@ -18,13 +18,13 @@ if (viewportWidth > 500) {
 window.location.href = '/?width=' + viewportWidth;
 }
 
-//Desaparecer start-screen luego de 2.8s
-const body = document.getElementById("body")
-const startScreen = document.getElementById("start-screen")
+// //Desaparecer start-screen luego de 2.8s
+// const body = document.getElementById("body")
+// const startScreen = document.getElementById("start-screen")
 
-setTimeout(function() {
-    body.classList.remove("hidden");
-    startScreen.classList.add("hidden");
-}, 2800);
+// setTimeout(function() {
+//     body.classList.remove("hidden");
+//     startScreen.classList.add("hidden");
+// }, 2800);
 
 

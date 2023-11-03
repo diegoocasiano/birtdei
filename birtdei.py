@@ -1,29 +1,45 @@
-from flask import Flask, render_template, request, send_from_directory, jsonify
+from flask import Flask, render_template, request, send_from_directory, session
 from datetime import datetime
 import os
+import random
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from dotenv import load_dotenv
 from datetime import datetime
+from flask_session import Session
 
 
 app = Flask(__name__)
 
 load_dotenv('.env') 
 
+# Las sessions se guardaran como archivos en el sistemas de archivos del servidor
+app.config['SESSION_TYPE'] = 'filesystem'
+Session(app)
+
+
 @app.route('/')
 def inicio():
     width = int(request.args.get('width', 0))
-    if width > 500:
-        return render_template('desktop.html')
+
+    visited_regalos = session.get('visited_regalos', False)
+    print(f'Visitó regalos?: {visited_regalos}')
+
+    if visited_regalos:
+        return render_template('index2.html')
     else:
-        return render_template('index.html')
+        return render_template('index1.html')
 
-@app.route('/ingreso')
-def birthday():
-    return render_template('s2_form.html')  
+@app.route('/index1')
+def index1():
+    return render_template("index1.html")
 
-@app.route('/ingreso2', methods=['POST'])
+@app.route('/index2')
+def index2():
+    return render_template("index2.html")
+
+
+@app.route('/ingreso', methods=['POST'])
 def procesar_cumple():
     dia = int(request.form['dia'])
     mes = int(request.form['mes'])
@@ -68,6 +84,7 @@ def procesar_cumple():
 
 @app.route('/regalos')
 def home():
+    session['visited_regalos'] = True
     return render_template('home.html')
 
 @app.route('/feedback')
