@@ -1,24 +1,3 @@
-html {
-    font-size: 100%;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Medium.otf);
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-SemiBold.otf);
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Bold.otf);
-    font-weight: 700;
-    font-style: normal;
-}
 :root {
     --Orange01-Birt: #F84F39;
     --Yellow-Birt: #FFDC40;
@@ -26,6 +5,11 @@ html {
     --Soft-Yellow01-Birt: #FFF9E3;
     --White-Birt: #FFFFFF;
     --Orange02-Birt: #FF7511;
+}
+
+html {
+    font-size: 100%;
+    font-family: 'Greycliff CF';
 }
 
 
@@ -65,33 +49,47 @@ main .sct1-container {
 }
 h1 {
     text-align: center;
-    margin-bottom: 8px;
-    font-family: 'Causten Round';
+    margin-bottom: 11px;
+
+    font-family: 'Greycliff CF';
+    font-size: 27px;
     font-weight: 700;
-    font-size: 34px;
-    line-height: 38px;
+    line-height: 110%;
+    letter-spacing: -0.54px;
+
     color: var(--Orange02-Birt);
 }
 p {
-    margin-bottom: 32px;
-    font-family: 'Causten Round';
-    font-weight: 500;
-    font-size: 18px;
+    margin-bottom: 33px;
+
+    font-family: 'Greycliff CF';
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.32px;
+
+    color: var(--Black-Birt);
 }
-.container-btn{
-    padding: 10.5px 28px;
-    border-radius: 18px;
-    background-color: var(--Orange02-Birt);
-}
+
 .btn-vregalos {
-    font-family: 'Causten Round';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 183px;
+    height: 41px;
+    
+    font-family: 'Greycliff CF';
     font-weight: 500;
     font-size: 16px;
+    line-height: 20px;
+
+    border-radius: 18px;
     color: var(--White-Birt);
+    background-color: var(--Orange01-Birt);
     text-decoration: none;
 }
 
 .btn-vregalos img {
     margin-left: 6px;
-    margin-bottom: -1px;
+    margin-top: 12px;
 }

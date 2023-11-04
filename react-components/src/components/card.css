@@ -1,7 +1,3 @@
-html {
-    font-size: 100%;
-  }
-  
 :root {
     --Orange01-Birt: #F84F39;
     --Yellow-Birt: #FFDC40;
@@ -19,7 +15,10 @@ html {
     --Soft-Yellow02-Birt: #FFFCF0;
 }
 
-
+html {
+    font-size: 100%;
+    font-family: 'Greycliff CF';
+  }
 /* Styles to the card */
 
 .main-cards-container {
@@ -73,39 +72,39 @@ html {
     gap: 6px;
 }
 .card-container .h1-regalo-marca {
-    /* uso line-height para nivelar la altura de la caja del h1 y asi poder centrarlo verticalmente con el icon */
-    line-height: 13px;
-    font-family: 'Causten Round';
-    font-size: 16px;
-    font-weight: 600;
+    font-family: 'Greycliff CF';
+    font-size: 14px;
+    font-weight: 700;
+
     color: var(--main-orange-01-birt, #F84F39);
 }
 
 .card-container .nombre-marca {
     margin-top: 5px;
 
-    font-family: 'Causten Round';
-    font-weight: 500;
-    font-size: 15px;
+    font-family: 'Greycliff CF';
+    font-weight: 600;
+    font-size: 14px;
+
     color: var(--neutral-black-birt, #0E0E0E);
 }
 
 .card-container .categoria-marca {
     margin-top: 2px;
 
-    font-family: 'Causten Round';
-    font-weight: 500;
-    font-size: 15px;
+    font-family: 'Greycliff CF';
+    font-weight: 600;
+    font-size: 14px;
+    
     color: var(--neutral-gray-birt, #555);
 }
 
 
 .btn-detallesRegalo {
-    font-family: 'Causten Round';
-    font-weight: 500;
-    font-size: 15px;
+    font-family: 'Greycliff CF';
+    font-weight: 600;
+    font-size: 14px;
     padding: 5px 0;
-    margin-top: 0px;
 
     color: var(--Blue01-Birt);
     background-color: var(--Soft-Yellow02-Birt);

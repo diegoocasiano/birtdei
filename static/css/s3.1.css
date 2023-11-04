@@ -1,30 +1,14 @@
-html {
-    font-size: 100%;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Medium.otf);
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-SemiBold.otf);
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Bold.otf);
-    font-weight: 700;
-    font-style: normal;
-}
 :root {
     --Orange01-Birt: #F84F39;
     --Yellow-Birt: #FFDC40;
     --Black-Birt: #0E0E0E;
     --Soft-Yellow01-Birt: #FFF9E3;
     --White-Birt: #FFFFFF;
+}
+
+html {
+    font-size: 100%;
+    font-family: 'Greycliff CF';
 }
 
 body {
@@ -63,23 +47,30 @@ main .sct1-container {
 }
 
 h1 {
-    margin-bottom: 8px;
-    font-family: 'Causten Round';
+    margin-bottom: 12px;
+
+    font-family: 'Greycliff CF';
     font-weight: 700;
-    font-size: 34px;
+    font-size: 32px;
+    letter-spacing: -0.64px;
+
     color: var(--Orange01-Birt);
     z-index: 1;
 }
 p {
     margin-bottom: 32px;
-    font-family: 'Causten Round';
-    font-weight: 500;
-    font-size: 18px;
+
+    font-family: 'Greycliff CF';
+    font-weight: 600;
+    font-size: 16px;
+
+    color: var(--Black-Birt);
     z-index: 1;
 }
 .sct1-container p span {
     font-weight: 700;
 }
+
 .container-btn{
     padding: 10.5px 28px;
     border-radius: 18px;
@@ -87,16 +78,29 @@ p {
     z-index: 1;
 }
 .btn-vregalos {
-    font-family: 'Causten Round';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 183px;
+    height: 41px;
+    
+    font-family: 'Greycliff CF';
     font-weight: 500;
     font-size: 16px;
+    line-height: 20px;
+
+    border-radius: 18px;
     color: var(--White-Birt);
+    background-color: var(--Orange01-Birt);
     text-decoration: none;
+
+    z-index: 1;
 }
 
 .btn-vregalos img {
     margin-left: 6px;
-    margin-bottom: -1px;
+    margin-top: 22px;
 }
 
 /* styles to confetti */

@@ -1,24 +1,3 @@
-html {
-    font-size: 100%;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Medium.otf);
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-SemiBold.otf);
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/static/fonts/CaustenRound-Bold.otf);
-    font-weight: 700;
-    font-style: normal;
-}
 :root {
     --Orange01-Birt: #F84F39;
     --Yellow-Birt: #FFDC40;
@@ -26,6 +5,11 @@ html {
     --Soft-Yellow01-Birt: #FFF9E3;
     --White-Birt: #FFFFFF;
     --Blue02-Birt: #0094FF;
+}
+
+html {
+    font-size: 100%;
+    font-family: 'Greycliff CF';
 }
 
 body {
@@ -66,15 +50,21 @@ main .sct1-container {
 }
 .sct1-container .content-part1 h1 {
     margin-bottom: 8px;
-    font-family: 'Causten Round';
+
+    font-family: 'Greycliff CF';
+    font-size: 27px;
     font-weight: 700;
-    font-size: 28px;
+    letter-spacing: -0.54px;
+
     color: var(--Blue02-Birt)
 }
 .sct1-container .content-part1 p {
-    font-family: 'Causten Round';
-    font-weight: 500;
+    font-family: 'Greycliff CF';
+    font-weight: 600;
     font-size: 16px;
+    letter-spacing: -0.32px;
+
+    color: var(--neutral-black-birt, #0E0E0E);
 }
 .sct1-container .content-part1 p span {
     font-weight: 700;
@@ -87,32 +77,45 @@ main .sct1-container {
     background: var(--Blue02-Birt)
 }
 
+.content-part2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 24px;
+}
 .sct1-container .content-part2 p {
-    font-family: 'Causten Round';
-    font-weight: 500;
+    font-family: 'Greycliff CF';
+    font-weight: 600;
     font-size: 16px;
+    letter-spacing: -0.32px;
+
+    color: var(--neutral-black-birt, #0E0E0E);
 }
 
-.container-btn{
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10.5px 30px;
-    border-radius: 18px;
-    background-color: var(--Blue02-Birt)
-}
 .btn-vregalos {
-    font-family: 'Causten Round';
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    
+    width: 183px;
+    height: 41px;
+    
+    font-family: 'Greycliff CF';
     font-weight: 500;
     font-size: 16px;
+    line-height: 20px;
+
+    border-radius: 18px;
     color: var(--White-Birt);
+    background: var(--complementary-blue-02-birt, #0094FF);
     text-decoration: none;
 }
 
 .btn-vregalos img {
     margin-left: 6px;
-    margin-bottom: -1px;
+    margin-bottom: 9px;
 }
-
 
 
 

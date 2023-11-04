@@ -1,14 +1,20 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birtdei</title>
     <link rel="icon" type="img/svg" href="/static/favicon/favicon.svg">
-    <link rel="stylesheet" href="{{ url_for('send_react_static', filename='index-v97.css') }}">
+
+    <link rel="preload" as="font" href="/static/fonts/Greycliff-CF/Greycliff-CF-Bold.woff2" type="font/woff2">
+    <link rel="preload" as="font" href="/static/fonts/Greycliff-CF/Greycliff-CF-Demi-Bold.woff2" type="font/woff2">
+    <link rel="preload" as="font" href="/static/fonts/Greycliff-CF/Greycliff-CF-Medium.woff2" type="font/woff2">
+    
+    <link rel="icon" type="img/svg" href="/static/favicon/favicon.svg">
+    <link rel="stylesheet" href="{{ url_for('send_react_static', filename='index-v99.css') }}">
   </head>
   <body>
     <div id="root"></div>
-    <script src="{{ url_for('send_react_static', filename='index-v97.js') }}"></script>
+    <script src="{{ url_for('send_react_static', filename='index-v99.js') }}"></script>
   </body>
 </html>
