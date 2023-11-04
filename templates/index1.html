@@ -7,17 +7,23 @@
     <link rel="icon" type="img/svg" href="/static/favicon/favicon.svg">
     <link rel="stylesheet" href="/static/css/reset.css">
     <link rel="stylesheet" href="/static/css/index1.css">
+    <script src="/static/js/confetti.js"></script>
 </head>
 <body>
-    <header>
+    <!-- <header>
         <img src="/static/img/Posi-Wordmark-Birt.svg" alt="logo-birtdei">
-    </header>
+    </header> -->
     <main>
-        <div class="main_titulo">
-            <h1>¿Cuándo naciste?</h1>
-            <hr class="borde-titulo">
-        </div>
         <section class="sct1_container">
+            <img src="/static/img/Posi-Wordmark-Birt.svg" alt="logo-birtdei">
+            <h1>Todos los regalos que las marcas<br> tienen para ti en tu cumple</h1>
+            <img class="separator-waves" src="/static/svg/separator-waves.svg">
+        </section>
+        <section class="sct2_container">
+            <div class="main_titulo">
+                <h1>¿Cuándo naciste?</h1>
+                <hr class="borde-titulo">
+            </div>
             <form action="/ingreso" method="POST">
                 <div class="main-container_box-input">
                     <div class="container_boxes-input">
@@ -35,10 +41,12 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn-continuar" id="btn-continuar" disabled>Continuar <img src="/static/icons/arrow-right.svg" alt="Flecha derecha"></button>
             </form>
         </section>
+        <button type="submit" class="btn-continuar" id="btn-continuar" disabled>Continuar<img src="/static/icons/arrow-right.svg" alt="Flecha derecha"></button>
+        
     </main>
+    <canvas id="confetti"></canvas>
 </body>
 <!-- Limitar a dos digitos cada input -->
 <script>
@@ -73,6 +81,6 @@
             submitButton.classList.remove('btn-activo');
         }
     }
-    
 </script>
+<script src="/static/js/index1.js"></script>
 </html>
