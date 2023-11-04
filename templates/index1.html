@@ -14,37 +14,41 @@
         <img src="/static/img/Posi-Wordmark-Birt.svg" alt="logo-birtdei">
     </header> -->
     <main>
+        <canvas id="confetti"></canvas>
         <section class="sct1_container">
             <img src="/static/img/Posi-Wordmark-Birt.svg" alt="logo-birtdei">
             <h1>Todos los regalos que las marcas<br> tienen para ti en tu cumple</h1>
             <img class="separator-waves" src="/static/svg/separator-waves.svg">
         </section>
         <section class="sct2_container">
-            <div class="main_titulo">
-                <h1>¿Cuándo naciste?</h1>
-                <hr class="borde-titulo">
-            </div>
             <form action="/ingreso" method="POST">
-                <div class="main-container_box-input">
-                    <div class="container_boxes-input">
-                        <div class="input-container">
-                            <input class="input-box-dia" required type="number" id="dia" name="dia" min="0" max="99" placeholder="11" oninput="justTwoDigits(this)">
-                            <p class="dia">Día</p>
-                        </div>
-                        <div class="input-container">
-                            <input class="input-box-mes" required type="number" id="mes" name="mes" min="0" max="99" placeholder="07" oninput="justTwoDigits(this)">
-                            <p class="mes">Mes</p>
-                        </div>
-                        <div class="input-container">
-                            <input class="input-box-anio" required type="number" id="anio" name="anio" min="0" max="99" placeholder="02"oninput="justTwoDigits(this)">
-                            <p class="año">Año</p>
+                <div class="form-container">
+                    <div class="main_titulo">
+                        <h1>¿Cuándo naciste?</h1>
+                        <hr class="borde-titulo">
+                    </div>
+                    <div class="main-container_box-input">
+                        <div class="container_boxes-input">
+                            <div class="input-container">
+                                <input class="input-box-dia" required type="number" id="dia" name="dia" min="0" max="99" placeholder="11" oninput="justTwoDigits(this)">
+                                <p class="dia">Día</p>
+                            </div>
+                            <div class="input-container">
+                                <input class="input-box-mes" required type="number" id="mes" name="mes" min="0" max="99" placeholder="07" oninput="justTwoDigits(this)">
+                                <p class="mes">Mes</p>
+                            </div>
+                            <div class="input-container">
+                                <input class="input-box-anio" required type="number" id="anio" name="anio" min="0" max="99" placeholder="02"oninput="justTwoDigits(this)">
+                                <p class="año">Año</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <button type="submit" class="btn-continuar" id="btn-continuar" disabled>Continuar<img src="/static/icons/arrow-right.svg" alt="Flecha derecha"></button>
             </form>
         </section>
-        <button type="submit" class="btn-continuar" id="btn-continuar" disabled>Continuar<img src="/static/icons/arrow-right.svg" alt="Flecha derecha"></button>
-        <canvas id="confetti"></canvas>
+        
+
     </main>
     
 </body>
