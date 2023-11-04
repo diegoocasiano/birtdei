@@ -26,8 +26,11 @@ def inicio():
     else:
         return render_template('index1.html')
 
+@app.route('/inicio')
+def inicio_again():
+    return render_template('index1.html')
 
-@app.route('/ingreso', methods=['POST'])
+@app.route('/ingresando', methods=['POST'])
 def procesar_cumple():
     dia = int(request.form['dia'])
     mes = int(request.form['mes'])
