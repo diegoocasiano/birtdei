@@ -10,7 +10,7 @@ window.addEventListener('resize', redirectionToDesktop);
 //Configuración del confetti
 var confettiSettings = {
     target: 'confetti',
-    max: '60',
+    max: '70',
     size: '1',
     animate: true,
     clock: 30,

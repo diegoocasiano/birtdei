@@ -8,10 +8,13 @@
 
 html {
     font-size: 100%;
-    font-family: 'Greycliff CF';
+    font-family: 'Onest', sans-serif;
 }
 
 body {
+    height: 100vh;
+    overflow: hidden;
+
     background-color: var(--Soft-Yellow01-Birt);
 }
 
@@ -47,25 +50,24 @@ main .sct1-container {
 }
 
 h1 {
-    margin-bottom: 12px;
-
-    font-family: 'Greycliff CF';
-    font-weight: 700;
     font-size: 32px;
-    letter-spacing: -0.64px;
+    font-weight: 800;
+    letter-spacing: -0.32px;
 
     color: var(--Orange01-Birt);
     z-index: 1;
+
+    margin-bottom: 8px;
 }
 p {
-    margin-bottom: 32px;
-
-    font-family: 'Greycliff CF';
-    font-weight: 600;
     font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.32px;
 
     color: var(--Black-Birt);
     z-index: 1;
+
+    margin-bottom: 32px;
 }
 .sct1-container p span {
     font-weight: 700;
@@ -73,8 +75,10 @@ p {
 
 .container-btn{
     padding: 10.5px 28px;
+
     border-radius: 18px;
     background-color: var(--Orange01-Birt);
+
     z-index: 1;
 }
 .btn-vregalos {
@@ -85,10 +89,8 @@ p {
     width: 183px;
     height: 41px;
     
-    font-family: 'Greycliff CF';
     font-weight: 500;
     font-size: 16px;
-    line-height: 20px;
 
     border-radius: 18px;
     color: var(--White-Birt);
@@ -104,14 +106,14 @@ p {
 }
 
 /* styles to confetti */
-#confetti {
+.confetti {
+    transition: transform 0.8s, width 1s; 
+}
+.confetti.active {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     z-index: 0;
-    
-    transform: scale(0);
-    transition: transform 1s, width 1s; 
 }

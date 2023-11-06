@@ -21,6 +21,9 @@ html {
     font-family: 'Onest', sans-serif;
 }
 body {
+    height: 100vh;
+    overflow: hidden;
+
     background-color: var(--Soft-Yellow01-Birt);
 }
 main {
