@@ -106,20 +106,23 @@ html {
     display: flex;
     align-items: center;
     gap: 6px;
+
+
 }
 .card-container .h1-regalo-marca {
-    font-family: 'Greycliff CF';
+    font-family: 'Onest', sans-serif;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
 
     color: var(--main-orange-01-birt, #F84F39);
+   
 }
 
 .card-container .nombre-marca {
     margin-top: 5px;
 
-    font-family: 'Greycliff CF';
-    font-weight: 600;
+    font-family: 'Onest', sans-serif;
+    font-weight: 500;
     font-size: 14px;
 
     color: var(--neutral-black-birt, #0E0E0E);
@@ -128,8 +131,8 @@ html {
 .card-container .categoria-marca {
     margin-top: 2px;
 
-    font-family: 'Greycliff CF';
-    font-weight: 600;
+    font-family: 'Onest', sans-serif;
+    font-weight: 500;
     font-size: 14px;
     
     color: var(--neutral-gray-birt, #555);
@@ -137,8 +140,8 @@ html {
 
 
 .btn-detallesRegalo {
-    font-family: 'Greycliff CF';
-    font-weight: 600;
+    font-family: 'Onest', sans-serif;
+    font-weight: 500;
     font-size: 14px;
     padding: 5px 0;
 

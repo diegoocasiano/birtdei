@@ -1,3 +1,14 @@
+//Redirigir a la página desktop.html si el viewport es mayor a 500
+function redirectionToDesktop() {
+    if (window.innerWidth > 500) {
+        window.location.href = '/error'
+    }
+}
+window.addEventListener('load', redirectionToDesktop);
+window.addEventListener('resize', redirectionToDesktop);
+
+
+//Form
 const btnIdea = document.getElementById("btnIdea");
 const btnError = document.getElementById("btnError");
 const tituloInput = document.getElementById("titulo");

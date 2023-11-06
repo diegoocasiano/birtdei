@@ -16,8 +16,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 @app.route('/')
 def inicio():
-    width = int(request.args.get('width', 0))
-
+    
     visited_regalos = session.get('visited_regalos', False)
     print(f'Visitó regalos?: {visited_regalos}')
 
@@ -117,7 +116,10 @@ def send_mail():
             return ('', 200) 
         else:
             return ('', 500) 
-     
+
+@app.route('/error')
+def vDesktop():
+    return render_template('desktop.html')
 
 # Ruta para poder cargar archivos desde otro directorio: los componentes de react
 @app.route('/react-components/dist/<path:filename>')
