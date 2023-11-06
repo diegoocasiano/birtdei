@@ -225,6 +225,7 @@ header h1 {
     transition: all 0.5s ease-out;
 }
 .backHome {
+    display: none;
     text-decoration: none;
     opacity: 0;
     transition: all 1s ease;

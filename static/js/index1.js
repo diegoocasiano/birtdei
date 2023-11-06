@@ -10,7 +10,8 @@ window.addEventListener('resize', redirectionToDesktop);
 //Configuración del confetti
 var confettiSettings = {
     target: 'confetti',
-    size: '0.7',
+    max: '60',
+    size: '1',
     animate: true,
     clock: 30,
     props: ['circle','square'],
