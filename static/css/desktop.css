@@ -59,9 +59,13 @@ main {
     line-height: 120%;
 }
 .txt-container p span {
-    font-weight: 600;
+    font-weight: 700;
 }
+.txt-container .highlight {
+    font-weight: 700;
+    color: var(--complementary-orange-02-birt, #FF7511);
 
+}
 
 /* styles to bg glass */
 .sct-bg-glass {
