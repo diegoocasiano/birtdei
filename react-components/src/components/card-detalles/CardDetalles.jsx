@@ -38,7 +38,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
       });
 
     const calcularAltoSection = (numeroCondiciones, numeroSaltosDeLinea, numeroSaltosLineaRegalo) => {
-        return 280 + (numeroCondiciones * 20) + (numeroSaltosDeLinea * 18) + (numeroSaltosLineaRegalo * 19)+ 'px';
+        return 431 + (numeroCondiciones * 15) + (numeroSaltosDeLinea * 18) + (numeroSaltosLineaRegalo * 16)+ 'px';
     };
 
 
@@ -133,7 +133,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
             </div>
 
             <div className="footer">
-                
+
                 <hr className="divider" />
 
                 <div className="sct1-disclaimer">

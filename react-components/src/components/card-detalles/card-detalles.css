@@ -117,7 +117,7 @@ html {
     padding: 0 10px;
 
     margin-top: 20px;
-    margin-bottom: 23px;
+    margin-bottom: 24px;
 }
 .mainContent .sct1-regaloMarca p{
     font-size: 14px;
@@ -136,6 +136,7 @@ html {
 .sct1-regaloMarca .regaloMarca h2 {
     font-size: 15px;
     font-weight: 600;
+    line-height: 18px;
     
     color: var(--Orange01-Birt);
 }
@@ -167,7 +168,7 @@ html {
 .condicionesRegalo-container {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 8px;
 }
 .condicionesRegalo-container .condicion {
     display: flex;
