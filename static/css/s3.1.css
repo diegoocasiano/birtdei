@@ -12,19 +12,17 @@ html {
 }
 
 body {
-    height: 100vh;
-    overflow: hidden;
-
     background-color: var(--Soft-Yellow01-Birt);
 }
 
 header {
     position: fixed;
+
     display: flex;
     justify-content: center;
-    z-index: 1;
     width: 100vw;
-    /* background-color: #FFF9E3; */
+
+    z-index: 1;
 }
 header img {
     width: 91px;
@@ -34,15 +32,17 @@ header img {
 main {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     justify-content: center;
     align-items: center;
+
+    height: 100svh;
 }
 main .sct1-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 70px;
+
+    padding-bottom: 40px;
 }
 .sct1-container img {
     margin-left: 3px;

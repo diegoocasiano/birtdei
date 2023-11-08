@@ -16,7 +16,6 @@ const dataRegalos = [
         condicionesRegalo: [
             "Presentar DNI", 
             "Consumir o comprar",
-            "Válido en el día de tu cumple"
         ]
     },
     {   
@@ -74,7 +73,7 @@ const dataRegalos = [
     },
     {   
         id: 5,
-        regalo: "1 Minifigura + 1 Po...",
+        regalo: "1 Minifigura + 1 Postal",
         regaloFull: "1 Minifigura + 1 Postal",
         nombreMarca: "Lego",
         categoriaMarca: "Juguetería",
@@ -92,8 +91,8 @@ const dataRegalos = [
     },
     {   
         id: 6,
-        regalo: "1 Brownie c/ helado",
-        regaloFull: "1 Brownie c/ helado",
+        regalo: "1 Brownie con helado",
+        regaloFull: "1 Brownie con helado",
         nombreMarca: "Juicy Lucy",
         categoriaMarca: "Restaurante",
         colorMarca: "#1C1C1C",
@@ -128,7 +127,7 @@ const dataRegalos = [
     {   
         id: 8,
         regalo: "1 Entrada 2D",
-        regaloFull: "Ingreso gratis",
+        regaloFull: "1 Entrada 2D",
         nombreMarca: "Cineplanet",
         categoriaMarca: "Cine",
         colorMarca: "#003162",
@@ -145,7 +144,7 @@ const dataRegalos = [
     {   
         id: 9,
         regalo: "1 Pancake especial",
-        regaloFull: "Ingreso gratis",
+        regaloFull: "1 Pancake especial",
         nombreMarca: "IHOP",
         categoriaMarca: "Restaurante",
         colorMarca: "#1598D5",
@@ -162,7 +161,7 @@ const dataRegalos = [
     },
     {   
         id: 10,
-        regalo: "1 Brownie c/ hel...",
+        regalo: "1 Brownie c/ helado de vainilla",
         regaloFull: "1 Brownie de chocolate c/ helado de vainilla",
         nombreMarca: "Osaka",
         categoriaMarca: "Restaurante",
@@ -180,7 +179,7 @@ const dataRegalos = [
     },
     {   
         id: 11,
-        regalo: "1 Copa de Helados +",
+        regalo: "1 Copa de helados + 1 Caja de pastel",
         regaloFull: "1 Copa de helados + 1 Caja de pastel",
         nombreMarca: "La Bistecca",
         categoriaMarca: "Buffet",
@@ -234,8 +233,8 @@ const dataRegalos = [
     },
     {   
         id: 14,
-        regalo: "1 Postre especial...",
-        regaloFull: "Un crunch de almendra con brownie, chantillí, grageas de colores, salsa de chocolate y manjar",
+        regalo: "1 Postre especial",
+        regaloFull: "Crunch de almendra con brownie, chantillí, grageas de colores, salsa de chocolate y manjar",
         nombreMarca: "Papacho's",
         categoriaMarca: "Restaurante",
         colorMarca: "#F4E02A",
@@ -270,7 +269,7 @@ const dataRegalos = [
     },
     {   
         id: 16,
-        regalo: "1 Cóctel o bebida...",
+        regalo: "1 Cóctel o bebida sin alcohol",
         regaloFull: "1 Cóctel o bebida sin alcohol",
         nombreMarca: "Rustica",
         categoriaMarca: "Restaurante",

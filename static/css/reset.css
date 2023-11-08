@@ -46,6 +46,5 @@
   
   /* Configuramos la tipografía para toda la web */
   body {
-    min-height: 100vh;
     font-size: 100%;
   }

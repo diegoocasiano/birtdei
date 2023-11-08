@@ -1,7 +1,7 @@
 html {
     font-size: 100%;
+    font-family: 'Onest', sans-serif;
   }
-  
 :root {
     --Orange01-Birt: #F84F39;
     --Yellow-Birt: #FFDC40;
@@ -45,10 +45,9 @@ html {
 .card-detalles-container {
     position: fixed;
     bottom: 0;
-    padding-top: 20px;
 
     width: 100%;
-    min-height: 320px;
+    min-height: 471px;
 
     border-radius: 20px 20px 0px 0px;
     background: rgba(255, 252, 240, 0.80);
@@ -61,35 +60,38 @@ html {
     transform: translateY(0%);
 }
 /* styles to marca-info */
-
-.marca-info {
+.header-marca {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    padding-top: 24px;
+    padding-bottom: 18px;
 
-    gap: 7px;
+    gap: 6px;
+    border-bottom: 1px solid #B1B1B1;
 }
-
-.marca-info .logo-container {
+.header-marca .container-logoMarca {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 29px;
-    height: 30.5px;
+    width: 30px;
+    height: 32px;
 
     overflow: hidden;
-    border-radius: 5px;
-    background-color: #1D77FF;
+    border-radius: 6px;
 }
-.marca-info .logo-container img{
+.header-marca .container-logoMarca .logoMarca {
     width: 80%;
 }
-.marca-info h1 {
-    font-family: 'Onest', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
+.header-marca .nameMarca {
+    font-size: 15px;
+    font-weight: 600;
+
+    color: var(--Black-Birt);
 }
+
 
 .line-top {
     max-width: 100%;
@@ -101,120 +103,145 @@ html {
 }
 
 /* styles to regalo-detalles */
+
 .regalo-detalles-container {
     height: 100%;
     margin: 0 25px;
     margin-top: 16px;
 }
 
-.regalo-container p {
-    font-family: 'Onest', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
+.mainContent {
+   padding: 0 20px;
+}
+.mainContent .sct1-regaloMarca {
+    padding: 0 10px;
 
+    margin-top: 20px;
+    margin-bottom: 23px;
+}
+.mainContent .sct1-regaloMarca p{
+    font-size: 14px;
+    font-weight: 400;
+    
     color: var(--Black-Birt);
 }
 
-.txt-regalo {
+.sct1-regaloMarca .regaloMarca {
     display: flex;
     align-items: center;
-    gap: 4px;
-    
-    margin-top: 5px;
+    gap: 6px;
+
+    margin-top: 6px;
 }
-
-.txt-regalo .h1-regalo-marca {
-    font-family: 'Onest', sans-serif;
+.sct1-regaloMarca .regaloMarca h2 {
+    font-size: 15px;
     font-weight: 600;
-    font-size: 16px;
-
+    
     color: var(--Orange01-Birt);
 }
-.txt-regalo img {
+.sct1-regaloMarca .regaloMarca .iconGift {
     width: 17px;
     height: 17px;
 }
 
+.divider {
+    border-top: 1px solid #C5C5C5;
+}
+
+
+
+
 /* styles to condiciones */
-.condiciones-main-container {
-    margin-top: 12px;
+.sct2-condicionesRegalo {
+    padding: 0 10px;
+    margin-top: 20px;
 }
-.condiciones-main-container h2 {
-    margin-bottom: 5px;
-
-    font-family: 'Onest', sans-serif;
+.sct2-condicionesRegalo h3 {
+    font-size: 14px;
     font-weight: 600;
-    font-size: 15px;
-
+    
     color: var(--Black-Birt);
+
+    margin-bottom: 8px;
 }
-.condiciones-container {
+.condicionesRegalo-container {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 7px;
 }
-.regalo-detalles-container .condicion {   
+.condicionesRegalo-container .condicion {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+}
+.condicionesRegalo-container .condicion .bullet {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    
+    border-radius: 50%;
+    background-color: var(--Orange01-Birt);
+}
+.condicionesRegalo-container .condicion p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+/* Styles to footer */
+.card-detalles-container .footer {
+    position: absolute;
+    bottom: 50px;
+
     width: 100%;
+    padding: 0 20px;
+
+}
+
+.footer .sct1-disclaimer {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 22px;
+    gap: 8px;
+    padding: 0 10px;
+}
+.footer .sct1-disclaimer .disclaimer {
     display: flex;
     gap: 6px;
 }
-.condicion .bullet {
-    width: 6px;
-    height: 6px;
-    margin-top: 5px;
-    /* esta propiedad hace que el bullet no se encoja */
-    flex-shrink: 0;
-
-    border-radius: 50%;
-    background-color: var(--Black-Birt);
-}
-.condicion p {
-    font-family: 'Onest', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-
-    color: var(--Black-Birt);
-}
-
-/* styles to msj-important */
-.msj-important {
-    display: flex;
-    margin-top: 14px;
-
-    gap: 3px;
-}
-.msj-important p {
-    font-family: 'Onest', sans-serif;
-    font-weight: 500;
+.footer .sct1-disclaimer .disclaimer p {
     font-size: 13px;
-
+    font-weight: 400;
+    
     color: var(--Black-Birt);
 }
 
-/* styles to btn close-detalles */
-.btn-close-container {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, -50%);
+.footer .sct2-btnClose{
+    display: flex;
+    justify-content: center;
+
+    margin-top: 40px;
+}
+.footer .btnClose {
     
-    margin-bottom: 7px;
-}
-.close-detalles {
-    width: 126px;
-    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 132px;
+    height: 40px;
+    padding: 15px;
 
-    font-family: 'Onest', sans-serif;
-    font-weight: 500;
     font-size: 15px;
-    color: var(--main-orange-01-birt, #F84F39);
+    font-weight: 600;
+    line-height: 20px;
 
-    text-decoration: none;
+
+    color: var(--Orange01-Birt);
     border-radius: 18px;
-    background: none;
-    border: 2px solid var(--main-orange-01-birt, #F84F39);
-}
-
-@media screen and (min-width: 390px) {
+    border: 2px solid #FFBEB6;
+    background: #FFD1CB;
     
 }

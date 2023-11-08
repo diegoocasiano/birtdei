@@ -5,7 +5,8 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
     // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
     const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';  
     const GiftBrand = `${imageBasePath}brand/gift-card.svg`
-    const ImportantIcon = `${imageBasePath}brand/important-icon.svg`
+    const iconInfo = `${imageBasePath}brand/icon-info.svg`
+    const iconCheck = `${imageBasePath}brand/icon-check.svg`
 
     const [numeroSaltosLineaRegalo, setNumeroSaltosLineaRegalo] = useState(0)
     const [numeroCondiciones, setNumeroCondiciones] = useState(0);
@@ -90,54 +91,75 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
     <>  
         <div className={`bg-detallesWindow ${detallesWindowActive ? 'active' : ''}`}></div>
 
-        <section ref={detallesRef} className={`card-detalles-container ${detallesWindowActive ? 'active' : ''}`}
-                style={{ height: calcularAltoSection(numeroCondiciones, numeroSaltosDeLinea, numeroSaltosLineaRegalo) }}>
-            <div className="marca-info">
-                <div className="logo-container" style={{ backgroundColor: colorMarca }}>
-                    <img src={logoMarca.url} style={{width: logoMarca.sizeLittle}} />
+        <section 
+            ref={detallesRef} 
+            className={`card-detalles-container ${detallesWindowActive ? 'active' : ''}`}
+            style={{ height: calcularAltoSection(numeroCondiciones, numeroSaltosDeLinea, numeroSaltosLineaRegalo) }}>
+
+            <div className='header-marca'>
+                <div className="container-logoMarca" style={{ backgroundColor: colorMarca }}>
+                    <img className='logoMarca' src={logoMarca.url}
+                            style={{width: logoMarca.sizeLittle}}/>
                 </div>
-                <h1>{nombreMarca}</h1>                 
+                <h1 className="nameMarca">{nombreMarca}</h1>
             </div>
 
-            <hr className="line-top" />
+            <div className="mainContent">
 
-            <div className="regalo-detalles-container">
-                <div className="regalo-container">
+                <div className="sct1-regaloMarca">
                     <p>Te regala</p>
-                    <div ref={h1Ref} className="txt-regalo">
-                        <img src={GiftBrand}/>
-                        <h1 className='h1-regalo-marca'>{regaloFull}</h1>
+                    <div className="regaloMarca">
+                        <img className="iconGift" src={GiftBrand} />
+                        <h2>{regaloFull}</h2>
                     </div>
                 </div>
-                <div className="condiciones-main-container" >
-                    <h2>Condiciones</h2>
-                    <div className="condiciones-container" ref={paragraphRef} >
+
+                <hr className="divider" />
+
+                <div className="sct2-condicionesRegalo">
+                    <h3 className='title'>Condiciones</h3>
+                    <div className="condicionesRegalo-container" ref={paragraphRef}>
                     {condicionesRegalo.map((condicion, index) => (
                         <div className="condicion" key={index}>
                             <div className="bullet"></div>
-                            <p className='line-txt'>{condicion}</p>
+                            <p>{condicion}</p>
                         </div>
-                        ))}                       
+                        ))}
                     </div>
+                </div>
 
-                </div>
-                <div className="msj-important">
-                    <img src={ImportantIcon} />
-                    <p>Disponible solo en Lima (Perú). Sujeto a cambios.</p>
-                </div>
+                
+
             </div>
-            <div className="btn-close-container">
-                <button className="close-detalles" onClick={() => {
-                        setDetallesWindowActive(false);
-                        setTimeout(() => {
-                            toggleDetalles();
-                        }, 300);
-                    }} >
-                    Todo claro
-                </button>
+
+            <div className="footer">
+                
+                <hr className="divider" />
+
+                <div className="sct1-disclaimer">
+                    <div className="disclaimer N1">
+                        <img src={iconCheck}/>
+                        <p>Válido solo en Lima (Perú)</p>
+                    </div>
+                    <div className="disclaimer N2">
+                        <img src={iconInfo}/>
+                        <p>Regalo sujeto a cambios</p>
+                    </div>
+                </div>
+                <div className="sct2-btnClose">
+                    <button className="btnClose" 
+                        onClick={() => {
+                            setDetallesWindowActive(false);
+                            setTimeout(() => {
+                                toggleDetalles();
+                            }, 300);
+                        }}>Todo claro
+                    </button>
+                </div>
+                
             </div>
+
         </section>
-        
     </>
   )
 }

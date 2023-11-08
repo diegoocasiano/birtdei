@@ -14,9 +14,6 @@ html {
 
 
 body {
-    height: 100vh;
-    overflow: hidden;
-
     background-color: var(--Soft-Yellow01-Birt);
 }
 
@@ -26,20 +23,19 @@ main {
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
+    height: 100svh;
 
     padding-bottom: 10px;
 }
 
 header {
     position: fixed;
+
     display: flex;
     justify-content: center;
-
     width: 100vw;
-    z-index: 1;
 
-    background-color: #FFF9E3;
+    z-index: 1;
 }
 header img {
     width: 91px;
@@ -50,7 +46,8 @@ main .sct1-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
+
+    padding-bottom: 40px;
 }
 
 .sct1-container img {

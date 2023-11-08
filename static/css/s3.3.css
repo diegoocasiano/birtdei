@@ -13,10 +13,21 @@ html {
 }
 
 body {
-    height: 100vh;
-    overflow: hidden;
-    
     background-color: var(--Soft-Yellow01-Birt);
+}
+
+header {
+    position: fixed;
+
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+
+    z-index: 1;
+}
+header img {
+    width: 91px;
+    margin-top: 27px;
 }
 
 main {
@@ -25,33 +36,19 @@ main {
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
-    
-    padding-bottom: 20px;
-}
-
-header {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    z-index: 1;
-    width: 100vw;
-    background-color: #FFF9E3;
-}
-header img {
-    width: 91px;
-    margin-top: 27px;
+    height: 100svh;
 }
 
 main .sct1-container {
-    margin-bottom: 30px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100vw;
 
     gap: 10px;
+
+    padding-bottom: 40px;
 }
 .sct1-container .content-part1 {
     margin-bottom: 10px;
