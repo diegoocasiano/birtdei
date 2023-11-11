@@ -19,25 +19,6 @@ html {
   --Soft-Yellow02-Birt: #FFFCF0;
 }
 
-@font-face {
-  font-family: 'Causten Round';
-  src: url(/assets/fonts/CaustenRound-Medium.otf);
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Causten Round';
-  src: url(/assets/fonts/CaustenRound-SemiBold.otf);
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Causten Round';
-  src: url(/assets/fonts/CaustenRound-Bold.otf);
-  font-weight: 700;
-  font-style: normal;
-}
-
 body {
   background-color: var(--Soft-Yellow02-Birt);
 }
