@@ -27,9 +27,9 @@ html {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 12px 20px;
 
-    margin-top: 83px;
+    margin-top: 81px;
     margin-bottom: 40px;
 }
 
@@ -46,7 +46,7 @@ html {
     align-items: center;
 
     width: 100%;
-    min-height: 168px;
+    min-height: 160px;
 
     border-radius: 10px;
     background-color: #ffeba2
@@ -64,14 +64,14 @@ html {
 /* Styles to content */
 
 .card-content-container {
-   padding-top: 12px;
-   padding-left: 7px;
+   padding-left: 8px;
+   padding-top: 13px;
 }
 
 .regalo-marca {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
     width: 95%;
 
     overflow: hidden;
@@ -79,7 +79,6 @@ html {
     white-space: nowrap;
 }
 .card-container .h1-regalo-marca {
-    font-family: 'Onest', sans-serif;
     font-size: clamp(0.875rem, 0.04166666666666674rem + 3.7037037037037033vw, 1rem);
     font-weight: 600;
 
@@ -93,7 +92,6 @@ html {
 .card-container .nombre-marca {
     margin-top: 5px;
 
-    font-family: 'Onest', sans-serif;
     font-size: clamp(0.875rem, 0.04166666666666674rem + 3.7037037037037033vw, 1rem);
     font-weight: 500;
 
@@ -103,7 +101,6 @@ html {
 .card-container .categoria-marca {
     margin-top: 2px;
 
-    font-family: 'Onest', sans-serif;
     font-weight: 500;
     font-size: clamp(0.875rem, 0.04166666666666674rem + 3.7037037037037033vw, 1rem);
 
@@ -113,16 +110,19 @@ html {
 
 
 .btn-detallesRegalo {
+
     font-family: 'Onest', sans-serif;
     font-weight: 500;
     font-size: clamp(0.875rem, 0.04166666666666674rem + 3.7037037037037033vw, 1rem);
-    padding: 5px 0;
+    
+    padding: 6px 0 10px 0px;
 
     color: var(--Blue01-Birt);
     background-color: var(--Soft-Yellow02-Birt);
 }
 
 .btn-detallesRegalo img {
+    margin-bottom: -1px;
     padding-left: 5px;
 }
 

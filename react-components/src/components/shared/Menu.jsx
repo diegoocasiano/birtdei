@@ -52,20 +52,9 @@ function Menu({setMenuOpen}) {
     };
 
     const handleTouchEnd = (e) => {
-        if (currentY - startY > 60) {
+        if (currentY - startY > 0) {
           e.currentTarget.style.transition = 'transform 0.3s ease';
-          e.currentTarget.style.transform = 'translateY(160px)';
-          setTimeout(() => {
-            setBgMenuActive(false)
-          }, 250)
-          setBgMenuOpacity(0);
-          
-        } else if (currentY - startY <= 0) {
-          // No hagas nada si el desplazamiento es menor o igual a 0px (swipe up).
-
-        } else if (currentY - startY <= 60) {
-          e.currentTarget.style.transition = 'transform 0.3s ease';
-          e.currentTarget.style.transform = 'translateY(160px)'; // 160px == altura del elemento (menú)
+          e.currentTarget.style.transform = 'translateY(184px)';
           setBgMenuOpacity(0)
           setTimeout(() => {
             setBgMenuActive(false)
@@ -76,8 +65,12 @@ function Menu({setMenuOpen}) {
           },300)
           
           setIsTouching(false)
-
-        } else {
+          
+        } 
+        else if (currentY - startY <= 0) {
+          // No hagas nada si el desplazamiento es menor o igual a 0px (swipe up).
+        } 
+        else {
           // Si se hace cualquier otra cosa, el menú no se cerrará.
           e.currentTarget.style.transform = `translateY(0px)`;
           setBgMenuActive(true)
@@ -105,7 +98,7 @@ function Menu({setMenuOpen}) {
         const menuElement = menuRef.current;
         if (menuElement) {
           menuElement.style.transition = 'transform 0.3s ease';
-          menuElement.style.transform = 'translateY(160px)';      
+          menuElement.style.transform = 'translateY(184px)';      
         }
       };
       // Logica
@@ -144,8 +137,8 @@ function Menu({setMenuOpen}) {
 
         <hr className='handle-dd-menu'/>
         <div className="btns-container">
-          <a className='btn-top' href="https://linktr.ee/diegocasiano" target='blank'>Creado por Diego C. <img src={ArrowRightUp} ></img></a>
-          <a className='btn-bot' href="/feedback">Escribir sugerencias <img src={ArrowRightUpWh} ></img></a>
+          <a className='btn-top' href="/feedback">Enviar feedback<img src={ArrowRightUpWh} ></img></a>
+          <a className='btn-bot' href="https://linktr.ee/diegocasiano" target='blank'>Creado por Diego C. <img src={ArrowRightUp} ></img></a>
         </div>
     </div>
     

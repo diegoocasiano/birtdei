@@ -1,5 +1,6 @@
 html {
     font-size: 100%;
+    font-family: 'Onest', sans-serif;
   }
   
 :root {
@@ -17,25 +18,6 @@ html {
   
     --Soft-Yellow01-Birt: #FFF9E3;
     --Soft-Yellow02-Birt: #FFFCF0;
-}
-  
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/assets/fonts/CaustenRound-Medium.otf);
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/assets/fonts/CaustenRound-SemiBold.otf);
-    font-weight: 600;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Causten Round';
-    src: url(/assets/fonts/CaustenRound-Bold.otf);
-    font-weight: 700;
-    font-style: normal;
 }
 
 /* Styles to menu */
@@ -65,7 +47,7 @@ html {
     align-items: center;
 
     width: 100%;
-    height: 160px;
+    height: 184px;
 
     border-radius: 20px 20px 0px 0px;
     background: rgba(255, 252, 240, 0.80);
@@ -80,9 +62,11 @@ html {
 
 
 .handle-dd-menu {
-    width: 26px;
+    position: absolute;
+    top: 14px;
+
+    width: 28px;
     height: 2px;
-    margin-bottom: 130px;
 
     border-radius: 50px;
     background-color: #787878;
@@ -95,43 +79,47 @@ html {
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+
+   margin-bottom: 16px;
 }
 
-.btns-container .btn-bot {
+.btns-container .btn-top {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 35px;
 
-    font-family: 'Causten Round';
+    width: 210px;
+    height: 42px;
+
     font-weight: 600;
     font-size: 15px;
     color: var(--neutral-white-birt, #FFF);
     
     text-decoration: none;
-    border-radius: 18px;
+    border-radius: 20px;
     background: var(--main-orange-01-birt, #F84F39);
 }
-.btns-container .btn-top {
+.btns-container .btn-bot {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 35px;
 
-    font-family: 'Causten Round';
+    width: 210px;
+    height: 42px;
+
     font-weight: 600;
     font-size: 15px;
     color: var(--main-orange-01-birt, #F84F39);
 
     text-decoration: none;
-    border-radius: 18px;
+    border-radius: 20px;
     background: none;
     border: 2px solid var(--main-orange-01-birt, #F84F39);
 }
 
-.btns-container img {
-    margin-bottom: 0dvh;
+.btn-top img {
+    margin-left: 7px;
+}
+.btn-bot img {
     margin-left: 4px;
 }

@@ -4,7 +4,7 @@ const dataRegalos = [
     {   
         id: 1,
         regalo: "1 Helado",
-        regaloFull: "1 Helado",
+        regaloFull: "Crunch Crunch Chocolate Crunch",
         nombreMarca: "McDonald's",
         categoriaMarca: "Comida Rápida",
         colorMarca: "#e50000",
@@ -16,6 +16,7 @@ const dataRegalos = [
         condicionesRegalo: [
             "Presentar DNI", 
             "Consumir o comprar",
+            " Consumir o comprar Consumir o Consumir o comprar Consumir o Consumir o comprar Consumir"
         ]
     },
     {   
@@ -50,7 +51,8 @@ const dataRegalos = [
         condicionesRegalo: [
             "Presentar tu DNI",
             "Consumir o comprar",
-            "Válido en el día de tu cumple"
+            "Válido en el día de tu cumple",
+            "Válido en el día de tu cumple flalallalalaladausdhasida",
         ]
     },
     {   
