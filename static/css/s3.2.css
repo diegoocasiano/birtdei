@@ -51,6 +51,8 @@ main .sct1-container {
 }
 
 .sct1-container img {
+    width: 99.05px;
+    
     margin-bottom: 10px;
 }
 h1 {
