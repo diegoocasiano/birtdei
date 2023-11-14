@@ -33,8 +33,11 @@ svg {
   fill: currentColor;
 }
 
+/* Esto bloquea el scroll del cuerpo principal, ya que no queremos que no se mueva el header u otro contenido, solo lo que está en el main como las cards */
 body {
-  min-height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  
   font-size: 100%;
   
 }

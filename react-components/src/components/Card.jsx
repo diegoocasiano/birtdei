@@ -1,19 +1,21 @@
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react';
+
 import './card.css'
 
+
 function Card({toggleDetalles, logoMarca, colorMarca, regalo, nombreMarca, categoriaMarca}) {
+
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
 
   const ArrowRightIcon = `${imageBasePath}brand/arrow-right-card.svg`
   const GiftBrand = `${imageBasePath}brand/gift-card.svg`
-
-
+  
   return (
     <div className="card-container" >
       <button className='btn card-logo-marca'
         onClick={toggleDetalles}
         style={{ backgroundColor: colorMarca }}>
-          <img src={logoMarca.url} style={{ width: logoMarca.size }} />
+          <img src={logoMarca.url}  style={{ width: logoMarca.size }} />
       </button>
       <div className='card-content-container'>
         <div className="regalo-marca">

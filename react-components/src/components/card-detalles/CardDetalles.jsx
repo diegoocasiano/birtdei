@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState} from 'react';
+
 import './card-detalles.css'
 
 function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca}) {
@@ -18,7 +19,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
 
 
     //Calcular el alto del contenedor de cardDetalles
-    
+        
 
     const handleTouchStart = (e) => {
         setStartY(e.touches[0].clientY)
@@ -51,7 +52,6 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         if (currentY - startY > 0) {
             e.currentTarget.style.transition = 'transform 0.4s ease';
             e.currentTarget.style.transform = 'translateY(100%)';
-            
             setBgOpacity(0);
             setTimeout(() => {
                 setDetallesWindowActive(false);
@@ -92,17 +92,28 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
 
 
       //Esto hace que no se pueda hacer scroll cuando la ventanita de detalles  esté activa
-      useEffect(() => {
-        if (detallesWindowActive) {
-            document.body.style.overflow = 'hidden';
-        }
-        else {
-            document.body.style.overflow = 'auto';
-        }
-      }, [detallesWindowActive]);
+         useEffect(() => {
+           if (detallesWindowActive) {
+            
+            // const scrollPosition = window.scrollY;
+            // document.querySelector('main').style.marginTop = `-${scrollPosition}px`;
+
+            // document.body.classList.add('noScroll')
+
+           }
+           else {
+
+            // document.body.classList.remove('noScroll')
+
+            // const scrollPosition = parseInt(document.querySelector('main').style.marginTop || 0, 10);
+            // document.querySelector('main').style.marginTop = '';
+            // window.scrollTo(0, -scrollPosition);
+            //    document.body.style.overflow = 'auto';
+           }
+         }, [detallesWindowActive]);
 
 
-
+        
       // Logica para que se cierre la ventanita cuando se toque fuera de la ventanita
       const windowDetallesRef = useRef(null);
 
@@ -145,15 +156,18 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
 
     // Función que se realizará al hacer click en el button close
     const handleCloseButtonClick = () => {
+
         closeDetallesWindowAnimation();
+
         setBgOpacity(0);
-            setTimeout(() => {
-                setDetallesWindowActive(false);
-            }, 390);
+
+        setTimeout(() => {
+            setDetallesWindowActive(false);
+        }, 390);
            
-            setTimeout(() => {
-                toggleDetalles();
-            }, 400);
+        setTimeout(() => {
+            toggleDetalles();
+        }, 400);
       };
 
 
@@ -218,6 +232,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         
     };
 
+    
   return (
     <>  
         <div className={`bg-detallesWindow ${detallesWindowActive ? 'active' : ''} ${isTouching ? 'touchMove' : '' } `}

@@ -21,21 +21,22 @@ function App() {
     }
   };
 
+  // Logica para capturar el scroll del contenedor de las cards y cargar el siguiente grupo de cards
   useEffect(() => {
+    const cardsContainer = document.querySelector('.main-cards-container');
+
     const handleScroll = () => {
       if (
-        window.innerHeight + window.scrollY >=
-        document.body.offsetHeight - 100
-        
+        cardsContainer.scrollHeight - cardsContainer.scrollTop <= cardsContainer.clientHeight + 300
       ) {
-        loadNextPage()
+        loadNextPage();
       }
     };
-
-    window.addEventListener('scroll', handleScroll)
-
+  
+    cardsContainer.addEventListener('scroll', handleScroll);
+  
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      cardsContainer.removeEventListener('scroll', handleScroll);
     };
   }, [paginaActual]);
 
@@ -77,6 +78,7 @@ function App() {
     setMenuOpen(!menuOpen)
   };
 
+
   return (
     <>
       <header>
@@ -84,9 +86,6 @@ function App() {
       </header>
 
       <main>
-          <div className="main-cards-container">
-            {dataRegalosList}
-          </div>
           { detallesOpen && <CardDetalles
             nombreMarca={marcaSeleccionada.nombreMarca}
             regaloFull={marcaSeleccionada.regaloFull}
@@ -95,6 +94,9 @@ function App() {
             logoMarca={marcaSeleccionada.logoMarca}
             toggleDetalles={toggleDetalles} />
           }
+          <div className="main-cards-container">
+            {dataRegalosList}
+          </div>
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
           }
