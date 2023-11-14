@@ -55,6 +55,9 @@ main {
 
     color: var(--neutral-black-birt, #0E0E0E);
 }
+.sct1-container img {
+    width: 111.59px;
+}
 .sct1-container p {
     font-size: 16px;
     font-weight: 600;
