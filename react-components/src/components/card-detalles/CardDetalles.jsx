@@ -90,30 +90,28 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
       []);
 
 
-
-      //Esto hace que no se pueda hacer scroll cuando la ventanita de detalles  esté activa
-         useEffect(() => {
-           if (detallesWindowActive) {
+    //   //Esto hace que no se pueda hacer scroll cuando la ventanita de detalles  esté activa
+    //      useEffect(() => {
+    //        if (detallesWindowActive) {
             
-            // const scrollPosition = window.scrollY;
-            // document.querySelector('main').style.marginTop = `-${scrollPosition}px`;
+    //         // const scrollPosition = window.scrollY;
+    //         // document.querySelector('main').style.marginTop = `-${scrollPosition}px`;
 
-            // document.body.classList.add('noScroll')
+    //         // document.body.classList.add('noScroll')
 
-           }
-           else {
+    //        }
+    //        else {
 
-            // document.body.classList.remove('noScroll')
+    //         // document.body.classList.remove('noScroll')
 
-            // const scrollPosition = parseInt(document.querySelector('main').style.marginTop || 0, 10);
-            // document.querySelector('main').style.marginTop = '';
-            // window.scrollTo(0, -scrollPosition);
-            //    document.body.style.overflow = 'auto';
-           }
-         }, [detallesWindowActive]);
+    //         // const scrollPosition = parseInt(document.querySelector('main').style.marginTop || 0, 10);
+    //         // document.querySelector('main').style.marginTop = '';
+    //         // window.scrollTo(0, -scrollPosition);
+    //         //    document.body.style.overflow = 'auto';
+    //        }
+    //      }, [detallesWindowActive]);
 
 
-        
       // Logica para que se cierre la ventanita cuando se toque fuera de la ventanita
       const windowDetallesRef = useRef(null);
 

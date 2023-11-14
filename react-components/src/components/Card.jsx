@@ -9,6 +9,20 @@ function Card({toggleDetalles, logoMarca, colorMarca, regalo, nombreMarca, categ
 
   const ArrowRightIcon = `${imageBasePath}brand/arrow-right-card.svg`
   const GiftBrand = `${imageBasePath}brand/gift-card.svg`
+
+  
+  // Preload de imágenes
+  const ArrowRightUp = `${imageBasePath}brand/arrow-right-up.svg`
+  const ArrowRightUpWh = `${imageBasePath}brand/arrow-right-up-wh.svg`
+
+  useEffect(() => {
+    const preloadImages = [ArrowRightUp, ArrowRightUpWh];
+
+    preloadImages.forEach((imageSrc) => {
+      const img = new Image();
+      img.src = imageSrc;
+    });
+  }, [ArrowRightUp, ArrowRightUpWh])
   
   return (
     <div className="card-container" >
