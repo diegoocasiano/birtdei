@@ -4,7 +4,7 @@ const dataRegalos = [
     {   
         id: 1,
         regalo: "1 Helado",
-        regaloFull: "Crunch Crunch Chocolate Crunch",
+        regaloFull: "1 Helado",
         nombreMarca: "McDonald's",
         categoriaMarca: "Comida Rápida",
         colorMarca: "#e50000",
@@ -16,7 +16,6 @@ const dataRegalos = [
         condicionesRegalo: [
             "Presentar DNI", 
             "Consumir o comprar",
-            " Consumir o comprar Consumir o Consumir o comprar Consumir o Consumir o comprar Consumir"
         ]
     },
     {   
@@ -31,9 +30,9 @@ const dataRegalos = [
             size: "80%",
             sizeLittle: "75%",
         },
-        // El cuadradito amarillo es un carácter invisible que ayuda a dar un salto de linea (alt + 255)
         condicionesRegalo: [
-            "Ser parte de Starbucks Rewards: adquiere la Starbucks Card en cualquiera de sus tiendas, regístrala en la app de Starbucks y realiza un depósito mínimo de 20 soles para activarla.  ¡Eso es todo!",
+            "Ser parte de Starbucks Rewards: adquiere la Starbucks Card en cualquiera de sus tiendas, regístrala en la app de Starbucks y realiza un depósito mínimo de 20 soles para activarla. ¡Eso es todo!",
+            "Válido en todo el mes de tu cumpleaños",
         ]
     },
     {   
@@ -51,8 +50,7 @@ const dataRegalos = [
         condicionesRegalo: [
             "Presentar tu DNI",
             "Consumir o comprar",
-            "Válido en el día de tu cumple",
-            "Válido en el día de tu cumple flalallalalaladausdhasida",
+            "Válido en el día de tu cumpleaños",
         ]
     },
     {   
