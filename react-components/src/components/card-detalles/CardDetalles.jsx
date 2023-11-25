@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useState} from 'react';
 
 import './card-detalles.css'
 
-function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca}) {
+function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta}) {
     // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
     const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';  
     const GiftBrand = `${imageBasePath}brand/gift-card.svg`
     const iconInfo = `${imageBasePath}brand/icon-info.svg`
     const iconCheck = `${imageBasePath}brand/icon-check.svg`
+    const iconInsta = `${imageBasePath}brand/icon-instagram.svg`
 
     // Código para cerrar cardDetalles haciendo swipe down
     const [bgOpacity, setBgOpacity] = useState(1);
@@ -246,11 +247,19 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
             onTouchEnd={handleTouchEnd}>
 
             <div className='header-marca'>
-                <div className="container-logoMarca" style={{ backgroundColor: colorMarca }}>
-                    <img className='logoMarca' src={logoMarca.url}
-                            style={{width: logoMarca.sizeLittle}}/>
+                <div className="content-left">
+                    <div className="container-logoMarca" style={{ backgroundColor: colorMarca }}>
+                        <img className='logoMarca' src={logoMarca.url}
+                                style={{width: logoMarca.sizeLittle}}/>
+                    </div>
+                    <h1 className="nameMarca">{nombreMarca}</h1>
                 </div>
-                <h1 className="nameMarca">{nombreMarca}</h1>
+
+                <div className="content-right">
+                    <a className="btn-instagram" href={linkInsta}>
+                        <img src={iconInsta} alt="botón de instagram" />
+                    </a>
+                </div>
             </div>
 
             <div className="mainContent">

@@ -62,7 +62,7 @@ html {
 /* styles to marca-info */
 .header-marca {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     
     /* padding-top: 24px;
@@ -74,10 +74,20 @@ html {
     /* margin-bottom: 26px; */
     margin-bottom: clamp(1.1875rem, 0.35416666666666674rem + 3.7037037037037033vw, 1.3125rem);    
     
-    gap: 6px;
+
     border-bottom: 1px solid #B1B1B1;
 }
-.header-marca .container-logoMarca {
+
+.header-marca .content-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-left: 28px;
+}
+.header-marca .content-left .container-logoMarca {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +98,7 @@ html {
     overflow: hidden;
     border-radius: 6px;
 }
-.header-marca .container-logoMarca .logoMarca {
+.header-marca .content-left .container-logoMarca .logoMarca {
     width: 80%;
 }
 .header-marca .nameMarca {
@@ -99,6 +109,13 @@ html {
     color: var(--Black-Birt);
 }
 
+.header-marca .content-right {
+
+    margin-right: 28px;
+}
+.header-marca .content-right .btn-instagram img {
+    padding-top: 2px;
+}
 
 /* styles to regalo-detalles */
 

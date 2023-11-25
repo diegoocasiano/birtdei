@@ -45,8 +45,8 @@ function App() {
   const [detallesOpen, setDetallesOpen] = useState(false)
   const [marcaSeleccionada, setMarcaSeleccionada] = useState(null);
 
-  const toggleDetalles = (nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca) => {
-      setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca});
+  const toggleDetalles = (nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta) => {
+      setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta});
       setDetallesOpen(!detallesOpen);
     };
 
@@ -63,8 +63,9 @@ function App() {
           colorMarca={r.colorMarca}
           logoMarca={r.logoMarca}
           condicionesRegalo={r.condicionesRegalo}
+          linkInsta={r.linkInsta}
           toggleDetalles={() =>
-            toggleDetalles(r.nombreMarca, r.regaloFull, r.condicionesRegalo, r.colorMarca, r.logoMarca)
+            toggleDetalles(r.nombreMarca, r.regaloFull, r.condicionesRegalo, r.colorMarca, r.logoMarca, r.linkInsta)
           }
         />
       );
@@ -92,6 +93,7 @@ function App() {
             condicionesRegalo={marcaSeleccionada.condicionesRegalo}
             colorMarca={marcaSeleccionada.colorMarca}
             logoMarca={marcaSeleccionada.logoMarca}
+            linkInsta={marcaSeleccionada.linkInsta}
             toggleDetalles={toggleDetalles} />
           }
           <div className="main-cards-container">
