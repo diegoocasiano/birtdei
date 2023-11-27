@@ -6,6 +6,10 @@ from sendgrid.helpers.mail import Mail
 from dotenv import load_dotenv
 from datetime import datetime
 
+from database import dbConnection
+from flask import jsonify
+
+
 app = Flask(__name__)
 
 #Carga el file .env
@@ -13,6 +17,8 @@ load_dotenv('.env')
 
 #llave secreta para manejar las sessions
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+
+
 
 @app.route('/')
 def inicio():
@@ -77,6 +83,19 @@ def home():
     session['visited_regalos'] = True
     return render_template('home.html')
 
+@app.route('/enviar-correo', methods=['POST']) 
+def enviar_correo():
+    if request.method == 'POST': 
+        data = request.get_json() #Se obtiene el json que se envía desde el frontend
+        email = data.get('email') #Se obtiene el email del json
+
+        db = dbConnection("emails-users") #Se crea el nombre de la base de datos 
+        emails_collection = db['updates-subscription'] #Se crea el nombre de la colección
+        emails_collection.insert_one({'email': email}) #Se inserta el email en la colección
+
+        return jsonify({'message': 'stored email successfully'})
+
+
 @app.route('/feedback')
 def feedback():
     return render_template('feedback.html')
@@ -126,5 +145,5 @@ def vDesktop():
 def send_react_static(filename):
     return send_from_directory('react-components/dist', filename)
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     app.run(debug=True)
