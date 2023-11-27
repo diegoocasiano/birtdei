@@ -4,11 +4,21 @@ html {
 }
 
 :root {
-    --Orange01-Birt: #F84F39;
+    --Orange01-Birt: #FD3D24;
     --Yellow-Birt: #FFDC40;
-    --Black-Birt: #0E0E0E;
+  
+    --Blue01-Birt: #1D77FF;
+    --Blue02-Birt: #0094FF;
+    --Purple-Birt: #A430FF;
+    --Orange02-Birt: #FF7511;
+  
+    --Black-Birt: #252525;
+    --White-Birt: #FFFFFF;
+    --Gray-Birt: #555555;
+  
     --Soft-Yellow01-Birt: #FFF9E3;
-}
+    --Soft-Yellow02-Birt: #FFFCF0;
+  }
 
 body {
     height: 100vh;

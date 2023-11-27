@@ -54,6 +54,7 @@ def procesar_cumple():
 
     #Calcular la edad
     edad = fecha_actual.year - anio_completo
+    print(edad)
 
     # Calcula la fecha de cumpleaños para este año
     fecha_cumple = datetime(fecha_actual.year, mes, dia)
@@ -73,7 +74,7 @@ def procesar_cumple():
         return render_template('s3.2.html', edad=edad, dias_para_cumple=dias_para_cumple)
     
     elif 32 <= dias_para_cumple <= 220:
-        return render_template('s3.3.html', edad=edad, dias_para_cumple=dias_para_cumple)
+        return render_template('s3.3.html', edad=edad+1, dias_para_cumple=dias_para_cumple)
     
     else:
         return render_template('s3.4.html', edad=edad, dias_para_cumple=dias_para_cumple)
