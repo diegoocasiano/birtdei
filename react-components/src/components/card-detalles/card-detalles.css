@@ -1,9 +1,9 @@
 html {
     font-size: 100%;
     font-family: 'Onest', sans-serif;
-  }
+}
 :root {
-    --Orange01-Birt: #F84F39;
+    --Orange01-Birt: #FD3D24;
     --Yellow-Birt: #FFDC40;
   
     --Blue01-Birt: #1D77FF;
@@ -11,13 +11,13 @@ html {
     --Purple-Birt: #A430FF;
     --Orange02-Birt: #FF7511;
   
-    --Black-Birt: #0E0E0E;
+    --Black-Birt: #252525;
     --White-Birt: #FFFFFF;
     --Gray-Birt: #555555;
   
     --Soft-Yellow01-Birt: #FFF9E3;
     --Soft-Yellow02-Birt: #FFFCF0;
-}
+  }
 
 
 
@@ -31,6 +31,7 @@ html {
     background: rgba(0, 0, 0, 0.4);
     transition: all 0.4s ease-out;
     
+    z-index: 1;
 }
 
 .bg-detallesWindow.touchMove {
@@ -54,6 +55,8 @@ html {
 
     transition: all 0.4s ease-out;
     transform: translateY(100%);
+
+    z-index: 1;
 }
 .card-detalles-container.active {
     transform: translateY(0%);
@@ -238,7 +241,7 @@ html {
 
     margin-top: 
         clamp(1.4375rem, 0.1875rem + 5.555555555555555vw, 1.625rem); 
-
+        
     gap: 8px;
     padding: 0 10px;
 }

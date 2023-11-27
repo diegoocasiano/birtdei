@@ -197,12 +197,12 @@ function App() {
                     </div>
                     <div className="subsct2">
                       <h3><span>Cuéntanos tu opinión</span> para mejorar<br/>tu experiencia en Birtdei</h3>
-                      <a class="btn-sendEmail" href="">Enviar feedback <img src={ArrowRight}/></a>
+                      <a class="btn-sendEmail" href="/feedback">Enviar feedback <img src={ArrowRight}/></a>
                     </div>
                     <img className='arrow2' src={ArrowDownLargeSpecial}/>
                   </div>
                 </div>
-                <div className="footer">
+                <div className="footerContainer">
                   <p>Diseñado por <a href="https://linktr.ee/diegocasiano">Diego Casiano</a></p>
                 </div>
               </div>

@@ -3,7 +3,7 @@ html {
 }
 
 :root {
-  --Orange01-Birt: #F84F39;
+  --Orange01-Birt: #FD3D24;
   --Yellow-Birt: #FFDC40;
 
   --Blue01-Birt: #1D77FF;
@@ -11,7 +11,7 @@ html {
   --Purple-Birt: #A430FF;
   --Orange02-Birt: #FF7511;
 
-  --Black-Birt: #0E0E0E;
+  --Black-Birt: #252525;
   --White-Birt: #FFFFFF;
   --Gray-Birt: #555555;
 
@@ -136,7 +136,7 @@ body {
   font-size: 12px;
   font-weight: 500;
   
-  color: #424242;
+  color: var(--Gray-Birt);
 }
 
 .subSections-container .subsct1 .content2 {
@@ -266,19 +266,19 @@ body {
 }
 
 /* styles to footer */
-.footer {
-  margin-top: 26px;
+.footerContainer {
+  margin-top: 28px;
   border-top: 1px solid #D6CFB8;
 }
 
-.footer p {
+.footerContainer p {
   margin-top: 18px;
   font-size: 13px;
   font-weight: 500;
 
   color: var(--Black-Birt);
 }
-.footer p a {
+.footerContainer p a {
   text-decoration: none;
   font-weight: 600;
   color: var(--Orange01-Birt);
