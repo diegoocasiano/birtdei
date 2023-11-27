@@ -54,7 +54,6 @@ def procesar_cumple():
 
     #Calcular la edad
     edad = fecha_actual.year - anio_completo
-    print(edad)
 
     # Calcula la fecha de cumpleaños para este año
     fecha_cumple = datetime(fecha_actual.year, mes, dia)
@@ -62,11 +61,14 @@ def procesar_cumple():
     # Usa el próximo año si ya pasó el cumpleaños
     if fecha_cumple < fecha_actual:
         fecha_cumple = datetime(fecha_actual.year + 1, mes, dia) 
-    
+
+    # Formatea la fecha de cumpleaños Day/Month/Year
+    fecha_cumple_formateada = fecha_cumple.strftime("%d/%m/%Y")
+
     # Calcula los días que faltan para el cumpleaños
     dias_para_cumple = (fecha_cumple - fecha_actual).days
     
-    session['datos_temporales'] = {'email': None, 'fecha_cumple': fecha_cumple, 'edad': edad}
+    session['datos_temporales'] = {'email': None, 'fecha_cumple': fecha_cumple_formateada, 'edad': edad}
 
     # Presentación de templates
     if dia == dia_actual and mes == mes_actual:
@@ -94,16 +96,19 @@ def enviar_correo():
 
         #Verifica si hay datos temporales en la session antes de insertar en la base de datos
         datos_temporales = session.get('datos_temporales', {})
-        fecha_cumple = datos_temporales.get('fecha_cumple')
+        fecha_cumple_formateada = datos_temporales.get('fecha_cumple')
         edad = datos_temporales.get('edad')
 
         db = dbConnection("emails-users") #Se crea el nombre de la base de datos 
         emails_collection = db['updates-subscription'] #Se crea el nombre de la colección
         
-        if fecha_cumple and edad:
-            emails_collection.insert_one({'email': email, 'fecha_cumple': fecha_cumple, 'edad': edad})
+        if fecha_cumple_formateada and edad:
+            emails_collection.insert_one({'email': email, 'fecha_cumple': fecha_cumple_formateada, 'edad': edad})
 
             session.pop('datos_temporales', None) #Elimina los datos temporales de la session después de insertar en la base de datos
+
+        else:
+            emails_collection.insert_one({'email': email}) #Se inserta el email en la colección
 
         return jsonify({'message': 'stored email successfully'})
 
