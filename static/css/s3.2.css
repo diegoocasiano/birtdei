@@ -55,7 +55,7 @@ main .sct1-container {
     flex-direction: column;
     align-items: center;
 
-    padding-bottom: 40px;
+    padding-bottom: 10px;
 }
 
 .sct1-container img {

@@ -35,7 +35,7 @@ body {
 
     height: 100svh;
 
-    padding-bottom: 40px;
+    padding-bottom: 0px;
 }
 .pg1-container .header-container {
     display: flex;
@@ -107,7 +107,7 @@ body {
 
     height: 100svh;
 
-    padding-bottom: 40px;
+    padding-bottom: 0px;
 }
 .pg2-container .main_titulo {
     display: flex;
