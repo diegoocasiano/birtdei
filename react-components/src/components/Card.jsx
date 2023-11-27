@@ -29,7 +29,7 @@ function Card({toggleDetalles, logoMarca, colorMarca, regalo, nombreMarca, categ
       <button className='btn card-logo-marca'
         onClick={toggleDetalles}
         style={{ backgroundColor: colorMarca }}>
-          <img src={logoMarca.url}  style={{ width: logoMarca.size }} />
+          <img src={logoMarca.url} alt={`Logo de ${nombreMarca}`} loading="lazy" style={{ width: logoMarca.size }} />
       </button>
       <div className='card-content-container'>
         <div className="regalo-marca">
