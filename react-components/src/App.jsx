@@ -94,7 +94,7 @@ function App() {
 
     const handleScroll = () => {
       if (
-        cardsContainer.scrollHeight - cardsContainer.scrollTop <= cardsContainer.clientHeight + 1200
+        cardsContainer.scrollHeight - cardsContainer.scrollTop <= cardsContainer.clientHeight + 1400
       ) {
         loadNextPage();
       }

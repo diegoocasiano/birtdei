@@ -580,46 +580,7 @@ const dataRegalos = [
             "Regalo válido durante todo el mes de tu cumple (solo puedes canjearlo una vez) y exclusivo para compras online",
         ]
     },
-    // {   
-    //     id: 23,
-    //     regalo: "1 Helado",
-    //     regaloFull: "1 Helado",
-    //     nombreMarca: "Edo Sushi Bar",
-    //     linkInsta: "https://www.instagram.com/edosushibarperu",
-    //     categoriaMarca: "Restaurante",
-    //     colorMarca: "#000000",
-    //     logoMarca: {
-    //         url: `${imageBasePath}logos-marcas/edoSushiBar-logo.png`,
-    //         size: "76%",
-    //         sizeLittle: "80%",
-    //     },
-    //     condicionesRegalo: [
-    //         "Presentar tu DNI físico (Tener +18 años)",
-    //         "Consumir antes",
-    //         "Válido el día de tu cumple",
-    //     ]
-    // },
     
-    
-    // {   
-    //     id: 29,
-    //     regalo: "1 Postre sorpresa",
-    //     regaloFull: "1 Postre sorpresa",
-    //     nombreMarca: "Señor Limón",
-    //     linkInsta: "https://www.instagram.com/senorlimonoficial",
-    //     categoriaMarca: "Restaurante",
-    //     colorMarca: "#ffffff",
-    //     logoMarca: {
-    //         url: `${imageBasePath}logos-marcas/senorLimon-logo.png`,
-    //         size: "78%",
-    //         sizeLittle: "76%",
-    //     },
-    //     condicionesRegalo: [
-    //         "Presentar tu DNI físico (Tener +18 años)",
-    //         "Consumir antes",
-    //         "Válido el día de tu cumple",
-    //     ]
-    // },
     
     
     {   
@@ -737,7 +698,46 @@ const dataRegalos = [
         ]
     },
     
+    // {   
+    //     id: 23,
+    //     regalo: "1 Helado",
+    //     regaloFull: "1 Helado",
+    //     nombreMarca: "Edo Sushi Bar",
+    //     linkInsta: "https://www.instagram.com/edosushibarperu",
+    //     categoriaMarca: "Restaurante",
+    //     colorMarca: "#000000",
+    //     logoMarca: {
+    //         url: `${imageBasePath}logos-marcas/edoSushiBar-logo.png`,
+    //         size: "76%",
+    //         sizeLittle: "80%",
+    //     },
+    //     condicionesRegalo: [
+    //         "Presentar tu DNI físico (Tener +18 años)",
+    //         "Consumir antes",
+    //         "Válido el día de tu cumple",
+    //     ]
+    // },
     
+    
+    // {   
+    //     id: 29,
+    //     regalo: "1 Postre sorpresa",
+    //     regaloFull: "1 Postre sorpresa",
+    //     nombreMarca: "Señor Limón",
+    //     linkInsta: "https://www.instagram.com/senorlimonoficial",
+    //     categoriaMarca: "Restaurante",
+    //     colorMarca: "#ffffff",
+    //     logoMarca: {
+    //         url: `${imageBasePath}logos-marcas/senorLimon-logo.png`,
+    //         size: "78%",
+    //         sizeLittle: "76%",
+    //     },
+    //     condicionesRegalo: [
+    //         "Presentar tu DNI físico (Tener +18 años)",
+    //         "Consumir antes",
+    //         "Válido el día de tu cumple",
+    //     ]
+    // },
     
 ];
 export default dataRegalos;

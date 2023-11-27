@@ -66,6 +66,8 @@ def procesar_cumple():
     # Calcula los días que faltan para el cumpleaños
     dias_para_cumple = (fecha_cumple - fecha_actual).days
     
+    session['datos_temporales'] = {'email': None, 'fecha_cumple': fecha_cumple, 'edad': edad}
+
     # Presentación de templates
     if dia == dia_actual and mes == mes_actual:
         return render_template('s3.1.html', edad=edad)
@@ -90,9 +92,18 @@ def enviar_correo():
         data = request.get_json() #Se obtiene el json que se envía desde el frontend
         email = data.get('email') #Se obtiene el email del json
 
+        #Verifica si hay datos temporales en la session antes de insertar en la base de datos
+        datos_temporales = session.get('datos_temporales', {})
+        fecha_cumple = datos_temporales.get('fecha_cumple')
+        edad = datos_temporales.get('edad')
+
         db = dbConnection("emails-users") #Se crea el nombre de la base de datos 
         emails_collection = db['updates-subscription'] #Se crea el nombre de la colección
-        emails_collection.insert_one({'email': email}) #Se inserta el email en la colección
+        
+        if fecha_cumple and edad:
+            emails_collection.insert_one({'email': email, 'fecha_cumple': fecha_cumple, 'edad': edad})
+
+            session.pop('datos_temporales', None) #Elimina los datos temporales de la session después de insertar en la base de datos
 
         return jsonify({'message': 'stored email successfully'})
 
