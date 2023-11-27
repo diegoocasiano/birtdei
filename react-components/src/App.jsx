@@ -8,6 +8,73 @@ import CardDetalles from './components/card-detalles/CardDetalles'
 
 function App() {
 
+  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
+
+  const TruckEmoji = `${imageBasePath}brand/truck-emoji.png`
+  const ArrowRight = `${imageBasePath}brand/arrow-right.svg`
+  const ArrowDownSpecial = `${imageBasePath}brand/arrow-down-especial.svg`
+  const ArrowDownLargeSpecial = `${imageBasePath}brand/arrow-down-large.svg`
+
+  // Lógica para enviar email
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState('');
+  const [emailStored, setEmailStored] = useState(false);
+    
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    const formData = new FormData(document.getElementById('emailForm'));
+    const emailFromForm = formData.get('email');
+
+    // Enviar el correo al servidor Flask
+    try {
+      const response = await fetch('/enviar-correo', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email: emailFromForm }),
+      });
+
+      if (response.ok) {
+        console.log('email sent successfully');
+        setEmailStored(true);
+      } else {
+        console.error('email not sent');
+      }
+    } catch (error) {
+      console.error('Error sending email: ', error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // Cambiar apariencia del botón cuando el email ya se haya enviado
+  const [buttonText, setButtonText] = useState('Dejar correo');
+  const [buttonClass, setButtonClass] = useState('btn-submit');
+
+  const emailSentSuccessfully = () => {
+    if (emailStored) {
+      setButtonText('Listo!'); 
+      setButtonClass('btn-submit sentEmail');
+      setEmail(''); // Limpia el input cuando el email se haya enviado
+    }
+  }
+  useEffect(() => {
+    if (emailStored) {
+      emailSentSuccessfully();
+    }
+  }, [emailStored]);
+  
+  const handleEmailClick = () => {
+    setButtonText('Dejar correo');
+    setButtonClass('btn-submit');
+    setEmailStored(false);
+  };
+
+
   // Lógica para solo cargar 10 cards cuando se ingrese a la web por primera vez
   // Luego se deberá hacer scroll (casi hasta el final) para volver a cargar otras 10 cards
   // Esto produce la ilusión de scroll infinito
@@ -27,7 +94,7 @@ function App() {
 
     const handleScroll = () => {
       if (
-        cardsContainer.scrollHeight - cardsContainer.scrollTop <= cardsContainer.clientHeight + 300
+        cardsContainer.scrollHeight - cardsContainer.scrollTop <= cardsContainer.clientHeight + 800
       ) {
         loadNextPage();
       }
@@ -96,12 +163,50 @@ function App() {
             linkInsta={marcaSeleccionada.linkInsta}
             toggleDetalles={toggleDetalles} />
           }
-          <div className="main-cards-container">
-            {dataRegalosList}
-          </div>
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
           }
+  
+          <div className="main-cards-container">
+            {dataRegalosList}
+              <div className="finalHome-container">
+                <dv className="sct1-container">
+                  {/* <img src={TruckEmoji} alt="Emoji de camión"/> */}
+                  <h2>¡No termina aquí, <span>hay más <br/> regalos en camino!</span></h2>
+                  <p>Estamos conversando con más marcas <br/> increíbles para que formen parte de Birtdei</p>
+                </dv>
+                <hr className="divider" />
+                <div className="sct2-container">
+                  <p>Mientras tanto...</p>
+                  <img className='arrow1' src={ArrowDownSpecial}/>
+                  <div className="subSections-container">
+                    <div className="subsct1">
+                      <div className="content1">
+                        <h3><span>Déjanos tu correo</span> para avisarte<br/>cuando añadamos más regalos</h3>
+                        <p>(Prometemos no enviar spam)</p>
+                      </div>
+                      <form className='content2' id='emailForm' onSubmit={handleSubmit}>
+                        <input type="email" id="email" name="email" placeholder='Tu correo' required
+                          value={email} onChange={(e) => setEmail(e.target.value)} onClick={handleEmailClick}/>
+                        <button type='submit' className={buttonClass}>
+                          {loading && <div className="loader"></div>}
+                          {!loading && buttonText}
+                        </button>
+                      </form>
+                      
+                    </div>
+                    <div className="subsct2">
+                      <h3><span>Cuéntanos tu opinión</span> para mejorar<br/>tu experiencia en Birtdei</h3>
+                      <a class="btn-sendEmail" href="">Enviar feedback <img src={ArrowRight}/></a>
+                    </div>
+                    <img className='arrow2' src={ArrowDownLargeSpecial}/>
+                  </div>
+                </div>
+                <div className="footer">
+                  <p>Diseñado por <a href="https://linktr.ee/diegocasiano">Diego Casiano</a></p>
+                </div>
+              </div>
+          </div>
           
       </main>
     </>

@@ -1,5 +1,4 @@
 html {
-  
   font-size: 100%;
 }
 
@@ -24,3 +23,263 @@ body {
   background-color: var(--Soft-Yellow02-Birt);
 }
 
+/* Styles to finalHome */
+.finalHome-container {
+  width: 100%;
+  padding-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  margin: 0px 20px 0px 20px;
+}
+
+/* Styles to sct1 */
+.finalHome-container .sct1-container img {
+  width: 73px;
+}
+.finalHome-container .sct1-container h2 {
+  margin-top: 10px;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22px;
+
+  color: var(--Black-Birt);
+}
+.finalHome-container .sct1-container h2 span {
+  color: var(--Orange01-Birt);
+}
+
+.finalHome-container .sct1-container p {
+  margin-top: 8px;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 15.5px;
+
+  color: var(--Black-Birt);
+}
+
+.divider {
+  margin: 26px 0px 24px 0px;
+  height: 1px;
+  background-color: #D6CFB8;
+}
+
+/* Styles to sct2 */
+.finalHome-container .sct2-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sct2-container p {
+  font-size: 14px;
+  font-weight: 500;
+
+  color: var(--Black-Birt);
+}
+.finalHome-container .sct2-container .arrow1 {
+  margin-top: 13px;
+}
+
+
+.sct2-container .subSections-container {
+  margin-top: 7px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  gap: 18px;
+}
+
+.subSections-container .subsct1 {
+  position: absolute;
+  margin-top: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  width: 100%;
+  height: 214px;
+
+  padding: 0px 20px 0px 20px;
+
+  border-radius: 20px;
+  border: 1px solid #D6CFB8;
+  background: #F9F6E9;
+}
+.subSections-container .subsct1 .content1 {
+  margin-top: 25px;
+}
+.subSections-container .subsct1 .content1 h3 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  
+  color: var(--Black-Birt);
+}
+.subSections-container .subsct1 .content1 h3 span {
+  color: var(--Orange01-Birt);
+}
+.subSections-container .subsct1 .content1 p {
+  margin-top: 5px;
+
+  font-size: 12px;
+  font-weight: 500;
+  
+  color: #424242;
+}
+
+.subSections-container .subsct1 .content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.subSections-container .subsct1 .content2 input {
+  width: 100%;
+  height: 40px;
+  padding: 0px 18px 0px 18px;
+  
+  font-family: Onest;
+  font-size: 13px;
+  font-weight: 500;
+
+  border-radius: 18px;
+  border: 1px solid #D0D5DD;
+  background: #FFFDF6;
+}
+.subsct1 .content2 input::placeholder{
+  color: #8f9688;
+}
+.subsct1 .content2 input:focus{
+  outline: none;
+  border: 1px solid var(--Orange02-Birt);
+}
+
+.subSections-container .subsct1 .content2 .btn-submit {
+  width: 100%;
+  height: 40px;
+
+  font-family: Onest;
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--White-Birt);
+  border-radius: 18px;
+  background-color: var(--Orange01-Birt);
+
+  transition: all 0.3s ease;
+}
+.subsct1 .content2 .btn-submit.sentEmail{
+  
+  width: 40%;
+
+  border-radius: 18px;
+  background-color: #34C759;
+}
+
+.loader {
+  margin-top: 3px;
+
+  width: 18px;
+  height: 18px;
+
+  display: inline-block;
+  box-sizing: border-box;
+
+  border: 2px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
+.subSections-container .subsct2 {
+  margin-top: 246px;
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+
+  width: 100%;
+  height: 145px;
+
+  padding: 0px 20px 0px 20px;
+
+  border-radius: 20px;
+  border: 1px solid #D6CFB8;
+  background: #F9F6E9;
+}
+
+.subSections-container .subsct2 h3 {
+  margin-top: 24px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+  
+  color: var(--Black-Birt);
+}
+.subSections-container .subsct2 h3 span {
+  color: var(--Orange01-Birt);
+}
+
+.subSections-container .subsct2 .btn-sendEmail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 42px;
+
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--Orange01-Birt);
+
+  text-decoration: none;
+  border-radius: 20px;
+  background: none;
+  border: 2px solid var(--Orange01-Birt);
+}
+.subSections-container .subsct2 .btn-sendEmail img {
+  margin-left: 5px;
+}
+
+/* styles to footer */
+.footer {
+  margin-top: 26px;
+  border-top: 1px solid #D6CFB8;
+}
+
+.footer p {
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 500;
+
+  color: var(--Black-Birt);
+}
+.footer p a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--Orange01-Birt);
+}
