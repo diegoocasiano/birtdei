@@ -2,6 +2,25 @@ const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/re
 
 const dataRegalos = [
     {   
+        id: 9,
+        regalo: "1 Pancake especial",
+        regaloFull: "1 Pancake especial",
+        nombreMarca: "IHOP",
+        linkInsta: "https://www.instagram.com/ihopperu",
+        categoriaMarca: "Restaurante",
+        colorMarca: "#1598D5",
+        logoMarca: {
+            url: `${imageBasePath}logos-marcas/ihop-logo.png`,
+            size: "80%",
+            sizeLittle: "75%",
+        },
+        condicionesRegalo: [
+            "Presentar tu DNI físico (Tener +18 años)",
+            "Consumir antes",
+            "Válido el día de tu cumple",
+        ]
+    },
+    {   
         id: 1,
         regalo: "1 Helado",
         regaloFull: "1 Helado",
@@ -38,25 +57,7 @@ const dataRegalos = [
             "Válido el día de tu cumple",
         ]
     },
-    {   
-        id: 9,
-        regalo: "1 Pancake especial",
-        regaloFull: "1 Pancake especial",
-        nombreMarca: "IHOP",
-        linkInsta: "https://www.instagram.com/ihopperu",
-        categoriaMarca: "Restaurante",
-        colorMarca: "#1598D5",
-        logoMarca: {
-            url: `${imageBasePath}logos-marcas/ihop-logo.png`,
-            size: "80%",
-            sizeLittle: "75%",
-        },
-        condicionesRegalo: [
-            "Presentar tu DNI físico (Tener +18 años)",
-            "Consumir antes",
-            "Válido el día de tu cumple",
-        ]
-    },
+    
     {   
         id: 4,
         regalo: "1 Shot o 1 Postre",
