@@ -21,21 +21,22 @@ const dataRegalos = [
         ]
     },
     {   
-        id: 1,
-        regalo: "1 Helado",
-        regaloFull: "1 Helado",
-        nombreMarca: "McDonald's",
-        linkInsta: "https://www.instagram.com/mcdonalds_peru",
-        categoriaMarca: "Comida Rápida",
-        colorMarca: "#e50000",
+        id: 4,
+        regalo: "1 Shot o 1 Postre",
+        regaloFull: "1 Shot o 1 Postre",
+        nombreMarca: "Fridays",
+        linkInsta: "https://www.instagram.com/fridaysperu",
+        categoriaMarca: "Restaurante",
+        colorMarca: "#E31836",
         logoMarca: {
-            url: `${imageBasePath}logos-marcas/logo-mcdonalds.png`,
-            size: "70%",
-            sizeLittle: "60%",
+            url: `${imageBasePath}logos-marcas/logo-fridays.png`,
+            size: "80%",
+            sizeLittle: "80%",
         },
         condicionesRegalo: [
-            "Presentar DNI", 
+            "Presentar tu DNI físico (Tener +18 años)",
             "Consumir o comprar",
+            "Válido el día de tu cumple",
         ]
     },
     {   
@@ -51,26 +52,6 @@ const dataRegalos = [
             size: "77%",
             sizeLittle: "75%",
         },  
-        condicionesRegalo: [
-            "Presentar tu DNI físico (Tener +18 años)",
-            "Consumir o comprar",
-            "Válido el día de tu cumple",
-        ]
-    },
-    
-    {   
-        id: 4,
-        regalo: "1 Shot o 1 Postre",
-        regaloFull: "1 Shot o 1 Postre",
-        nombreMarca: "Fridays",
-        linkInsta: "https://www.instagram.com/fridaysperu",
-        categoriaMarca: "Restaurante",
-        colorMarca: "#E31836",
-        logoMarca: {
-            url: `${imageBasePath}logos-marcas/logo-fridays.png`,
-            size: "80%",
-            sizeLittle: "80%",
-        },
         condicionesRegalo: [
             "Presentar tu DNI físico (Tener +18 años)",
             "Consumir o comprar",
@@ -95,6 +76,28 @@ const dataRegalos = [
             "Válido en todo el mes de tu cumpleaños",
         ]
     },
+    {   
+        id: 1,
+        regalo: "1 Helado",
+        regaloFull: "1 Helado",
+        nombreMarca: "McDonald's",
+        linkInsta: "https://www.instagram.com/mcdonalds_peru",
+        categoriaMarca: "Comida Rápida",
+        colorMarca: "#e50000",
+        logoMarca: {
+            url: `${imageBasePath}logos-marcas/logo-mcdonalds.png`,
+            size: "70%",
+            sizeLittle: "60%",
+        },
+        condicionesRegalo: [
+            "Presentar DNI", 
+            "Consumir o comprar",
+        ]
+    },
+   
+    
+    
+    
     {   
         id: 8,
         regalo: "1 Entrada 2D",
