@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_from_directory, session
 from datetime import datetime
 import os
+from flask import redirect, url_for
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from dotenv import load_dotenv
@@ -24,7 +25,6 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 def inicio():
     
     visited_regalos = session.get('visited_regalos', False)
-    print(f'Visitó regalos?: {visited_regalos}')
 
     if visited_regalos:
         return render_template('index2.html')

@@ -31,6 +31,8 @@ html {
     opacity: 1;
     background: rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease-in-out;
+
+    z-index: 1;
 }
 
 .bg-dd-menu.active.touchMove {
@@ -55,6 +57,8 @@ html {
 
     transition: all 0.3s ease-in-out;
     transform: translateY(100%);
+
+    z-index: 1;
 }
 .drop-down-menu-container.active {
     transform: translateY(0);

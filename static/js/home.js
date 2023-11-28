@@ -6,3 +6,8 @@ function redirectionToDesktop() {
 }
 window.addEventListener('load', redirectionToDesktop);
 window.addEventListener('resize', redirectionToDesktop);
+
+//Onpopstate hace que la function se dispare cuando se presiona el botón de retroceso o hacia adelante
+document.addEventListener('popstate ', function() {
+        window.location.href = '/'
+});
