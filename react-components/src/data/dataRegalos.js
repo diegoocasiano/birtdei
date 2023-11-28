@@ -2,60 +2,39 @@ const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/re
 
 const dataRegalos = [
     {   
-        id: 9,
-        regalo: "1 Pancake especial",
-        regaloFull: "1 Pancake especial",
-        nombreMarca: "IHOP",
-        linkInsta: "https://www.instagram.com/ihopperu",
-        categoriaMarca: "Restaurante",
-        colorMarca: "#1598D5",
+        id: 1,
+        regalo: "1 Helado",
+        regaloFull: "1 Helado",
+        nombreMarca: "McDonald's",
+        linkInsta: "https://www.instagram.com/mcdonalds_peru",
+        categoriaMarca: "Comida Rápida",
+        colorMarca: "#e50000",
         logoMarca: {
-            url: `${imageBasePath}logos-marcas/ihop-logo.png`,
-            size: "80%",
-            sizeLittle: "75%",
+            url: `${imageBasePath}logos-marcas/logo-mcdonalds.png`,
+            size: "70%",
+            sizeLittle: "60%",
         },
         condicionesRegalo: [
-            "Presentar tu DNI físico (Tener +18 años)",
-            "Consumir antes",
-            "Válido el día de tu cumple",
+            "Presentar DNI", 
+            "Consumir o comprar",
         ]
     },
     {   
-        id: 4,
-        regalo: "1 Shot o 1 Postre",
-        regaloFull: "1 Shot o 1 Postre",
-        nombreMarca: "Fridays",
-        linkInsta: "https://www.instagram.com/fridaysperu",
-        categoriaMarca: "Restaurante",
-        colorMarca: "#E31836",
+        id: 37,
+        regalo: "15% dsct",
+        regaloFull: "15% dsct",
+        nombreMarca: "Adidas",
+        linkInsta: "https://www.instagram.com/adidaspe",
+        categoriaMarca: "Ropa deportiva",
+        colorMarca: "#000000",
         logoMarca: {
-            url: `${imageBasePath}logos-marcas/logo-fridays.png`,
-            size: "80%",
-            sizeLittle: "80%",
+            url: `${imageBasePath}logos-marcas/adidas-logo.png`,
+            size: "78%",
+            sizeLittle: "72%",
         },
         condicionesRegalo: [
-            "Presentar tu DNI físico (Tener +18 años)",
-            "Consumir o comprar",
-            "Válido el día de tu cumple",
-        ]
-    },
-    {   
-        id: 3,
-        regalo: "1 Postre",
-        regaloFull: "1 Postre",
-        nombreMarca: "Chilli's",
-        linkInsta: "https://www.instagram.com/chilisperu",
-        categoriaMarca: "Restaurante",
-        colorMarca: "#F6EADE",
-        logoMarca: {
-            url: `${imageBasePath}logos-marcas/logo-chillis.png`,
-            size: "77%",
-            sizeLittle: "75%",
-        },  
-        condicionesRegalo: [
-            "Presentar tu DNI físico (Tener +18 años)",
-            "Consumir o comprar",
-            "Válido el día de tu cumple",
+            "Regístrate en Adiclub a través de www.adidas.pe",
+            "Válido el día de tu cumple (te llegará un correo)",
         ]
     },
     {   
@@ -77,28 +56,6 @@ const dataRegalos = [
         ]
     },
     {   
-        id: 1,
-        regalo: "1 Helado",
-        regaloFull: "1 Helado",
-        nombreMarca: "McDonald's",
-        linkInsta: "https://www.instagram.com/mcdonalds_peru",
-        categoriaMarca: "Comida Rápida",
-        colorMarca: "#e50000",
-        logoMarca: {
-            url: `${imageBasePath}logos-marcas/logo-mcdonalds.png`,
-            size: "70%",
-            sizeLittle: "60%",
-        },
-        condicionesRegalo: [
-            "Presentar DNI", 
-            "Consumir o comprar",
-        ]
-    },
-   
-    
-    
-    
-    {   
         id: 8,
         regalo: "1 Entrada 2D",
         regaloFull: "1 Entrada 2D",
@@ -114,24 +71,6 @@ const dataRegalos = [
         condicionesRegalo: [
             "Ser miembro del programa Socio Cineplanet",
             "Válido hasta 3 días después de tu cumple",
-        ]
-    },
-    {   
-        id: 37,
-        regalo: "15% dsct",
-        regaloFull: "15% dsct",
-        nombreMarca: "Adidas",
-        linkInsta: "https://www.instagram.com/adidaspe",
-        categoriaMarca: "Ropa deportiva",
-        colorMarca: "#000000",
-        logoMarca: {
-            url: `${imageBasePath}logos-marcas/adidas-logo.png`,
-            size: "78%",
-            sizeLittle: "72%",
-        },
-        condicionesRegalo: [
-            "Regístrate en Adiclub a través de www.adidas.pe",
-            "Válido el día de tu cumple (te llegará un correo)",
         ]
     },
     {   
@@ -171,7 +110,25 @@ const dataRegalos = [
             "Válido el día de tu cumple",
         ]
     },
-    
+    {   
+        id: 9,
+        regalo: "1 Pancake especial",
+        regaloFull: "1 Pancake especial",
+        nombreMarca: "IHOP",
+        linkInsta: "https://www.instagram.com/ihopperu",
+        categoriaMarca: "Restaurante",
+        colorMarca: "#1598D5",
+        logoMarca: {
+            url: `${imageBasePath}logos-marcas/ihop-logo.png`,
+            size: "80%",
+            sizeLittle: "75%",
+        },
+        condicionesRegalo: [
+            "Presentar tu DNI físico (Tener +18 años)",
+            "Consumir antes",
+            "Válido el día de tu cumple",
+        ]
+    },
     {   
         id: 28,
         regalo: "1 Postre sorpresa",
@@ -229,7 +186,25 @@ const dataRegalos = [
             "Válido el día de tu cumple",
         ]
     },
-    
+    {   
+        id: 4,
+        regalo: "1 Shot o 1 Postre",
+        regaloFull: "1 Shot o 1 Postre",
+        nombreMarca: "Fridays",
+        linkInsta: "https://www.instagram.com/fridaysperu",
+        categoriaMarca: "Restaurante",
+        colorMarca: "#E31836",
+        logoMarca: {
+            url: `${imageBasePath}logos-marcas/logo-fridays.png`,
+            size: "80%",
+            sizeLittle: "80%",
+        },
+        condicionesRegalo: [
+            "Presentar tu DNI físico (Tener +18 años)",
+            "Consumir o comprar",
+            "Válido el día de tu cumple",
+        ]
+    },
     
     {   
         id: 10,
