@@ -35,6 +35,7 @@ def inicio():
 def inicio_again():
     return render_template('index1.html')
 
+
 @app.route('/ingresando', methods=['POST'])
 def procesar_cumple():
     dia = int(request.form['dia'])
@@ -71,17 +72,37 @@ def procesar_cumple():
     session['datos_temporales'] = {'email': None, 'fecha_cumple': fecha_cumple_formateada, 'edad': edad}
 
     # Presentación de templates
+    # Importante: Los tenplates nunca deben de renderizarse en la misma ruta donde se procesan los datos ingresados
+    # por el usuario, siempre deben de redirigir a otra ruta para renderizar el template
     if dia == dia_actual and mes == mes_actual:
-        return render_template('s3.1.html', edad=edad)
+        return redirect('/a{}'.format(edad)) #El {} es para poder pasar la variable edad a la ruta correspondiente
     
     elif 0 <= dias_para_cumple <= 31:
-        return render_template('s3.2.html', edad=edad, dias_para_cumple=dias_para_cumple)
+        return redirect('/b{}-{}'.format(edad, dias_para_cumple))
     
     elif 32 <= dias_para_cumple <= 220:
-        return render_template('s3.3.html', edad=edad+1, dias_para_cumple=dias_para_cumple)
+        return redirect('/c{}-{}'.format(edad, dias_para_cumple))
     
     else:
-        return render_template('s3.4.html', edad=edad, dias_para_cumple=dias_para_cumple)
+        return redirect('/d{}-{}'.format(edad, dias_para_cumple))
+
+#Renderiza los templates según cuántos días faltan para su cumple
+@app.route('/a<int:edad>') #<int:edad> es para poder pasar la variable edad a la función
+def show_s3_1(edad): #edad es la variable que se pasa desde la ruta
+    return render_template('s3.1.html', edad=edad) #finalmente se pasa la variable edad al template
+
+@app.route('/b<int:edad>-<int:dias_para_cumple>')
+def show_s3_2(edad, dias_para_cumple):
+    return render_template('s3.2.html', edad=edad, dias_para_cumple=dias_para_cumple)
+
+@app.route('/c<int:edad>-<int:dias_para_cumple>')
+def show_s3_3(edad, dias_para_cumple):
+    return render_template('s3.3.html', edad=edad+1, dias_para_cumple=dias_para_cumple)
+
+@app.route('/d<int:edad>-<int:dias_para_cumple>')
+def show_s3_4(edad, dias_para_cumple):
+    return render_template('s3.4.html', edad=edad, dias_para_cumple=dias_para_cumple)
+
 
 @app.route('/regalos')
 def home():
