@@ -27,6 +27,12 @@
 
     gtag('config', 'G-E6NL8DX650');
     </script>
+
+    <!-- Vercel analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +48,7 @@
     <link rel="stylesheet" href="{{ url_for('send_react_static', filename='index-v177.css') }}">
 
   </head>
-  <body
+  <body>
     <div id="root"></div>
     <script src="{{ url_for('send_react_static', filename='index-v177.js') }}"></script>
   </body>
