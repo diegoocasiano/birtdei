@@ -87,7 +87,7 @@ def procesar_cumple():
         return redirect('/d{}-{}'.format(edad, dias_para_cumple))
 
 #Renderiza los templates según cuántos días faltan para su cumple
-@app.route('/a<int:edad>') #<int:edad> es para poder pasar la variable edad a la función
+@app.route('/a<int:edad>') #<int:edad> es para poder pasa r la variable edad a la función
 def show_s3_1(edad): #edad es la variable que se pasa desde la ruta
     return render_template('s3.1.html', edad=edad) #finalmente se pasa la variable edad al template
 
