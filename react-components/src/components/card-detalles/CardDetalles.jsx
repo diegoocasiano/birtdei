@@ -5,7 +5,7 @@ import './card-detalles.css'
 function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta}) {
     // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
     const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';  
-    const GiftBrand = `${imageBasePath}brand/gift-card.svg`
+    const giftBrand = `${imageBasePath}brand/gift-card.svg`
     const iconInfo = `${imageBasePath}brand/icon-info.svg`
     const iconCheck = `${imageBasePath}brand/icon-check.svg`
     const iconInsta = `${imageBasePath}brand/icon-instagram.svg`
@@ -267,7 +267,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
                 <div className="sct1-regaloMarca">
                     <p>Te regala</p>
                     <div className="regaloMarca">
-                        <img className="iconGift" src={GiftBrand} />
+                        <img className="iconGift" src={giftBrand} />
                         <h2 ref={h2Ref}>{regaloFull}</h2>
                     </div>
                 </div>

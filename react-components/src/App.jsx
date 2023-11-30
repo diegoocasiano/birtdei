@@ -10,11 +10,29 @@ function App() {
 
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
 
-  const TruckEmoji = `${imageBasePath}brand/truck-emoji.png`
-  const ArrowRight = `${imageBasePath}brand/arrow-right.svg`
-  const ArrowDownSpecial = `${imageBasePath}brand/arrow-down-especial.svg`
-  const ArrowDownLargeSpecial = `${imageBasePath}brand/arrow-down-large.svg`
+  const truckEmoji = `${imageBasePath}brand/truck-emoji.png`
+  const arrowRight = `${imageBasePath}brand/arrow-right.svg`
+  const arrowDownSpecial = `${imageBasePath}brand/arrow-down-especial.svg`
+  const arrowDownLargeSpecial = `${imageBasePath}brand/arrow-down-large.svg`
 
+  // Preload de imágenes
+  // Colocar todas las imágenes que quieras que se descarguen al entrar a home.html
+  const arrowRightUp = `${imageBasePath}brand/arrow-right-up.svg`
+  const arrowRightUpWh = `${imageBasePath}brand/arrow-right-up-wh.svg`
+  const iconInfo = `${imageBasePath}brand/icon-info.svg`
+  const iconCheck = `${imageBasePath}brand/icon-check.svg`
+  const iconInsta = `${imageBasePath}brand/icon-instagram.svg`
+
+  useEffect(() => {
+    const preloadImages = [arrowRightUp, arrowRightUpWh, iconInfo, iconCheck, iconInsta];
+
+    preloadImages.forEach((imageSrc) => {
+      const img = new Image();
+      img.src = imageSrc;
+    });
+  }, [arrowRightUp, arrowRightUpWh, iconInfo, iconCheck, iconInsta])
+
+  
   // Lógica para enviar email
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
@@ -171,14 +189,14 @@ function App() {
             {dataRegalosList}
               <div className="finalHome-container">
                 <dv className="sct1-container">
-                  {/* <img src={TruckEmoji} alt="Emoji de camión"/> */}
+                  {/* <img src={truckEmoji} alt="Emoji de camión"/> */}
                   <h2>¡No termina aquí, <span>hay más <br/> regalos en camino!</span></h2>
                   <p>Estamos conversando con más marcas <br/> increíbles para que formen parte de Birtdei</p>
                 </dv>
                 <hr className="divider" />
                 <div className="sct2-container">
                   <p>Mientras tanto...</p>
-                  <img className='arrow1' src={ArrowDownSpecial}/>
+                  <img className='arrow1' src={arrowDownSpecial}/>
                   <div className="subSections-container">
                     <div className="subsct1">
                       <div className="content1">
@@ -197,9 +215,9 @@ function App() {
                     </div>
                     <div className="subsct2">
                       <h3><span>Cuéntanos tu opinión</span> para mejorar<br/>tu experiencia en Birtdei</h3>
-                      <a class="btn-sendEmail" href="/feedback">Enviar feedback <img src={ArrowRight}/></a>
+                      <a class="btn-sendEmail" href="/feedback">Enviar feedback <img src={arrowRight}/></a>
                     </div>
-                    <img className='arrow2' src={ArrowDownLargeSpecial}/>
+                    <img className='arrow2' src={arrowDownLargeSpecial}/>
                   </div>
                 </div>
                 <div className="footerContainer">

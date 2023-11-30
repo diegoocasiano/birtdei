@@ -5,8 +5,8 @@ function Menu({setMenuOpen}) {
   // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';   
 
-  const ArrowRightUp = `${imageBasePath}brand/arrow-right-up.svg`
-  const ArrowRightUpWh = `${imageBasePath}brand/arrow-right-up-wh.svg`
+  const arrowRightUp = `${imageBasePath}brand/arrow-right-up.svg`
+  const arrowRightUpWh = `${imageBasePath}brand/arrow-right-up-wh.svg`
   
 
     {/* bgMenuActive activa un fondo con transparencia y bloquea el body */}
@@ -137,8 +137,8 @@ function Menu({setMenuOpen}) {
 
         <hr className='handle-dd-menu'/>
         <div className="btns-container">
-          <a className='btn-top' href="/feedback">Enviar feedback<img src={ArrowRightUpWh} ></img></a>
-          <a className='btn-bot' href="https://linktr.ee/diegocasiano" target='blank'>Creado por Diego C. <img src={ArrowRightUp} ></img></a>
+          <a className='btn-top' href="/feedback">Enviar feedback<img src={arrowRightUpWh} ></img></a>
+          <a className='btn-bot' href="https://linktr.ee/diegocasiano" target='blank'>Creado por Diego C. <img src={arrowRightUp}></img></a>
         </div>
     </div>
     

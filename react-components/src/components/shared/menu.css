@@ -52,8 +52,9 @@ html {
     height: 184px;
 
     border-radius: 20px 20px 0px 0px;
-    background: rgba(255, 252, 240, 0.80);
-    backdrop-filter: blur(20px);
+    background-color: #fffcf0;
+    /* background: rgba(255, 252, 240, 0.80);
+    backdrop-filter: blur(20px); */
 
     transition: all 0.3s ease-in-out;
     transform: translateY(100%);
