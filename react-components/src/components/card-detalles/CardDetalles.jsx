@@ -42,6 +42,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         const percentage = (translateY / windowDetallesHeight) * 100;
         const newOpacity = Math.max(0, 1 - percentage / 100);
         setBgOpacity(newOpacity);
+        
     }
     
     const handleTouchEnd = (e) => {
@@ -63,10 +64,21 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
             }, 500);
         } 
 
-        // No hagas nada si el desplazamiento es menor o igual a 0px (si hace swipe up).
+        // Si el desplazamiento es menor e igual que 0, se cierra la ventanita
+        // Se cierra la ventanita al hacer touch en ella
         else if (currentY - startY <= 0) {
-            
-        } 
+            e.currentTarget.style.transition = 'transform 0.4s ease';
+            e.currentTarget.style.transform = `translateY(100%)`;
+    
+            setBgOpacity(0);
+            setTimeout(() => {
+                setDetallesWindowActive(false);
+            }, 390);
+           
+            setTimeout(() => {
+                toggleDetalles();
+            }, 400);
+        }
 
         else {
             // Si se hace cualquier otra cosa, el menú no se cerrará.
@@ -212,13 +224,15 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         }
       });
 
-    // Se configura el alto del contenedor de CardDetalles. 470 es el alto mínimo que tiene el overlay (cardDetalles) en un vw 360px
+    // Se configura el alto del contenedor de CardDetalles. 390 es el alto mínimo que tiene el overlay (cardDetalles) en un vw 360px
     const newHeightCardDetalles = (numeroSaltosLineaH2) => {
 
         // Calcula el tamaño del viewport
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
-        const minHeight = 470 + (vw - 360) * (502 - 470) / (414 - 360);
+        // 390 es el alto mínimo que tiene el overlay (cardDetalles) en un vw 360px
+        // 468 es el alto que tiene el overlay (cardDetalles) en un vw de 414px
+        const minHeight = 390 + (vw - 360) * (502 - 468) / (414 - 360);
 
         const multXSaltoLineaH2 = 18 + (vw - 360) * (20 - 18) / (414 - 360);
 
@@ -304,11 +318,11 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
                         <p>Regalo sujeto a cambios</p>
                     </div>
                 </div>
-                <div className="sct2-btnClose">
+                {/* <div className="sct2-btnClose">
                     <button className="btnClose" 
                         onClick={handleCloseButtonClick}>Todo claro
                     </button>
-                </div>
+                </div> */}
                 
             </div>
 
