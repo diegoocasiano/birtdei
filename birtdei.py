@@ -48,20 +48,25 @@ def procesar_cumple():
         anio_completo = 2000 + anio
     else:
         anio_completo = 2000 - (100 - anio)
+    print(anio_completo)
 
     fecha_actual = datetime.now()
     dia_actual = fecha_actual.day
     mes_actual = fecha_actual.month
+    año_actual = fecha_actual.year
+ 
 
     #Calcular la edad
     edad = fecha_actual.year - anio_completo
+    edad = edad - 1
+    
 
     # Calcula la fecha de cumpleaños para este año
-    fecha_cumple = datetime(fecha_actual.year, mes, dia)
+    fecha_cumple = datetime(año_actual, mes, dia)
 
     # Usa el próximo año si ya pasó el cumpleaños
     if fecha_cumple < fecha_actual:
-        fecha_cumple = datetime(fecha_actual.year + 1, mes, dia) 
+        fecha_cumple = datetime(año_actual + 1, mes, dia) 
 
     # Formatea la fecha de cumpleaños Day/Month/Year
     fecha_cumple_formateada = fecha_cumple.strftime("%d/%m/%Y")
@@ -89,11 +94,11 @@ def procesar_cumple():
 #Renderiza los templates según cuántos días faltan para su cumple
 @app.route('/a<int:edad>') #<int:edad> es para poder pasa r la variable edad a la función
 def show_s3_1(edad): #edad es la variable que se pasa desde la ruta
-    return render_template('s3.1.html', edad=edad) #finalmente se pasa la variable edad al template
+    return render_template('s3.1.html', edad=edad+1) #finalmente se pasa la variable edad al template
 
 @app.route('/b<int:edad>-<int:dias_para_cumple>')
 def show_s3_2(edad, dias_para_cumple):
-    return render_template('s3.2.html', edad=edad, dias_para_cumple=dias_para_cumple)
+    return render_template('s3.2.html', edad=edad+1, dias_para_cumple=dias_para_cumple)
 
 @app.route('/c<int:edad>-<int:dias_para_cumple>')
 def show_s3_3(edad, dias_para_cumple):
