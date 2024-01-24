@@ -40,27 +40,43 @@ function justTwoDigits(input) {
         input.value = valor.slice(0, 2);
     }
 }
-// Activar botón cuando se llenen todos los inputs
-    const diaInput = document.getElementById('dia');
-    const mesInput = document.getElementById('mes');
-    const anioInput = document.getElementById('anio');
+
+function moveNext(input, nextInputId) {
+    if (input.value.length === 2) {
+        document.getElementById(nextInputId).focus();
+    }
+}
+
+// Integración con la función checkInputs existente
+function checkInputs() {
+    const diaValue = document.getElementById('dia').value.trim();
+    const mesValue = document.getElementById('mes').value.trim();
+    const anioValue = document.getElementById('anio').value.trim();
     const submitButton = document.getElementById('btn-continuar');
 
-    diaInput.addEventListener('input', checkInputs);
-    mesInput.addEventListener('input', checkInputs);
-    anioInput.addEventListener('input', checkInputs);
-
-    function checkInputs() {
-        const diaValue = diaInput.value.trim();
-        const mesValue = mesInput.value.trim();
-        const anioValue = anioInput.value.trim();
-
-        if (diaValue && mesValue && (anioValue.length >=2)) {
-            submitButton.removeAttribute('disabled');
-            submitButton.classList.add('btn-activo');
-        }
-        else {
-            submitButton.setAttribute('disabled', true);
-            submitButton.classList.remove('btn-activo');
-        }
+    if (diaValue && mesValue && (anioValue.length >= 2)) {
+        submitButton.removeAttribute('disabled');
+        submitButton.classList.add('btn-activo');
+    } else {
+        submitButton.setAttribute('disabled', true);
+        submitButton.classList.remove('btn-activo');
     }
+}
+
+// Asociar la función checkInputs a los eventos 'input'
+document.getElementById('dia').addEventListener('input', function() {
+    justTwoDigits(this);
+    moveNext(this, 'mes');
+    checkInputs();
+});
+
+document.getElementById('mes').addEventListener('input', function() {
+    justTwoDigits(this);
+    moveNext(this, 'anio');
+    checkInputs();
+});
+
+document.getElementById('anio').addEventListener('input', function() {
+    justTwoDigits(this);
+    checkInputs();
+});
