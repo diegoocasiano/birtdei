@@ -190,11 +190,11 @@ function App() {
           <div className="main-cards-container">
             {dataRegalosList}
               <div className="finalHome-container">
-                <dv className="sct1-container">
+                <div className="sct1-container">
                   {/* <img src={truckEmoji} alt="Emoji de camión"/> */}
                   <h2>¡No termina aquí, <span>hay más <br/> regalos en camino!</span></h2>
                   <p>Estamos conversando con más marcas <br/> increíbles para que formen parte de Birtdei</p>
-                </dv>
+                </div>
                 <hr className="divider" />
                 <div className="sct2-container">
                   <p>Mientras tanto...</p>
@@ -217,7 +217,7 @@ function App() {
                     </div>
                     <div className="subsct2">
                       <h3><span>Cuéntanos tu opinión</span> para mejorar<br/>tu experiencia en Birtdei</h3>
-                      <a class="btn-sendEmail" href="/feedback">Enviar feedback <img src={arrowRight}/></a>
+                      <a className="btn-sendEmail" href="/feedback">Enviar feedback <img src={arrowRight}/></a>
                     </div>
                     <img className='arrow2' src={arrowDownLargeSpecial}/>
                   </div>
@@ -230,7 +230,7 @@ function App() {
           
       </main>
 
-  
+      <SpeedInsights url="https://birtdei.com"/>
     </>
     
   )
