@@ -6,6 +6,8 @@ import NavBar from './components/shared/NavBar'
 import dataRegalos from './data/DataRegalos'
 import CardDetalles from './components/card-detalles/CardDetalles'
 
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 function App() {
 
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
@@ -227,6 +229,8 @@ function App() {
           </div>
           
       </main>
+
+      <SpeedInsights />
     </>
     
   )
