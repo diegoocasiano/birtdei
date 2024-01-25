@@ -230,7 +230,7 @@ function App() {
           
       </main>
 
-      <SpeedInsights url="https://birtdei.com"/>
+      
     </>
     
   )
