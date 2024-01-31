@@ -21,7 +21,7 @@ html {
     font-family: 'Onest', sans-serif;
 }
 body {
-    background-color: var(--Soft-Yellow01-Birt);
+    background-color: var(--Soft-Yellow02-Birt);
 }
 
 main {
@@ -95,7 +95,7 @@ header h1 {
     gap: 2px;
 
     color: var(--Orange01-Birt);
-    background-color: var(--Soft-Yellow01-Birt);
+    background-color: var(--Soft-Yellow02-Birt);
     border: 1.5px solid #D6CFB8;
 }
 .btn-idea img {
@@ -113,7 +113,7 @@ header h1 {
     gap: 5px;
 
     color: var(--Orange01-Birt);
-    background-color: var(--Soft-Yellow01-Birt);
+    background-color: var(--Soft-Yellow02-Birt);
     border: 1.5px solid #D6CFB8;
 }
 .btn-error img {
@@ -160,7 +160,7 @@ header h1 {
 
     border-radius: 18px;
     border: 1.3px solid #D6CFB8;
-    background-color: var(--Soft-Yellow01-Birt);
+    background-color: var(--Soft-Yellow02-Birt);
 }
 .inpt-title:focus {
     outline: none;
@@ -191,7 +191,7 @@ header h1 {
     border-radius: 18px;
     resize: none;
     border: 1.3px solid #D6CFB8;
-    background-color: var(--Soft-Yellow01-Birt);
+    background-color: var(--Soft-Yellow02-Birt);
 }
 .inpt-details:focus {
     outline: none;
