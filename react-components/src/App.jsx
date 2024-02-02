@@ -191,7 +191,7 @@ function App() {
             {dataRegalosList}
               <div className="finalHome-container">
                 <div className="sct1-container">
-                  <img src={emojiGift} alt="Emoji de camión"/>
+                  <img className='emojiRegalo' src={emojiGift} alt="Emoji de regalo"/>
                   <h2>¡No termina aquí, <span>hay más <br/> regalos en camino!</span></h2>
                   <p>Estamos conversando con más marcas <br/> increíbles para que formen parte de Birtdei</p>
                 </div>
@@ -224,7 +224,7 @@ function App() {
                     <hr className="divider" />
 
                     <div className="subsct3">
-                      <img src={emojiConfetti} alt="Emoji de camión"/>
+                      <img className='emojiConfetti' src={emojiConfetti} alt="Emoji de confetti"/>
                       <h2><span>¡Destaca tu marca</span> en Birtdei!</h2>
                       <p>Atrae nuevos clientes regalándoles<br/> algo especial en su cumpleaños</p>
                       <a className='btn-marcasContactar' href="https://us.frms.link/t3ipetb/" target='_blank'>Contactar <img src={arrowRightWh}/> </a>

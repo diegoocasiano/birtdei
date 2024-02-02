@@ -280,9 +280,12 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
+.subsct3 .emojiConfetti {
+  width: 72px;
+  height: 72.18px;
+}
 .subsct3 h2{
-  margin-top: 18px;
+  margin-top: 16px;
 
   font-size: 20px;
   font-weight: 700;
