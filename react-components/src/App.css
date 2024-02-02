@@ -23,6 +23,10 @@ body {
   background-color: var(--Soft-Yellow02-Birt);
 }
 
+header {
+  z-index: 1;
+}
+
 /* Styles to finalHome */
 .finalHome-container {
   width: 100%;
@@ -98,8 +102,6 @@ body {
   width: 100%;
 
   gap: 18px;
-
-  z-index: -1;
 }
 
 .subSections-container .divider {

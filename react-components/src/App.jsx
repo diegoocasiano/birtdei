@@ -227,7 +227,7 @@ function App() {
                       <img className='emojiConfetti' src={emojiConfetti} alt="Emoji de confetti"/>
                       <h2><span>¡Destaca tu marca</span> en Birtdei!</h2>
                       <p>Atrae nuevos clientes regalándoles<br/> algo especial en su cumpleaños</p>
-                      <a className='btn-marcasContactar' href="https://us.frms.link/t3ipetb/" target='_blank'>Contactar <img src={arrowRightWh}/> </a>
+                      <a className='btn-marcasContactar' href="https://us.frms.link/t3ipetb/" target='blank'>Contactar <img src={arrowRightWh}/> </a>
                     </div>
                   </div>
                 </div>
