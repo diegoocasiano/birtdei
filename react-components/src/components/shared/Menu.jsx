@@ -137,7 +137,7 @@ function Menu({setMenuOpen}) {
 
         <hr className='handle-dd-menu'/>
         <div className="btns-container">
-          <a className='btn-top' href="/feedback">Enviar feedback<img src={arrowRightUpWh} ></img></a>
+          <a className='btn-top' href="/feedback">Danos tu opinión<img src={arrowRightUpWh} ></img></a>
           <a className='btn-bot' href="https://linktr.ee/diegocasiano" target='blank'>Creado por Diego C. <img src={arrowRightUp}></img></a>
         </div>
     </div>

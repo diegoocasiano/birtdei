@@ -72,7 +72,7 @@ function App() {
   }
 
   // Cambiar apariencia del botón cuando el email ya se haya enviado
-  const [buttonText, setButtonText] = useState('Dejar correo');
+  const [buttonText, setButtonText] = useState('Dejar mi correo');
   const [buttonClass, setButtonClass] = useState('btn-submit');
 
   const emailSentSuccessfully = () => {
