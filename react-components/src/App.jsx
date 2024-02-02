@@ -12,27 +12,27 @@ function App() {
 
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
 
-  const truckEmoji = `${imageBasePath}brand/truck-emoji.png`
-  const arrowRight = `${imageBasePath}brand/arrow-right.svg`
+  const emojiGift = `${imageBasePath}brand/emoji-gift.png`
+  const emojiConfetti = `${imageBasePath}brand/emoji-confetti.png`
   const arrowDownSpecial = `${imageBasePath}brand/arrow-down-especial.svg`
   const arrowDownLargeSpecial = `${imageBasePath}brand/arrow-down-large.svg`
 
   // Preload de imágenes
   // Colocar todas las imágenes que quieras que se descarguen al entrar a home.html
   const arrowRightUp = `${imageBasePath}brand/arrow-right-up.svg`
-  const arrowRightUpWh = `${imageBasePath}brand/arrow-right-up-wh.svg`
+  const arrowRightWh = `${imageBasePath}brand/arrow-right-wh.svg`
   const iconInfo = `${imageBasePath}brand/icon-info.svg`
   const iconCheck = `${imageBasePath}brand/icon-check.svg`
   const iconInsta = `${imageBasePath}brand/icon-instagram.svg`
 
   useEffect(() => {
-    const preloadImages = [arrowRightUp, arrowRightUpWh, iconInfo, iconCheck, iconInsta];
+    const preloadImages = [arrowRightUp, iconInfo, iconCheck, iconInsta, arrowRightWh];
 
     preloadImages.forEach((imageSrc) => {
       const img = new Image();
       img.src = imageSrc;
     });
-  }, [arrowRightUp, arrowRightUpWh, iconInfo, iconCheck, iconInsta])
+  }, [arrowRightUp, arrowRightWh , iconInfo, iconCheck, iconInsta])
 
   
   // Lógica para enviar email
@@ -191,7 +191,7 @@ function App() {
             {dataRegalosList}
               <div className="finalHome-container">
                 <div className="sct1-container">
-                  {/* <img src={truckEmoji} alt="Emoji de camión"/> */}
+                  <img src={emojiGift} alt="Emoji de camión"/>
                   <h2>¡No termina aquí, <span>hay más <br/> regalos en camino!</span></h2>
                   <p>Estamos conversando con más marcas <br/> increíbles para que formen parte de Birtdei</p>
                 </div>
@@ -217,9 +217,18 @@ function App() {
                     </div>
                     <div className="subsct2">
                       <h3><span>Danos tu opinión</span> para mejorar<br/>tu experiencia en Birtdei</h3>
-                      <a className="btn-sendEmail" href="/feedback">Dar mi opinión <img src={arrowRight}/></a>
+                      <a className="btn-sendEmail" href="/feedback">Dar mi opinión <img src={arrowRightWh}/></a>
                     </div>
                     <img className='arrow2' src={arrowDownLargeSpecial}/>
+
+                    <hr className="divider" />
+
+                    <div className="subsct3">
+                      <img src={emojiConfetti} alt="Emoji de camión"/>
+                      <h2><span>¡Destaca tu marca</span> en Birtdei!</h2>
+                      <p>Atrae nuevos clientes regalándoles<br/> algo especial en su cumpleaños</p>
+                      <a className='btn-marcasContactar' href="https://us.frms.link/t3ipetb/" target='_blank'>Contactar <img src={arrowRightWh}/> </a>
+                    </div>
                   </div>
                 </div>
                 <div className="footerContainer">
