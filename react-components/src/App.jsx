@@ -89,7 +89,7 @@ function App() {
   }, [emailStored]);
   
   const handleEmailClick = () => {
-    setButtonText('Dejar correo');
+    setButtonText('Dejar mi correo');
     setButtonClass('btn-submit');
     setEmailStored(false);
   };
@@ -216,8 +216,8 @@ function App() {
                       
                     </div>
                     <div className="subsct2">
-                      <h3><span>Cuéntanos tu opinión</span> para mejorar<br/>tu experiencia en Birtdei</h3>
-                      <a className="btn-sendEmail" href="/feedback">Enviar feedback <img src={arrowRight}/></a>
+                      <h3><span>Danos tu opinión</span> para mejorar<br/>tu experiencia en Birtdei</h3>
+                      <a className="btn-sendEmail" href="/feedback">Dar mi opinión <img src={arrowRight}/></a>
                     </div>
                     <img className='arrow2' src={arrowDownLargeSpecial}/>
                   </div>
