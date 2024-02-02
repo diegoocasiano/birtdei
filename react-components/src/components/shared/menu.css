@@ -114,17 +114,16 @@ html {
 
     font-weight: 600;
     font-size: 15px;
-    color: var(--main-orange-01-birt, #F84F39);
+    color: var(--White-Birt);
 
     text-decoration: none;
     border-radius: 20px;
-    background: none;
-    border: 2px solid var(--main-orange-01-birt, #F84F39);
+    background: var(--Orange02-Birt);
 }
 
 .btn-top img {
     margin-left: 7px;
 }
 .btn-bot img {
-    margin-left: 4px;
+    margin-left: 5.4px;
 }
