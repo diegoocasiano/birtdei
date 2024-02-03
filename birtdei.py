@@ -36,6 +36,18 @@ def inicio_again():
     return render_template('index1.html')
 
 
+# Nueva función para insertar la edad en la colección "edades"
+def insert_edad_db(edad, fecha_cumple_formateada):
+    try:
+        db = dbConnection("edades-users") 
+        edades_collection = db['edades']
+
+        edades_collection.insert_one({'edad': edad, '   fecha_cumple_formateada': fecha_cumple_formateada})
+        print(f"Edad {edad} con fecha de cumpleaños {fecha_cumple_formateada} almacenada en la colección 'edades'")
+
+    except Exception as e:
+        print(f"Error al almacenar la edad en la colección 'edades': {str(e)}")
+
 @app.route('/ingresando', methods=['POST'])
 def procesar_cumple():
     dia = int(request.form['dia'])
@@ -76,6 +88,8 @@ def procesar_cumple():
     
     session['datos_temporales'] = {'email': None, 'fecha_cumple': fecha_cumple_formateada, 'edad': edad}
 
+    insert_edad_db(edad, fecha_cumple_formateada)
+
     # Presentación de templates
     # Importante: Los tenplates nunca deben de renderizarse en la misma ruta donde se procesan los datos ingresados
     # por el usuario, siempre deben de redirigir a otra ruta para renderizar el template
@@ -90,6 +104,8 @@ def procesar_cumple():
     
     else:
         return redirect('/d{}-{}'.format(edad, dias_para_cumple))
+
+
 
 #Renderiza los templates según cuántos días faltan para su cumple
 @app.route('/a<int:edad>') #<int:edad> es para poder pasa r la variable edad a la función
