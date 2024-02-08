@@ -137,7 +137,7 @@ function App() {
       setDetallesOpen(!detallesOpen);
 
       ReactGA.event({
-        category: 'Card',
+        category: 'click',
         action: 'Click en Card',
         label: nombreMarca,
       })
