@@ -134,7 +134,7 @@ function App() {
       setDetallesOpen(!detallesOpen);
 
       window.gtag('event', 'card_click', {
-        'event_category': 'click',
+        'event_category': 'card_click',
         'event_action': 'Click en Card',
         'event_label': nombreMarca
       });
