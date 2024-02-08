@@ -11,8 +11,6 @@ const TRACKING_ID = "G-E6NL8DX650"
 ReactGA.initialize(TRACKING_ID);
 
 function App() {
-
-
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
 
   const emojiGift = `${imageBasePath}brand/emoji-gift.png`
