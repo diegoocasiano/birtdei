@@ -5,10 +5,9 @@ import Menu from './components/shared/Menu'
 import NavBar from './components/shared/NavBar'
 import dataRegalos from './data/dataRegalos'
 import CardDetalles from './components/card-detalles/CardDetalles'
-import ReactGA from 'react-ga'; // Google Analytics
+import ReactGA from "react-ga4";
 
-const TRACKING_ID = "G-E6NL8DX650"
-ReactGA.initialize(TRACKING_ID);
+ReactGA.initialize("G-E6NL8DX650");
 
 function App() {
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
@@ -141,7 +140,6 @@ function App() {
         category: 'Card',
         action: 'Click en Card',
         label: nombreMarca,
-        hitCallback: null
       })
     };
 
