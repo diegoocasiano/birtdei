@@ -133,9 +133,9 @@ function App() {
       setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta});
       setDetallesOpen(!detallesOpen);
 
-      window.gtag('event', 'card_click', {
-        'event_category': 'card_click',
-        'event_action': 'Click en Card',
+      window.gtag('event', 'click_on_gift', {
+        'event_category': 'click',
+        'event_action': 'Click on gift card',
         'event_label': nombreMarca
       });
     };
