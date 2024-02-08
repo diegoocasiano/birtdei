@@ -5,9 +5,6 @@ import Menu from './components/shared/Menu'
 import NavBar from './components/shared/NavBar'
 import dataRegalos from './data/dataRegalos'
 import CardDetalles from './components/card-detalles/CardDetalles'
-import ReactGA from "react-ga4";
-
-ReactGA.initialize("G-E6NL8DX650");
 
 function App() {
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
@@ -136,11 +133,11 @@ function App() {
       setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta});
       setDetallesOpen(!detallesOpen);
 
-      ReactGA.event({
-        category: 'click',
-        action: 'Click en Card',
-        label: nombreMarca,
-      })
+      window.gtag('event', 'click', {
+        'event_category': 'click',
+        'event_action': 'Click en Card',
+        'event_label': nombreMarca
+      });
     };
 
   const dataRegalosList = dataRegalos
