@@ -140,7 +140,8 @@ function App() {
       ReactGA.event({
         category: 'Card',
         action: 'Click en Card',
-        label: nombreMarca
+        label: nombreMarca,
+        hitCallback: null
       })
     };
 
