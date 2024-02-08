@@ -133,7 +133,7 @@ function App() {
       setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta});
       setDetallesOpen(!detallesOpen);
 
-      window.gtag('event', 'click', {
+      window.gtag('event', 'card_click', {
         'event_category': 'click',
         'event_action': 'Click en Card',
         'event_label': nombreMarca
