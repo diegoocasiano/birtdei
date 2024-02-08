@@ -3,12 +3,15 @@ import {useEffect, useState } from 'react'
 import Card from './components/Card'
 import Menu from './components/shared/Menu'
 import NavBar from './components/shared/NavBar'
-import dataRegalos from './data/DataRegalos'
+import dataRegalos from './data/dataRegalos'
 import CardDetalles from './components/card-detalles/CardDetalles'
+import ReactGA from 'react-ga'; // Google Analytics
 
-import { SpeedInsights } from '@vercel/speed-insights/react';
+const TRACKING_ID = "G-E6NL8DX650"
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
+
 
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
 
@@ -135,6 +138,12 @@ function App() {
   const toggleDetalles = (nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta) => {
       setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta});
       setDetallesOpen(!detallesOpen);
+
+      ReactGA.event({
+        category: 'Card',
+        action: 'Click en Card',
+        label: nombreMarca
+      })
     };
 
   const dataRegalosList = dataRegalos
