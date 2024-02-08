@@ -7,13 +7,9 @@ import dataRegalos from './data/dataRegalos'
 import CardDetalles from './components/card-detalles/CardDetalles'
 import ReactGA from "react-ga4";
 
-
+ReactGA.initialize("G-E6NL8DX650");
 
 function App() {
-
-  ReactGA.initialize("G-E6NL8DX650");
-  ReactGA.send({ hitType: "pageview", page: "/regalos" });
-
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
 
   const emojiGift = `${imageBasePath}brand/emoji-gift.png`
