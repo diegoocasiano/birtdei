@@ -129,8 +129,8 @@ function App() {
   const [detallesOpen, setDetallesOpen] = useState(false)
   const [marcaSeleccionada, setMarcaSeleccionada] = useState(null);
 
-  const toggleDetalles = (nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta) => {
-      setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta});
+  const toggleDetalles = (nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id) => {
+      setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id});
       setDetallesOpen(!detallesOpen);
 
       window.gtag('event', 'click_on_gift', {
@@ -154,8 +154,9 @@ function App() {
           logoMarca={r.logoMarca}
           condicionesRegalo={r.condicionesRegalo}
           linkInsta={r.linkInsta}
+          id={r.id}
           toggleDetalles={() =>
-            toggleDetalles(r.nombreMarca, r.regaloFull, r.condicionesRegalo, r.colorMarca, r.logoMarca, r.linkInsta)
+            toggleDetalles(r.nombreMarca, r.regaloFull, r.condicionesRegalo, r.colorMarca, r.logoMarca, r.linkInsta, r.id)
           }
         />
       );
@@ -178,6 +179,7 @@ function App() {
 
       <main>
           { detallesOpen && <CardDetalles
+            id={marcaSeleccionada.id}
             nombreMarca={marcaSeleccionada.nombreMarca}
             regaloFull={marcaSeleccionada.regaloFull}
             condicionesRegalo={marcaSeleccionada.condicionesRegalo}

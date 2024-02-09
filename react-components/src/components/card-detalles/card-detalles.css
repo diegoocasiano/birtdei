@@ -118,6 +118,12 @@ html {
 .header-marca .content-right .btn-instagram img {
     padding-top: 2px;
 }
+.header-marca .content-right .btn-whatsapp {
+    padding: 13.5px;
+}
+.header-marca .content-right .btn-whatsapp img {
+    width: 22.75px;
+}
 
 /* styles to regalo-detalles */
 

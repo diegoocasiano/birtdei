@@ -2,13 +2,15 @@ import React, { useEffect, useRef, useState} from 'react';
 
 import './card-detalles.css'
 
-function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta}) {
+function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id}) {
+    console.log(id)
     // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
     const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';  
     const giftBrand = `${imageBasePath}brand/gift-card.svg`
     const iconInfo = `${imageBasePath}brand/icon-info.svg`
     const iconCheck = `${imageBasePath}brand/icon-check.svg`
     const iconInsta = `${imageBasePath}brand/icon-instagram.svg`
+    const iconWspp = `${imageBasePath}brand/icon-whatsapp.svg`
 
     // Código para cerrar cardDetalles haciendo swipe down
     const [bgOpacity, setBgOpacity] = useState(1);
@@ -66,19 +68,20 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
 
         // Si el desplazamiento es menor e igual que 0, se cierra la ventanita
         // Se cierra la ventanita al hacer touch en ella
-        else if (currentY - startY <= 0) {
-            e.currentTarget.style.transition = 'transform 0.4s ease';
-            e.currentTarget.style.transform = `translateY(100%)`;
     
-            setBgOpacity(0);
-            setTimeout(() => {
-                setDetallesWindowActive(false);
-            }, 390);
+        // else if (currentY - startY <= 0) {
+        //     e.currentTarget.style.transition = 'transform 0.4s ease';
+        //     e.currentTarget.style.transform = `translateY(100%)`;
+    
+        //     setBgOpacity(0);
+        //     setTimeout(() => {
+        //         setDetallesWindowActive(false);
+        //     }, 390);
            
-            setTimeout(() => {
-                toggleDetalles();
-            }, 400);
-        }
+        //     setTimeout(() => {
+        //         toggleDetalles();
+        //     }, 400);
+        // }
 
         else {
             // Si se hace cualquier otra cosa, el menú no se cerrará.
@@ -245,6 +248,14 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         
     };
 
+
+    const renderWhatsAppButton = id === 50? (
+        <a className="btn-whatsapp" href="https://wa.link/hce2j2">
+            <img src={iconWspp} alt="botón de WhatsApp" />
+        </a>
+    ) : null;
+    const renderDisclaimerText = id === 50 ? "Válido en todo el Perú" : "Válido solo en Lima (Perú)";
+
     
   return (
     <>  
@@ -270,6 +281,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
                 </div>
 
                 <div className="content-right">
+                    {renderWhatsAppButton}
                     <a className="btn-instagram" href={linkInsta}>
                         <img src={iconInsta} alt="botón de instagram" />
                     </a>
@@ -311,7 +323,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
                 <div className="sct1-disclaimer">
                     <div className="disclaimer N1">
                         <img src={iconCheck}/>
-                        <p>Válido solo en Lima (Perú)</p>
+                        <p>{renderDisclaimerText}</p>
                     </div>
                     <div className="disclaimer N2">
                         <img src={iconInfo}/>

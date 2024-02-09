@@ -129,6 +129,27 @@ const dataRegalos = [
             "Válido el día de tu cumple",
         ]
     },
+
+    // {   
+    //     id: 50,
+    //     regalo: "15% dsct",
+    //     regaloFull: "15% dsct",
+    //     nombreMarca: "Prodigiosa",
+    //     linkInsta: "https://www.instagram.com/prodigiosa.pe",
+    //     categoriaMarca: "Lencería",
+    //     colorMarca: "#0f151c",
+    //     logoMarca: {
+    //         url: `${imageBasePath}logos-marcas/prodigiosa-logo.png`,
+    //         size: "94%",
+    //         sizeLittle: "86%",
+    //     },
+    //     condicionesRegalo: [
+    //         "Tener +18 años",
+    //         "Envía una foto del lado frontal de tu DNI al WhatsApp de Prodigiosa (para verificar tu fecha de cumpleaños).",
+    //         "Disponible durante toda la semana de tu cumpleaños",
+    //     ]
+    // },
+
     {   
         id: 28,
         regalo: "1 Postre sorpresa",
@@ -679,24 +700,24 @@ const dataRegalos = [
     },
     
     
-    {   
-        id: 38,
-        regalo: "10% dsct",
-        regaloFull: "10% dsct",
-        nombreMarca: "Gotta",
-        linkInsta: "https://www.instagram.com/gotta_peru",
-        categoriaMarca: "Tienda de zapatos",
-        colorMarca: "#000000",
-        logoMarca: {
-            url: `${imageBasePath}logos-marcas/gotta-logo.png`,
-            size: "74%",
-            sizeLittle: "76%",
-        },
-        condicionesRegalo: [
-            "Crea una cuenta en www.gottaperu.com",
-            "Válido el día de tu cumple (te llegará un correo)",
-        ]
-    },
+     {   
+         id: 38,
+         regalo: "10% dsct",
+         regaloFull: "10% dsct",
+         nombreMarca: "Gotta",
+         linkInsta: "https:www.instagram.com/gotta_peru",
+         categoriaMarca: "Tienda de zapatos",
+         colorMarca: "#000000",
+         logoMarca: {
+             url: `${imageBasePath}logos-marcas/gotta-logo.png`,
+             size: "74%",
+             sizeLittle: "76%",
+         },
+         condicionesRegalo: [
+             "Crea una cuenta en www.gottaperu.com",
+             "Válido el día de tu cumple (te llegará un correo)",
+         ]
+     },
     
     // {   
     //     id: 23,
