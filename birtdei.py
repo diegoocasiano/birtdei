@@ -135,6 +135,7 @@ def enviar_correo():
     if request.method == 'POST': 
         data = request.get_json() #Se obtiene el json que se envía desde el frontend
         email = data.get('email') #Se obtiene el email del json
+        names = data.get('names') #Se obtiene el nombre del json
 
         #Verifica si hay datos temporales en la session antes de insertar en la base de datos
         datos_temporales = session.get('datos_temporales', {})
@@ -145,14 +146,14 @@ def enviar_correo():
         emails_collection = db['updates-subscription'] #Se crea el nombre de la colección
         
         if fecha_cumple_formateada and edad:
-            emails_collection.insert_one({'email': email, 'fecha_cumple': fecha_cumple_formateada, 'edad': edad})
+            emails_collection.insert_one({ 'names': names,'email': email, 'fecha_cumple': fecha_cumple_formateada, 'edad': edad})
 
             session.pop('datos_temporales', None) #Elimina los datos temporales de la session después de insertar en la base de datos
 
         else:
-            emails_collection.insert_one({'email': email}) #Se inserta el email en la colección
+            emails_collection.insert_one({'names': names ,'email': email}) #Se inserta el email en la colección
 
-        return jsonify({'message': 'stored email successfully'})
+        return jsonify({'message': 'stored form data successfully'})
 
 
 @app.route('/feedback')

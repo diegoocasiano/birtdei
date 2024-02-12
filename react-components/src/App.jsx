@@ -35,7 +35,8 @@ function App() {
   // Lógica para enviar email
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
-  const [emailStored, setEmailStored] = useState(false);
+  const [names, setNames] = useState('');
+  const [formDataStored, setFormDataStored] = useState(false);
     
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,6 +45,7 @@ function App() {
 
     const formData = new FormData(document.getElementById('emailForm'));
     const emailFromForm = formData.get('email');
+    const namesFromForm = formData.get('names');
 
     // Enviar el correo al servidor Flask
     try {
@@ -52,17 +54,17 @@ function App() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: emailFromForm }),
+        body: JSON.stringify({ email: emailFromForm, names: namesFromForm } ),
       });
 
       if (response.ok) {
-        console.log('email sent successfully');
-        setEmailStored(true);
+        console.log('form data sent successfully');
+        setFormDataStored(true);
       } else {
-        console.error('email not sent');
+        console.error('form data not sent');
       }
     } catch (error) {
-      console.error('Error sending email: ', error);
+      console.error('Error sending form data: ', error);
     } finally {
       setLoading(false);
     }
@@ -72,23 +74,24 @@ function App() {
   const [buttonText, setButtonText] = useState('Dejar mi correo');
   const [buttonClass, setButtonClass] = useState('btn-submit');
 
-  const emailSentSuccessfully = () => {
-    if (emailStored) {
+  const formDataSentSuccessfully = () => {
+    if (formDataStored) {
       setButtonText('Listo!'); 
       setButtonClass('btn-submit sentEmail');
       setEmail(''); // Limpia el input cuando el email se haya enviado
+      setNames(''); // Limpia el input cuando el email se haya enviado
     }
   }
   useEffect(() => {
-    if (emailStored) {
-      emailSentSuccessfully();
+    if (formDataStored) {
+      formDataSentSuccessfully();
     }
-  }, [emailStored]);
+  }, [formDataStored]);
   
-  const handleEmailClick = () => {
-    setButtonText('Dejar mi correo');
+  const handleInputClick = () => {
+    setButtonText('Dejar mi nombre y mi correo');
     setButtonClass('btn-submit');
-    setEmailStored(false);
+    setFormDataStored(false);
   };
 
 
@@ -209,8 +212,14 @@ function App() {
                         <p>(Prometemos no enviar spam)</p>
                       </div>
                       <form className='content2' id='emailForm' onSubmit={handleSubmit}>
+
+                        <input type="text" id="names" name="names" placeholder='Tu nombre y apellido' required
+                          value={names} onChange={(e) => setNames(e.target.value)} onClick={handleInputClick}/>
+
                         <input type="email" id="email" name="email" placeholder='Tu correo' required
-                          value={email} onChange={(e) => setEmail(e.target.value)} onClick={handleEmailClick}/>
+                          value={email} onChange={(e) => setEmail(e.target.value)} onClick={handleInputClick}/>
+
+                        
                         <button type='submit' className={buttonClass}>
                           {loading && <div className="loader"></div>}
                           {!loading && buttonText}

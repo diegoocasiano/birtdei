@@ -105,7 +105,7 @@ header {
 }
 
 .subSections-container .divider {
-  margin: 18px 0px 18px 0px;
+  margin: 66px 0px 18px 0px;
   height: 1px;
   width: 100%;
   background-color: #D6CFB8;
@@ -120,7 +120,7 @@ header {
   gap: 22px;
 
   width: 100%;
-  height: 214px;
+  height: 262px;
 
   padding: 0px 20px 0px 20px;
 
@@ -226,7 +226,7 @@ header {
   }
   } 
 .subSections-container .subsct2 {
-  margin-top: 246px;
+  margin-top: 294px;
   position: absolute;
 
   display: flex;
