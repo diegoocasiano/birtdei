@@ -133,8 +133,8 @@ const dataRegalos = [
     },
     {   
         id: 51,
-        regalo: "2x1 en café peruano",
-        regaloFull: "2x1 en café peruano",
+        regalo: "2x1 en café peruano de especialidad",
+        regaloFull: "2x1 en café peruano de especialidad",
         nombreMarca: "Cafeteria.pe",
         linkInsta: "https://www.instagram.com/cafeteria.pe",
         categoriaMarca: "Café",
