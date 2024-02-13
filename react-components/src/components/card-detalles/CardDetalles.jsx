@@ -249,8 +249,12 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
     };
 
 
-    const renderWhatsAppButton = id === 50? (
+    const renderWhatsAppButton = id === 50 ? (
         <a className="btn-whatsapp" href="https://wa.link/hce2j2">
+            <img src={iconWspp} alt="botón de WhatsApp" />
+        </a>
+    ) : id === 51 ? (
+        <a className="btn-whatsapp" href="https://wa.me/c/51919283497">
             <img src={iconWspp} alt="botón de WhatsApp" />
         </a>
     ) : null;

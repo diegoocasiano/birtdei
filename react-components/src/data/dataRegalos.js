@@ -56,6 +56,25 @@ const dataRegalos = [
         ]
     },
     {   
+        id: 26,
+        regalo: "1 Helado",
+        regaloFull: "1 Helado",
+        nombreMarca: "Pasta",
+        linkInsta: "https://www.instagram.com/pasta.pe",
+        categoriaMarca: "Restaurante",
+        colorMarca: "#ffffff",
+        logoMarca: {
+            url: `${imageBasePath}logos-marcas/pasta-logo.png`,
+            size: "70%",
+            sizeLittle: "74%",
+        },
+        condicionesRegalo: [
+            "Presentar tu DNI físico (Tener +18 años)",
+            "Consumir antes",
+            "Válido el día de tu cumple",
+        ]
+    },
+    {   
         id: 8,
         regalo: "1 Entrada 2D",
         regaloFull: "1 Entrada 2D",
@@ -113,24 +132,25 @@ const dataRegalos = [
         ]
     },
     {   
-        id: 26,
-        regalo: "1 Helado",
-        regaloFull: "1 Helado",
-        nombreMarca: "Pasta",
-        linkInsta: "https://www.instagram.com/pasta.pe",
-        categoriaMarca: "Restaurante",
+        id: 51,
+        regalo: "2x1 en café peruano",
+        regaloFull: "2x1 en café peruano",
+        nombreMarca: "Cafeteria.pe",
+        linkInsta: "https://www.instagram.com/cafeteria.pe",
+        categoriaMarca: "Café",
         colorMarca: "#ffffff",
         logoMarca: {
-            url: `${imageBasePath}logos-marcas/pasta-logo.png`,
-            size: "70%",
-            sizeLittle: "74%",
+            url: `${imageBasePath}logos-marcas/cafeteria-logo.png`,
+            size: "80%",
+            sizeLittle: "80%",
         },
         condicionesRegalo: [
-            "Presentar tu DNI físico (Tener +18 años)",
-            "Consumir antes",
-            "Válido el día de tu cumple",
+            "Disponible con los siguientes productos: Café \"Ayacuchano\" y Café \"El Abuelo\".",
+            "Enviar una foto del lado frontal de tu DNI al WhatsApp de Cafeteria.pe (para verificar tu fecha de cumpleaños).",
+            "No incluye el precio del delivery.",
         ]
     },
+    
     {   
         id: 9,
         regalo: "1 Pancake especial",
@@ -698,24 +718,24 @@ const dataRegalos = [
     },
     
     
-    // {   
-    //     id: 38,
-    //     regalo: "10% dsct",
-    //     regaloFull: "10% dsct",
-    //     nombreMarca: "Gotta",
-    //     linkInsta: "https://www.instagram.com/gotta_peru",
-    //     categoriaMarca: "Tienda de zapatos",
-    //     colorMarca: "#000000",
-    //     logoMarca: {
-    //         url: `${imageBasePath}logos-marcas/gotta-logo.png`,
-    //         size: "74%",
-    //         sizeLittle: "76%",
-    //     },
-    //     condicionesRegalo: [
-    //         "Crea una cuenta en www.gottaperu.com",
-    //         "Válido el día de tu cumple (te llegará un correo)",
-    //     ]
-    // },
+     {   
+         id: 38,
+         regalo: "10% dsct",
+         regaloFull: "10% dsct",
+         nombreMarca: "Gotta",
+         linkInsta: "https:www.instagram.com/gotta_peru",
+         categoriaMarca: "Tienda de zapatos",
+         colorMarca: "#000000",
+         logoMarca: {
+             url: `${imageBasePath}logos-marcas/gotta-logo.png`,
+             size: "74%",
+             sizeLittle: "76%",
+         },
+         condicionesRegalo: [
+             "Crea una cuenta en www.gottaperu.com",
+             "Válido el día de tu cumple (te llegará un correo)",
+         ]
+     },
     
     // {   
     //     id: 23,

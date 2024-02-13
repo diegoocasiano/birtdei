@@ -133,13 +133,13 @@ function App() {
   const [marcaSeleccionada, setMarcaSeleccionada] = useState(null);
 
   const toggleDetalles = (nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id) => {
+
       setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id});
       setDetallesOpen(!detallesOpen);
-
       window.gtag('event', 'click_on_gifts', {
         'by_marca': nombreMarca
       });
-    };
+  };
 
   const dataRegalosList = dataRegalos
     .slice(0, paginaActual * tarjetasPorPagina) // Filtra las tarjetas de acuerdo a la página actual
