@@ -138,12 +138,9 @@ function App() {
       setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id});
       setDetallesOpen(!detallesOpen);
       setUltimaMarcaSeleccionada(nombreMarca);
-      // window.gtag('event', 'click_on_gifts', {
-      //   'debug_mode': true,
-      //   'by_marca': nombreMarca
-      // });
   };
-
+  // ultimaMarcaSeleccionada siempre tendrá el valor de nombreMarca de la última marca seleccionada
+  // Se ejecuta este efecto cada vez que ultimaMarcaSeleccionada cambie (es decir, cada vez que se seleccione una card)
   useEffect(() => {
     if (ultimaMarcaSeleccionada !== null && ultimaMarcaSeleccionada !== undefined) {
         window.gtag('event', 'click_on_gifts', {
@@ -180,6 +177,11 @@ function App() {
   const toggleMenu = () => {
     setNotifDotActive(false)
     setMenuOpen(!menuOpen)
+
+    window.gtag('event', 'click_on_menu', {
+      'menu_button_clicked': buttonClicked,
+    });
+    
   };
 
 
