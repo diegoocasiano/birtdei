@@ -150,7 +150,26 @@ const dataRegalos = [
             "No incluye el precio del delivery.",
         ]
     },
-    
+    // {   
+    //     id: 52,
+    //     regalo: "10% dsct",
+    //     regaloFull: "10% dsct",
+    //     nombreMarca: "VK Studio",
+    //     linkInsta: "https://www.instagram.com/vkstudio.hn",
+    //     categoriaMarca: "Salón de uñas",
+    //     colorMarca: "#e64f94",
+    //     logoMarca: {
+    //         url: `${imageBasePath}logos-marcas/kvstudio-logo.svg`,
+    //         size: "75%",
+    //         sizeLittle: "75%",
+    //     },
+    //     condicionesRegalo: [
+    //         "Válido todo el mes de tu cumpleaños",
+    //         "Disponible en: Kapping Rubber, Kapping polygel y Polygel en uña natural",
+    //         "No válido para extensiones artificiales",
+    //         "Enviar una foto del lado frontal de tu DNI al WhatsApp de Cafeteria.pe (para verificar tu fecha de cumpleaños).",
+    //     ]
+    // },
     {   
         id: 9,
         regalo: "1 Pancake especial",

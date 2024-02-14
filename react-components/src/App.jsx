@@ -137,6 +137,7 @@ function App() {
       setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id});
       setDetallesOpen(!detallesOpen);
       window.gtag('event', 'click_on_gifts', {
+        'debug_mode': true,
         'by_marca': nombreMarca
       });
   };

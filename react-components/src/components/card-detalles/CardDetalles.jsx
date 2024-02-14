@@ -257,6 +257,10 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         <a className="btn-whatsapp" href="https://wa.me/c/51919283497">
             <img src={iconWspp} alt="botón de WhatsApp" />
         </a>
+    ) : id === 52 ? (
+        <a className="btn-whatsapp" href="https://wa.me/c/51919283497">
+            <img src={iconWspp} alt="botón de WhatsApp" />
+        </a>
     ) : null;
     const renderDisclaimerText = id === 50 ? "Válido en todo el Perú" : "Válido solo en Lima (Perú)";
 
