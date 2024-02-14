@@ -147,7 +147,6 @@ function App() {
   useEffect(() => {
     if (ultimaMarcaSeleccionada !== null && ultimaMarcaSeleccionada !== undefined) {
         window.gtag('event', 'click_on_gifts', {
-            'debug_mode': true,
             'by_marca': ultimaMarcaSeleccionada
         });
     }
