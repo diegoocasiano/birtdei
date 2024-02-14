@@ -138,11 +138,20 @@ function App() {
       setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id});
       setDetallesOpen(!detallesOpen);
       setUltimaMarcaSeleccionada(nombreMarca);
-      window.gtag('event', 'click_on_gifts', {
-        'debug_mode': true,
-        'by_marca': nombreMarca
-      });
+      // window.gtag('event', 'click_on_gifts', {
+      //   'debug_mode': true,
+      //   'by_marca': nombreMarca
+      // });
   };
+
+  useEffect(() => {
+    if (ultimaMarcaSeleccionada !== null && ultimaMarcaSeleccionada !== undefined) {
+        window.gtag('event', 'click_on_gifts', {
+            'debug_mode': true,
+            'by_marca': ultimaMarcaSeleccionada
+        });
+    }
+  }, [ultimaMarcaSeleccionada]);
 
   const dataRegalosList = dataRegalos
     .slice(0, paginaActual * tarjetasPorPagina) // Filtra las tarjetas de acuerdo a la página actual
