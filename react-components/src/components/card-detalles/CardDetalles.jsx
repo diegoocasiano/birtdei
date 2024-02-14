@@ -254,11 +254,11 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
             <img src={iconWspp} alt="botón de WhatsApp" />
         </a>
     ) : id === 51 ? (
-        <a className="btn-whatsapp" href="https://wa.me/c/51919283497">
+        <a className="btn-whatsapp" href="https://wa.link/i7dkym">
             <img src={iconWspp} alt="botón de WhatsApp" />
         </a>
     ) : id === 52 ? (
-        <a className="btn-whatsapp" href="https://wa.me/c/51919283497">
+        <a className="btn-whatsapp" href="https://wa.link/z3qd24">
             <img src={iconWspp} alt="botón de WhatsApp" />
         </a>
     ) : null;

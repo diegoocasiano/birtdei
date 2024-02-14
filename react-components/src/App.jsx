@@ -131,11 +131,13 @@ function App() {
 
   const [detallesOpen, setDetallesOpen] = useState(false)
   const [marcaSeleccionada, setMarcaSeleccionada] = useState(null);
+  const [ultimaMarcaSeleccionada, setUltimaMarcaSeleccionada] = useState(null);
 
   const toggleDetalles = (nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id) => {
 
       setMarcaSeleccionada({nombreMarca, regaloFull, condicionesRegalo, colorMarca, logoMarca, linkInsta, id});
       setDetallesOpen(!detallesOpen);
+      setUltimaMarcaSeleccionada(nombreMarca);
       window.gtag('event', 'click_on_gifts', {
         'debug_mode': true,
         'by_marca': nombreMarca
