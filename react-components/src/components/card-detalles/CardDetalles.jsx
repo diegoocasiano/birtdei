@@ -196,7 +196,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         const nuevoNumeroCondiciones = condiciones.length - 2;
         setNumeroCondiciones(nuevoNumeroCondiciones);
 
-        console.log('Número de condiciones:', nuevoNumeroCondiciones);
+        // console.log('Número de condiciones:', nuevoNumeroCondiciones);
 
     }, [setNumeroCondiciones]);
 
@@ -209,7 +209,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
             totalSaltosDeLinea += Math.round(lines) - 1;
         });
 
-        console.log('Saltos de linea en las Condiciones:', totalSaltosDeLinea);
+        // console.log('Saltos de linea en las Condiciones:', totalSaltosDeLinea);
 
         setNumeroSaltosDeLineaCondicion(totalSaltosDeLinea)
     }, [numeroCondiciones]);
@@ -223,7 +223,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
             const lines = h2.clientHeight / 18;
             setNumeroSaltosLineaH2(Math.round(lines) - 1);  
 
-            console.log('Número de líneas:', Math.round(lines) - 1);
+            // console.log('Número de líneas:', Math.round(lines) - 1);
         }
       });
 
