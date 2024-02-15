@@ -87,14 +87,12 @@ function Menu({setMenuOpen}) {
     
     // Envío del evento a Google Analytics 4
     const handleCloseMenu = () => {
+      const buttonName = buttonClicked || 'menu_closed';
       window.gtag('event', 'click_on_menu', {
         'debug_mode': true,
-        'menu_button_clicked': buttonClicked || 'menu_closed',
+        'menu_button_clicked': buttonName,
       });
-      
-      // Restablecer el estado de buttonClicked a null
-      setButtonClicked(null);
-      
+    
       // Cerrar el menú
       setMenuOpen(false);
     };
