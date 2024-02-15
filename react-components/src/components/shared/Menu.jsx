@@ -67,7 +67,7 @@ function Menu({setMenuOpen}) {
           }, 250)
 
           setTimeout(() => {
-            setMenuOpen(false)
+            handleCloseMenu(); // En lugar de poner solo setMenuOpen(false), se llama a esta función que además de cerrar el menu, envía un evento a Google Analytics 4
           },300)
           
           setIsTouching(false)
@@ -85,16 +85,17 @@ function Menu({setMenuOpen}) {
         setIsTouching(false);
       };
     
+    // Envío del evento a Google Analytics 4
     const handleCloseMenu = () => {
-        // Envío del evento a Google Analytics 4
-        window.gtag('event', 'click_on_menu', {
-          'debug_mode': true,
-          'menu_button_clicked': buttonClicked || 'menu_closed', // Si no se hizo clic en ningún botón, se enviará 'menu_closed'
-        });
+      window.gtag('event', 'click_on_menu', {
+        'debug_mode': true,
+        'menu_button_clicked': buttonClicked || 'menu_closed',
+      });
     
-        // Cerrar el menú
-        setMenuOpen(false);
-      };
+      // Cerrar el menú
+      setMenuOpen(false);
+    };
+
 
       //Esto hace que no se pueda hacer scroll cuando el menu está activo
       useEffect(() => {
@@ -124,7 +125,7 @@ function Menu({setMenuOpen}) {
           closeMenuAnimation(); // Función que cierra el menu
           setBgMenuOpacity(0)
           setTimeout(() => {
-            setMenuOpen(false)
+            handleCloseMenu();
           },300)
           setTimeout(() => {
             setBgMenuActive(false)
