@@ -125,6 +125,12 @@ function Menu({setMenuOpen}) {
         };
     }, [bgMenuActive]);
 
+    const [buttonClicked, setButtonClicked] = useState(null);
+
+    const handleButtonClick = (buttonName) => {
+      setButtonClicked(buttonName);
+    };
+
 
   return (
     <>
@@ -137,8 +143,8 @@ function Menu({setMenuOpen}) {
 
         <hr className='handle-dd-menu'/>
         <div className="btns-container">
-          <a className='btn-top' href="/feedback">Danos tu opinión<img src={arrowRightUpWh} ></img></a>
-          <a className='btn-bot' href="https://us.frms.link/t3ipetb/" target='_blank'>Tu marca en Birtdei <img src={arrowRightUpWh}></img></a>
+          <a className='btn-top' href="/feedback" onClick={() => handleClick('btn-top')}>Danos tu opinión<img src={arrowRightUpWh} ></img></a>
+          <a className='btn-bot' href="https://us.frms.link/t3ipetb/" target='_blank' onClick={() => handleClick('btn-bot')}>Tu marca en Birtdei <img src={arrowRightUpWh}></img></a>
         </div>
     </div>
     

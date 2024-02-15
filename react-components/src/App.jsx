@@ -174,7 +174,7 @@ function App() {
   const [notifDotActive, setNotifDotActive] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
   
-  const toggleMenu = () => {
+  const toggleMenu = (buttonClicked) => {
     setNotifDotActive(false)
     setMenuOpen(!menuOpen)
 
