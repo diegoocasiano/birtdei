@@ -127,7 +127,7 @@ function Menu({setMenuOpen}) {
 
     const [buttonClicked, setButtonClicked] = useState(null);
 
-    const handleButtonClick = (buttonName) => {
+    const handleClick = (buttonName) => {
       setButtonClicked(buttonName);
     };
 
