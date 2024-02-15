@@ -67,7 +67,8 @@ function Menu({setMenuOpen}) {
           }, 250)
 
           setTimeout(() => {
-            handleCloseMenu(); // En lugar de poner solo setMenuOpen(false), se llama a esta función que además de cerrar el menu, envía un evento a Google Analytics 4
+            handleCloseMenu();
+            setMenuOpen(false); // En lugar de poner solo setMenuOpen(false), se llama a esta función que además de cerrar el menu, envía un evento a Google Analytics 4
           },300)
           
           setIsTouching(false)
@@ -85,18 +86,6 @@ function Menu({setMenuOpen}) {
         setIsTouching(false);
       };
     
-    // Envío del evento a Google Analytics 4
-    const handleCloseMenu = () => {
-      const buttonName = buttonClicked || 'menu_closed';
-      window.gtag('event', 'click_on_menu', {
-        'debug_mode': true,
-        'menu_button_clicked': buttonName,
-      });
-    
-      // Cerrar el menú
-      setMenuOpen(false);
-    };
-
 
       //Esto hace que no se pueda hacer scroll cuando el menu está activo
       useEffect(() => {
@@ -126,7 +115,8 @@ function Menu({setMenuOpen}) {
           closeMenuAnimation(); // Función que cierra el menu
           setBgMenuOpacity(0)
           setTimeout(() => {
-            handleCloseMenu(buttonClicked);
+            handleCloseMenu();
+            setMenuOpen(false);
           },300)
           setTimeout(() => {
             setBgMenuActive(false)
@@ -144,7 +134,14 @@ function Menu({setMenuOpen}) {
         };
     }, [bgMenuActive]);
 
-    
+    // Envío del evento a Google Analytics 4
+    const handleCloseMenu = () => {
+      const buttonName = buttonClicked || 'menu_closed';
+      window.gtag('event', 'click_on_menu', {
+        'debug_mode': true,
+        'menu_button_clicked': buttonName,
+      });
+    };
 
 
   return (
