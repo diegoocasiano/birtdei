@@ -177,12 +177,6 @@ function App() {
   const toggleMenu = (buttonClicked) => {
     setNotifDotActive(false)
     setMenuOpen(!menuOpen)
-
-    window.gtag('event', 'click_on_menu', {
-      'debug_mode':true,
-      'menu_button_clicked': buttonClicked,
-    });
-
   };
 
 

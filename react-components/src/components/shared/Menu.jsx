@@ -7,7 +7,13 @@ function Menu({setMenuOpen}) {
 
   const arrowRightUp = `${imageBasePath}brand/arrow-right-up.svg`
   const arrowRightUpWh = `${imageBasePath}brand/arrow-right-up-wh.svg`
-  
+
+
+  const [buttonClicked, setButtonClicked] = useState(null);
+
+  const handleClick = (buttonName) => {
+    setButtonClicked(buttonName);
+  };
 
     {/* bgMenuActive activa un fondo con transparencia y bloquea el body */}
     const [bgMenuActive, setBgMenuActive] = useState(false)
@@ -78,7 +84,18 @@ function Menu({setMenuOpen}) {
 
         setIsTouching(false);
       };
-      
+    
+    const handleCloseMenu = () => {
+        // Envío del evento a Google Analytics 4
+        window.gtag('event', 'click_on_menu', {
+          'debug_mode': true,
+          'menu_button_clicked': buttonClicked || 'menu_closed', // Si no se hizo clic en ningún botón, se enviará 'menu_closed'
+        });
+    
+        // Cerrar el menú
+        setMenuOpen(false);
+      };
+
       //Esto hace que no se pueda hacer scroll cuando el menu está activo
       useEffect(() => {
         
@@ -125,11 +142,7 @@ function Menu({setMenuOpen}) {
         };
     }, [bgMenuActive]);
 
-    const [buttonClicked, setButtonClicked] = useState(null);
-
-    const handleClick = (buttonName) => {
-      setButtonClicked(buttonName);
-    };
+    
 
 
   return (
@@ -143,7 +156,7 @@ function Menu({setMenuOpen}) {
 
         <hr className='handle-dd-menu'/>
         <div className="btns-container">
-          <a className='btn-top' href="/feedback" onClick={() => handleClick('btn-top')}>Danos tu opinión<img src={arrowRightUpWh} ></img></a>
+          <a className='btn-top' href="/feedback" target='_blank' onClick={() => handleClick('btn-top')}>Danos tu opinión<img src={arrowRightUpWh} ></img></a>
           <a className='btn-bot' href="https://us.frms.link/t3ipetb/" target='_blank' onClick={() => handleClick('btn-bot')}>Tu marca en Birtdei <img src={arrowRightUpWh}></img></a>
         </div>
     </div>
