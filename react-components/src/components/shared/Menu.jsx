@@ -126,7 +126,7 @@ function Menu({setMenuOpen}) {
           closeMenuAnimation(); // Función que cierra el menu
           setBgMenuOpacity(0)
           setTimeout(() => {
-            handleCloseMenu();
+            handleCloseMenu(clickedButton);
           },300)
           setTimeout(() => {
             setBgMenuActive(false)
