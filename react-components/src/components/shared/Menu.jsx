@@ -91,7 +91,10 @@ function Menu({setMenuOpen}) {
         'debug_mode': true,
         'menu_button_clicked': buttonClicked || 'menu_closed',
       });
-    
+      
+      // Restablecer el estado de buttonClicked a null
+      setButtonClicked(null);
+      
       // Cerrar el menú
       setMenuOpen(false);
     };
