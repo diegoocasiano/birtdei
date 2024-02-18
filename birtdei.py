@@ -157,6 +157,7 @@ def enviar_correo():
 
 
 @app.route('/feedback')
+
 def feedback():
     return render_template('feedback.html')
 
@@ -196,9 +197,11 @@ def send_mail():
         else:
             return ('', 500) 
 
+
+ga4_property_id = os.environ.get('GA4_PROPERTY_ID')
 @app.route('/error')
 def vDesktop():
-    return render_template('desktop.html')
+    return render_template('desktop.html', ga4_property_id=ga4_property_id)
 
 # Ruta para poder cargar archivos desde otro directorio: los componentes de react
 @app.route('/react-components/dist/<path:filename>')
