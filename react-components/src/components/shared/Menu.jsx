@@ -138,7 +138,6 @@ function Menu({setMenuOpen}) {
     const handleCloseMenu = () => {
       const buttonName = buttonClicked || 'menu_closed';
       window.gtag('event', 'click_on_menu', {
-        'debug_mode': true,
         'menu_button_clicked': buttonName,
       });
     };

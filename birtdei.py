@@ -19,6 +19,11 @@ load_dotenv('.env')
 #llave secreta para manejar las sessions
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
+#ID de la propiedad en Google Analytics 4
+ga4_property_id = os.environ.get('GA4_PROPERTY_ID')
+
+#API Key de SendGrid
+sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
 
 
 @app.route('/')
@@ -27,9 +32,9 @@ def inicio():
     visited_regalos = session.get('visited_regalos', False)
 
     if visited_regalos:
-        return render_template('index2.html')
+        return render_template('index2.html', ga4_property_id=ga4_property_id)
     else:
-        return render_template('index1.html')
+        return render_template('index1.html', ga4_property_id=ga4_property_id)
 
 @app.route('/inicio')
 def inicio_again():
@@ -110,25 +115,25 @@ def procesar_cumple():
 #Renderiza los templates según cuántos días faltan para su cumple
 @app.route('/a<int:edad>') #<int:edad> es para poder pasa r la variable edad a la función
 def show_s3_1(edad): #edad es la variable que se pasa desde la ruta
-    return render_template('s3.1.html', edad=edad+1) #finalmente se pasa la variable edad al template
+    return render_template('s3.1.html', ga4_property_id=ga4_property_id, edad=edad+1) #finalmente se pasa la variable edad al template
 
 @app.route('/b<int:edad>-<int:dias_para_cumple>')
 def show_s3_2(edad, dias_para_cumple):
-    return render_template('s3.2.html', edad=edad+1, dias_para_cumple=dias_para_cumple)
+    return render_template('s3.2.html', ga4_property_id=ga4_property_id, edad=edad+1, dias_para_cumple=dias_para_cumple)
 
 @app.route('/c<int:edad>-<int:dias_para_cumple>')
 def show_s3_3(edad, dias_para_cumple):
-    return render_template('s3.3.html', edad=edad+1, dias_para_cumple=dias_para_cumple)
+    return render_template('s3.3.html', ga4_property_id=ga4_property_id, edad=edad+1, dias_para_cumple=dias_para_cumple)
 
 @app.route('/d<int:edad>-<int:dias_para_cumple>')
 def show_s3_4(edad, dias_para_cumple):
-    return render_template('s3.4.html', edad=edad, dias_para_cumple=dias_para_cumple)
+    return render_template('s3.4.html', ga4_property_id=ga4_property_id, edad=edad, dias_para_cumple=dias_para_cumple)
 
 
 @app.route('/regalos')
 def home():
     session['visited_regalos'] = True
-    return render_template('home.html')
+    return render_template('home.html', ga4_property_id=ga4_property_id)
 
 @app.route('/enviar-correo', methods=['POST']) 
 def enviar_correo():
@@ -159,10 +164,10 @@ def enviar_correo():
 @app.route('/feedback')
 
 def feedback():
-    return render_template('feedback.html')
+    return render_template('feedback.html', ga4_property_id=ga4_property_id)
 
 
-sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+
 
 def send_email(tipoFeedback, tituloFeedback, detallesFeedback, currentDate):
     message = Mail(
@@ -198,7 +203,6 @@ def send_mail():
             return ('', 500) 
 
 
-ga4_property_id = os.environ.get('GA4_PROPERTY_ID')
 @app.route('/error')
 def vDesktop():
     return render_template('desktop.html', ga4_property_id=ga4_property_id)
