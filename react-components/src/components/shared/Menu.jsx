@@ -112,10 +112,10 @@ function Menu({setMenuOpen}) {
       // Logica
       const handleOutsideClick = (event) => {
         if (menuRef.current && !menuRef.current.contains(event.target)) {
-          handleCloseMenu();
           closeMenuAnimation(); // Función que cierra el menu
           setBgMenuOpacity(0)
           setTimeout(() => {
+            handleCloseMenu();
             setMenuOpen(false);
           },300)
           setTimeout(() => {

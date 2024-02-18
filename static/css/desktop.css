@@ -62,7 +62,7 @@ main {
     color: var(--main-orange-01-birt, #F84F39);
 }
 .txt-container p {
-    margin-top: 8px;
+    margin-top: 12px;
 
     font-size: 18px;
     font-weight: 600;
