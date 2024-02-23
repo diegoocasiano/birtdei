@@ -81,15 +81,15 @@
                 <div class="main-container_box-input">
                     <div class="container_boxes-input">
                         <div class="input-container">
-                            <input class="input-box-dia" required type="number" id="dia" name="dia" min="0" max="99" placeholder="11" oninput="justTwoDigits(this); moveNext(this, 'mes')">
+                            <input class="input-box-dia focus" type="number" id="dia" name="dia" min="0" max="99" placeholder="11" oninput="justTwoDigits(this); enableNext(this, 'mes')" required>
                             <p class="dia">Día</p>
                         </div>
                         <div class="input-container">
-                            <input class="input-box-mes" required type="number" id="mes" name="mes" min="0" max="99" placeholder="07" oninput="justTwoDigits(this) ; moveNext(this, 'anio')">
+                            <input class="input-box-mes focus" type="number" id="mes" name="mes" min="0" max="99" placeholder="07" oninput="justTwoDigits(this) ; enableNext(this, 'anio')" disabled required>
                             <p class="mes">Mes</p>
                         </div>
                         <div class="input-container">
-                            <input class="input-box-anio" required type="number" id="anio" name="anio" min="0" max="99" placeholder="02"oninput="justTwoDigits(this) ; checkInputs();">
+                            <input class="input-box-anio focus" type="number" id="anio" name="anio" min="0" max="99" placeholder="02" oninput="justTwoDigits(this) ; checkInputs();" disabled required>
                             <p class="año">Año</p>
                         </div>
                     </div>

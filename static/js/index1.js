@@ -47,7 +47,8 @@ function moveNext(input, nextInputId) {
     }
 }
 
-// Integración con la función checkInputs existente
+
+// Para que el button se active cuando los tres inputs tengan contenido
 function checkInputs() {
     const diaValue = document.getElementById('dia').value.trim();
     const mesValue = document.getElementById('mes').value.trim();
@@ -64,19 +65,54 @@ function checkInputs() {
 }
 
 // Asociar la función checkInputs a los eventos 'input'
-document.getElementById('dia').addEventListener('input', function() {
+document.getElementById('dia').addEventListener('change', function() {
     justTwoDigits(this);
     moveNext(this, 'mes');
     checkInputs();
 });
 
-document.getElementById('mes').addEventListener('input', function() {
+document.getElementById('mes').addEventListener('change', function() {
     justTwoDigits(this);
     moveNext(this, 'anio');
     checkInputs();
 });
 
-document.getElementById('anio').addEventListener('input', function() {
+document.getElementById('anio').addEventListener('change', function() {
     justTwoDigits(this);
     checkInputs();
+});
+
+// Activa los siguientes inputs cuando se ingresan dos caracteres en el input anterior
+function enableNext(input, nextInputId) {
+    if (input.value.length >= 2) {
+        const nextInput = document.getElementById(nextInputId);
+        nextInput.removeAttribute('disabled');
+        nextInput.focus();
+    }
+}
+
+// Si el input dia tiene dos caracteres, cuando pasa al siguiente input, le quita el outline naranja al input-dia
+document.addEventListener("DOMContentLoaded", function() {
+    const inputDia = document.getElementById("dia");
+    const inputMes = document.getElementById("mes");
+
+    inputDia.addEventListener("input", function() {
+        if (inputDia.value.length >= 2) {
+            inputDia.classList.remove("focus");
+            inputMes.focus();
+        }
+    });
+});
+
+// Si el usuario borra datos de un input, el foco pasa al anterior input 
+document.getElementById('anio').addEventListener('input', function() {
+    if (this.value === '') {
+        document.getElementById('mes').focus();
+    }
+});
+
+document.getElementById('mes').addEventListener('input', function() {
+    if (this.value === '') {
+        document.getElementById('dia').focus();
+    }
 });

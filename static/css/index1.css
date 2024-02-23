@@ -178,6 +178,7 @@ body {
     gap: 15px;
     margin-top: 3px;
 }
+
 .pg2-container .container_boxes-input input {
     width: 68px;
     height: 80px;
@@ -187,16 +188,26 @@ body {
     font-family: 'Onest', sans-serif;
     font-weight: 700;
     font-size: 30px;
+    
 
     color: var(--Orange01-Birt);
     background: #FDF0BC;
+
 }
-.pg2-container .container_boxes-input input::placeholder {
-    color: var(--colores-dia-inactive-input, #FBB088);
-}
+
 .pg2-container .container_boxes-input input:focus {
     outline: 2px solid var(--Orange01-Birt);
 }
+
+.pg2-container .container_boxes-input input::placeholder {
+    color: var(--colores-dia-inactive-input, #FBB088);
+}
+
+.pg2-container .container_boxes-input .input-box-dia.focus {
+    outline: 2px solid var(--Orange01-Birt);
+}
+
+
 
 .pg2-container .input-container {
     display: flex;
