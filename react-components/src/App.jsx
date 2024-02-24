@@ -218,7 +218,7 @@ function App() {
                         <h3><span>Déjanos tu correo</span> para avisarte<br/>cuando añadamos más regalos</h3>
                         <p>(Prometemos no enviar spam)</p>
                       </div>
-                      <form className='content2' id='emailForm' onSubmit={handleSubmit}>
+                      <form className='content2' id='emailForm' onSubmit={(e) => {e.preventDefault(); e.stopPropagation(); handleSubmit(e);}}>
 
                         <input type="text" id="names" name="names" placeholder='Tu nombre y apellido' required
                           value={names} onChange={(e) => setNames(e.target.value)} onClick={handleInputClick}/>
