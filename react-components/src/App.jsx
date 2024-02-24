@@ -221,10 +221,10 @@ function App() {
                       <form className='content2' id='emailForm' onSubmit={handleSubmit}>
 
                         <input type="text" id="names" name="names" placeholder='Tu nombre y apellido' required
-                          onClick={handleInputClick}/>
+                          value={names} onChange={(e) => setNames(e.target.value)} onClick={handleInputClick}/>
 
                         <input type="email" id="email" name="email" placeholder='Tu correo' required
-                          onClick={handleInputClick}/>
+                          value={email} onChange={(e) => setEmail(e.target.value)} onClick={handleInputClick}/>
 
                         
                         <button type='submit' className={buttonClass}>
