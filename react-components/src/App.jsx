@@ -89,7 +89,6 @@ function App() {
   }, [formDataStored]);
   
   const handleInputClick = () => {
-    setButtonText('Dejar mi nombre y mi correo');
     setButtonClass('btn-submit');
     setFormDataStored(false);
   };
