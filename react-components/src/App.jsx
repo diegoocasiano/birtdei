@@ -58,6 +58,8 @@ function App() {
       if (response.ok) {
         console.log('form data sent successfully');
         setFormDataStored(true);
+        document.getElementById('names').value = '';
+        document.getElementById('email').value = '';
       } else {
         console.error('form data not sent');
       }
