@@ -34,8 +34,6 @@ function App() {
   
   // Lógica para enviar email
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState('');
-  const [names, setNames] = useState('');
   const [formDataStored, setFormDataStored] = useState(false);
     
   const handleSubmit = async (e) => {
@@ -78,8 +76,6 @@ function App() {
     if (formDataStored) {
       setButtonText('Listo!'); 
       setButtonClass('btn-submit sentEmail');
-      setEmail(''); // Limpia el input cuando el email se haya enviado
-      setNames(''); // Limpia el input cuando el email se haya enviado
     }
   }
   useEffect(() => {
@@ -218,13 +214,13 @@ function App() {
                         <h3><span>Déjanos tu correo</span> para avisarte<br/>cuando añadamos más regalos</h3>
                         <p>(Prometemos no enviar spam)</p>
                       </div>
-                      <form className='content2' id='emailForm' onSubmit={(e) => {e.preventDefault(); e.stopPropagation(); handleSubmit(e);}}>
+                      <form className='content2' id='emailForm' onSubmit={handleSubmit}>
 
                         <input type="text" id="names" name="names" placeholder='Tu nombre y apellido' required
-                          value={names} onChange={(e) => setNames(e.target.value)} onClick={handleInputClick}/>
+                        onClick={handleInputClick}/>
 
                         <input type="email" id="email" name="email" placeholder='Tu correo' required
-                          value={email} onChange={(e) => setEmail(e.target.value)} onClick={handleInputClick}/>
+                        onClick={handleInputClick}/>
 
                         
                         <button type='submit' className={buttonClass}>
