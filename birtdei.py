@@ -76,10 +76,10 @@ def procesar_cumple():
     #Calcular la edad
     edad = fecha_actual.year - anio_completo
     edad = edad - 1
-    
 
     # Calcula la fecha de cumpleaños para este año
     fecha_cumple = datetime(año_actual, mes, dia)
+    birth = datetime(anio_completo, mes, dia).strftime("%d/%m/%Y") # Para formatear la fecha de nacimiento y obtener en D/M/Y y no en el formato predeterminado de Python
 
     # Usa el próximo año si ya pasó el cumpleaños
     if fecha_cumple < fecha_actual:
@@ -91,7 +91,7 @@ def procesar_cumple():
     # Calcula los días que faltan para el cumpleaños
     dias_para_cumple = (fecha_cumple - fecha_actual).days
     
-    session['datos_temporales'] = {'email': None, 'fecha_cumple': fecha_cumple_formateada, 'edad': edad}
+    session['datos_temporales'] = {'email': None, 'edad': edad, 'birth': birth}
 
     insert_edad_db(edad, fecha_cumple_formateada)
 
@@ -144,19 +144,19 @@ def enviar_correo():
 
         #Verifica si hay datos temporales en la session antes de insertar en la base de datos
         datos_temporales = session.get('datos_temporales', {})
-        fecha_cumple_formateada = datos_temporales.get('fecha_cumple')
+        birth = datos_temporales.get('birth')
         edad = datos_temporales.get('edad')
 
         db = dbConnection("emails-users") #Se crea el nombre de la base de datos 
         emails_collection = db['updates-subscription'] #Se crea el nombre de la colección
         
-        if fecha_cumple_formateada and edad:
-            emails_collection.insert_one({ 'names': names,'email': email, 'fecha_cumple': fecha_cumple_formateada, 'edad': edad})
+        if birth and edad:
+            emails_collection.insert_one({ 'names': names,'email': email, 'birth': birth, 'edad': edad})
 
             session.pop('datos_temporales', None) #Elimina los datos temporales de la session después de insertar en la base de datos
 
         else:
-            emails_collection.insert_one({'names': names ,'email': email}) #Se inserta el email en la colección
+            emails_collection.insert_one({'names': names ,'email': email}) #Se inserta solo el email y nombre en la colección
 
         return jsonify({'message': 'stored form data successfully'})
 
