@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_from_directory, session
 from datetime import datetime
 import os
+from pyairtable import Api
 from flask import redirect, url_for
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
@@ -24,6 +25,9 @@ ga4_property_id = os.environ.get('GA4_PROPERTY_ID')
 
 #API Key de SendGrid
 sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+
+#API Key de Airtable
+airtableApi = Api(os.environ.get('AIRTABLE_API_KEY'))
 
 
 @app.route('/')
@@ -79,7 +83,7 @@ def procesar_cumple():
 
     # Calcula la fecha de cumpleaños para este año
     fecha_cumple = datetime(año_actual, mes, dia)
-    birth = datetime(anio_completo, mes, dia).strftime("%d/%m/%Y") # Para formatear la fecha de nacimiento y obtener en D/M/Y y no en el formato predeterminado de Python
+    birth = datetime(anio_completo, mes, dia).strftime("%Y-%m-%d") # Para formatear la fecha de nacimiento y obtener en formato ISO 8601 (AAAA-MM-DD) y no en el formato predeterminado de Python
 
     # Usa el próximo año si ya pasó el cumpleaños
     if fecha_cumple < fecha_actual:
@@ -142,21 +146,46 @@ def enviar_correo():
         email = data.get('email') #Se obtiene el email del json
         names = data.get('names') #Se obtiene el nombre del json
 
+        # Registro de datos en Airtable
+        BASE_ID = 'apps6RTIL11SBA533'
+        TABLE_NAME = 'Users Waitlist'
+        table = airtableApi.table(BASE_ID, TABLE_NAME)
+
         #Verifica si hay datos temporales en la session antes de insertar en la base de datos
         datos_temporales = session.get('datos_temporales', {})
         birth = datos_temporales.get('birth')
         edad = datos_temporales.get('edad')
 
-        db = dbConnection("emails-users") #Se crea el nombre de la base de datos 
-        emails_collection = db['updates-subscription'] #Se crea el nombre de la colección
-        
-        if birth and edad:
-            emails_collection.insert_one({ 'names': names,'email': email, 'birth': birth, 'edad': edad})
-
-            session.pop('datos_temporales', None) #Elimina los datos temporales de la session después de insertar en la base de datos
-
+        #Si birth no está vacio, se formatea la fecha de nacimiento para obtener el nombre del mes
+        if birth is not None:
+            birth_datetime = datetime.strptime(birth, "%Y-%m-%d")
+            birthMonth = birth_datetime.strftime("%B")
+        #Si birth está vacio, se asigna None a birth y birthMonth
         else:
-            emails_collection.insert_one({'names': names ,'email': email}) #Se inserta solo el email y nombre en la colección
+            birthMonth = None
+            birth = None
+        #Si edad está vacio, se asigna None a edad
+        if edad is None:
+            edad = None
+
+        #Se crea el nombre de la base de datos en MongoDB
+        db = dbConnection("emails-users")
+        #Se crea el nombre de la colección en MongoDB
+        emails_collection = db['updates-subscription']
+
+        #Insertar en MongoDB
+        emails_collection.insert_one({ 'names': names,'email': email, 'birth': birth, 'edad': edad})
+
+        #Insertar en Airtable
+        table.create({
+            'Names': names,
+            'Email': email,
+            'Age': edad,
+            'Birthday': birth,
+            'Birthday Month': birthMonth,
+        })
+        #Elimina los datos temporales de la session después de insertar en MongoDB y Airtable
+        session.pop('datos_temporales', None)
 
         return jsonify({'message': 'stored form data successfully'})
 
@@ -214,3 +243,4 @@ def send_react_static(filename):
 
 if __name__ == '__main__': 
     app.run(debug=True)
+

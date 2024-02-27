@@ -88,6 +88,7 @@ function App() {
   
   const handleInputClick = () => {
     setButtonClass('btn-submit');
+    setButtonText('Dejar mi correo'); 
     setFormDataStored(false);
   };
 
