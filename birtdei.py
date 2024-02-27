@@ -46,13 +46,13 @@ def inicio_again():
 
 
 # Nueva función para insertar la edad en la colección "edades"
-def insert_edad_db(edad, fecha_cumple_formateada):
+def insert_edad_db(edad, birth):
     try:
         db = dbConnection("edades-users") 
         edades_collection = db['edades']
 
-        edades_collection.insert_one({'edad': edad, '   fecha_cumple_formateada': fecha_cumple_formateada})
-        print(f"Edad {edad} con fecha de cumpleaños {fecha_cumple_formateada} almacenada en la colección 'edades'")
+        edades_collection.insert_one({'edad': edad, 'birth': birth})
+        print(f"Edad {edad} con fecha de cumpleaños {birth} almacenada en la colección 'edades'")
 
     except Exception as e:
         print(f"Error al almacenar la edad en la colección 'edades': {str(e)}")
@@ -83,21 +83,18 @@ def procesar_cumple():
 
     # Calcula la fecha de cumpleaños para este año
     fecha_cumple = datetime(año_actual, mes, dia)
-    birth = datetime(anio_completo, mes, dia).strftime("%Y-%m-%d") # Para formatear la fecha de nacimiento y obtener en formato ISO 8601 (AAAA-MM-DD) y no en el formato predeterminado de Python
+    birth = datetime(anio_completo, mes, dia).strftime("%Y-%m-%d") # Obtener en formato ISO 8601 (AAAA-MM-DD) y no en el formato predeterminado de Python
 
     # Usa el próximo año si ya pasó el cumpleaños
     if fecha_cumple < fecha_actual:
         fecha_cumple = datetime(año_actual + 1, mes, dia) 
-
-    # Formatea la fecha de cumpleaños Day/Month/Year
-    fecha_cumple_formateada = fecha_cumple.strftime("%d/%m/%Y")
 
     # Calcula los días que faltan para el cumpleaños
     dias_para_cumple = (fecha_cumple - fecha_actual).days
     
     session['datos_temporales'] = {'email': None, 'edad': edad, 'birth': birth}
 
-    insert_edad_db(edad, fecha_cumple_formateada)
+    insert_edad_db(edad, birth)
 
     # Presentación de templates
     # Importante: Los tenplates nunca deben de renderizarse en la misma ruta donde se procesan los datos ingresados
