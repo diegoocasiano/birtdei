@@ -27,14 +27,16 @@ export default function ModalSelectCategory() {
         }
       });
     }
-    handleSendData(option);
+    
   };
 
-  const handleSendData = (option) => {
+  const handleSendData = () => {
+    selectedOptions.forEach((option) => {
       window.gtag('event', 'Category_request', {
-      'category': option,
-      'debug_mode': true,
+        category: option,
+        debug_mode: true,
       });
+    });
   };
 
 
