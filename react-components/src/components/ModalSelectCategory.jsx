@@ -10,6 +10,8 @@ export default function ModalSelectCategory() {
   const emoji3_active = `${imageBasePath}brand/emoji3-active.png`
   const emoji4_active = `${imageBasePath}brand/emoji4-active.png`
 
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleOptionClick = (option) => {
@@ -31,18 +33,24 @@ export default function ModalSelectCategory() {
   };
 
   const handleSendData = () => {
-    selectedOptions.forEach((option) => {
-      window.gtag('event', 'Category_request', {
-        category: option,
-        debug_mode: true,
+    setLoading(true);
+    // Simular el envío de datos (aquí puedes realizar la lógica real para enviar los datos)
+    setTimeout(() => {
+      selectedOptions.forEach((option) => {
+        window.gtag('event', 'Category_request', {
+          category: option,
+          debug_mode: true,
+        });
       });
-    });
+      setLoading(false);
+      setSent(true);
+    }, 1000); // Simulamos un segundo de tiempo de carga
   };
 
 
   return (
     <>
-      <main className='modal-overlay'>
+        <div className='modal-overlay'></div>
         <section className='modal' >
           <section className="modal-titles">
             <h1 className="title">
@@ -103,15 +111,16 @@ export default function ModalSelectCategory() {
 
           </div>
 
-          <button className={`submit-button ${selectedOptions.length === 2 ? 'active' : ''}`}
-          onClick={handleSendData}>
-            Enviar
+          <button 
+            className={`submit-button ${selectedOptions.length === 2 ? 'active' : ''} ${sent ? 'sent' : ''}`}
+            onClick={handleSendData}>
+               {loading ? <div className="loader"></div> : sent ? 'Listo!' : 'Enviar'}
           </button>
 
           </section>
           
         </section>
-      </main>
+      
     </>
   )
 }
