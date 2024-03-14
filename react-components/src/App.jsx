@@ -177,7 +177,6 @@ function App() {
   const toggleMenu = () => {
     setNotifDotActive(false)
     setMenuOpen(!menuOpen)
-    setModalVisible(!modalVisible);
   };
 
 
