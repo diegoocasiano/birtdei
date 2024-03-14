@@ -213,7 +213,7 @@ html {
 }
 .submit-button.sent {
     background: #34c759;
-    transition: 0.3s ease-out;
+    transition: 0.4s ease;
 }
 
 .loader {

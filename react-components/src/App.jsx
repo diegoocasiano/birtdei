@@ -6,7 +6,6 @@ import Menu from './components/shared/Menu'
 import NavBar from './components/shared/NavBar'
 import dataRegalos from './data/dataRegalos'
 import CardDetalles from './components/card-detalles/CardDetalles'
-import { set } from 'react-ga'
 
 function App() {
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
@@ -173,12 +172,10 @@ function App() {
 
   const [notifDotActive, setNotifDotActive] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [modalVisible, setModalVisible] = useState(false);
   
   const toggleMenu = () => {
     setNotifDotActive(false)
     setMenuOpen(!menuOpen)
-    setModalVisible(!modalVisible)
   };
 
 
@@ -200,8 +197,8 @@ function App() {
             linkInsta={marcaSeleccionada.linkInsta}
             toggleDetalles={toggleDetalles} />
           }
+        
           {/* <ModalSelectCategory /> */}
-          {modalVisible && <ModalSelectCategory />}
 
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
