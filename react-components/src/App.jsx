@@ -1,6 +1,7 @@
 import './App.css'
 import {useEffect, useState } from 'react'
 import Card from './components/Card'
+import ModalSelectCategory from './components/ModalSelectCategory'
 import Menu from './components/shared/Menu'
 import NavBar from './components/shared/NavBar'
 import dataRegalos from './data/dataRegalos'
@@ -171,15 +172,18 @@ function App() {
 
   const [notifDotActive, setNotifDotActive] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [modalVisible, setModalVisible] = useState(false);
   
   const toggleMenu = () => {
     setNotifDotActive(false)
     setMenuOpen(!menuOpen)
+    setModalVisible(!modalVisible);
   };
 
 
   return (
     <>
+      
       <header>
         <NavBar toggleMenu={toggleMenu} notifDotActive={notifDotActive} />
       </header>
@@ -195,6 +199,9 @@ function App() {
             linkInsta={marcaSeleccionada.linkInsta}
             toggleDetalles={toggleDetalles} />
           }
+
+          {modalVisible && <ModalSelectCategory />}
+
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
           }
