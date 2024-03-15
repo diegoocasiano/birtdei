@@ -40,7 +40,6 @@ export default function ModalSelectCategory({ setShowModal, setDataSent}) {
       selectedOptions.forEach((option) => {
         window.gtag('event', 'Category_request', {
           category: option,
-          debug_mode: true,
         });
       });
       setLoading(false);
