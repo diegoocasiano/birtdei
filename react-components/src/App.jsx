@@ -1,5 +1,5 @@
 import './App.css'
-import {useEffect, useState } from 'react'
+import {useEffect, useState, useRef} from 'react'
 import Card from './components/Card'
 import ModalSelectCategory from './components/ModalSelectCategory'
 import Menu from './components/shared/Menu'
@@ -178,10 +178,27 @@ function App() {
     setMenuOpen(!menuOpen)
   };
 
+  // Mostrar el modal solo cuando no se esté mostrando el menú o los detalles del regalo
+  // Pero esa lógica se ejecutará cuando se haya hecho click al menos una vez en los detalles de un regalo
+  const [showModal, setShowModal] = useState(false);
+  const hasDetallesOpened = useRef(false);
+
+  useEffect(() => {
+    let timer;
+    if (detallesOpen) {
+      hasDetallesOpened.current = true;
+    }
+    if (!menuOpen && !detallesOpen && hasDetallesOpened.current) {
+      timer = setTimeout(() => {
+        setShowModal(true);
+      }, 2000); // 2 segundos
+    }
+    
+    return () => clearTimeout(timer);
+  }, [menuOpen, detallesOpen]);
 
   return (
     <>
-      
       <header>
         <NavBar toggleMenu={toggleMenu} notifDotActive={notifDotActive} />
       </header>
@@ -198,8 +215,8 @@ function App() {
             toggleDetalles={toggleDetalles} />
           }
         
-          {/* <ModalSelectCategory /> */}
-
+          
+        {showModal && <ModalSelectCategory />}
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
           }

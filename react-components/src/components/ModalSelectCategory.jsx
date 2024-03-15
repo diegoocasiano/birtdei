@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './modalSelectCategory.css'
 
 export default function ModalSelectCategory() {
@@ -12,6 +12,7 @@ export default function ModalSelectCategory() {
 
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleOptionClick = (option) => {
@@ -44,14 +45,22 @@ export default function ModalSelectCategory() {
       });
       setLoading(false);
       setSent(true);
+      setTimeout(() => {
+        setFadeIn(false);
+      }, 1000);
     }, 1000); // Simulamos un segundo de tiempo de carga
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setFadeIn(true);
+    }, 500);
+  }, []);
 
   return (
     <>
-        <div className='modal-overlay'></div>
-        <section className='modal' >
+        <div className={`modal-overlay ${fadeIn ? 'fade-in' : ''}`}></div>
+        <section className={`modal ${fadeIn ? 'fade-in' : ''}`}>
           <section className="modal-titles">
             <h1 className="title">
               ¡Ayúdanos a encontrar <br /> <span>los mejores regalos para ti!</span>
