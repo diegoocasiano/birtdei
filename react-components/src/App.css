@@ -347,3 +347,8 @@ header {
   font-weight: 600;
   color: var(--Orange01-Birt);
 }
+
+/* Ocultar scroll del home (/regalos) */
+::-webkit-scrollbar {
+    width: 0px;
+}

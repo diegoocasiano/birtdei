@@ -256,3 +256,29 @@ body {
     gap: 22px;
 }
 
+/* Quitar flechas de aumento y disminución en los inputs type number */
+.input-box-dia::-webkit-outer-spin-button,
+.input-box-dia::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none; 
+    margin: 0; /
+}
+
+.input-box-mes::-webkit-outer-spin-button,
+.input-box-mes::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none; 
+    margin: 0; /
+}
+
+.input-box-anio::-webkit-outer-spin-button,
+.input-box-anio::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none; 
+    margin: 0; /
+}
+
+/* media queries */
+.v-desktop {
+    display: none;
+}
