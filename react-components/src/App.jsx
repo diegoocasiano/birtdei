@@ -182,9 +182,15 @@ function App() {
   // Pero esa lógica se ejecutará cuando se haya hecho click al menos una vez en los detalles de un regalo
   const [showModal, setShowModal] = useState(false);
   const hasDetallesOpened = useRef(false);
-  const [dataSent, setDataSent] = useState(false);
+  const [dataSent, setDataSent] = useState(() => {
+    const saved = localStorage.getItem('dataSent');
+    return JSON.parse(saved) || false;
+  });
 
-
+  useEffect(() => {
+    localStorage.setItem('dataSent', JSON.stringify(dataSent));
+  }, [dataSent]);
+  
   useEffect(() => {
     let timer;
     if (detallesOpen) {
