@@ -216,7 +216,7 @@ function App() {
           }
         
           
-        {showModal && <ModalSelectCategory />}
+        {showModal && <ModalSelectCategory setShowModal={setShowModal}/>}
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
           }
