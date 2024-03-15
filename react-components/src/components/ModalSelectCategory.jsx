@@ -47,7 +47,7 @@ export default function ModalSelectCategory() {
       setSent(true);
       setTimeout(() => {
         setFadeIn(false);
-      }, 1000);
+      }, 500);
     }, 1000); // Simulamos un segundo de tiempo de carga
   };
 
