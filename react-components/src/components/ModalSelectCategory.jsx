@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './modalSelectCategory.css'
 
-export default function ModalSelectCategory({ setShowModal }) {
+export default function ModalSelectCategory({ setShowModal, setDataSent}) {
   // Importar variable de entorno para cambiar el base path de las imágenes según el modo de la app (dev o build)
   const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';   
 
@@ -51,6 +51,7 @@ export default function ModalSelectCategory({ setShowModal }) {
       }, 700);
       setTimeout(() => {
         setShowModal(false);
+        setDataSent(true);
       },1200)
     }, 800); // Simulamos un segundo de tiempo de carga
   };

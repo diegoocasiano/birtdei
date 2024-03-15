@@ -182,13 +182,15 @@ function App() {
   // Pero esa lógica se ejecutará cuando se haya hecho click al menos una vez en los detalles de un regalo
   const [showModal, setShowModal] = useState(false);
   const hasDetallesOpened = useRef(false);
+  const [dataSent, setDataSent] = useState(false);
+
 
   useEffect(() => {
     let timer;
     if (detallesOpen) {
       hasDetallesOpened.current = true;
     }
-    if (!menuOpen && !detallesOpen && hasDetallesOpened.current) {
+    if (!menuOpen && !detallesOpen && !dataSent && hasDetallesOpened.current) {
       timer = setTimeout(() => {
         setShowModal(true);
       }, 2000); // 2 segundos
@@ -216,7 +218,7 @@ function App() {
           }
         
           
-        {showModal && <ModalSelectCategory setShowModal={setShowModal}/>}
+        {showModal && <ModalSelectCategory setShowModal={setShowModal} setDataSent={setDataSent} />}
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
           }
