@@ -170,6 +170,7 @@ let secondAttempt = false;
 let firstScroll = false;
 let firstScrollDown = false;
 let hasScrolledDown = false;
+let showCards = false;
 
 // Ajustar la escala del Iphone 14 Pro según el viewport 
 function adjustIph14ProScale() {
@@ -216,7 +217,10 @@ function scrollToIph14Pro() {
         
     }, 600);
     showMainContent();
-    showCardsInfo();
+    
+    if (!showCards) {
+        showCardsInfo();
+    }
 
 }   
 
@@ -278,6 +282,8 @@ function showCardsInfo() {
     setTimeout(() => {
         card2.classList.add('active');
     },11000)
+
+    showCards = true;
 }
 
 function closeCard1() {

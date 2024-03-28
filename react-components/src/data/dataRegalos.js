@@ -16,7 +16,7 @@ const dataRegalos = [
         },
         condicionesRegalo: [
             "Presentar DNI", 
-            "Consumir o comprar",
+            "No es necesario comprar antes",
         ]
     },
     {   
