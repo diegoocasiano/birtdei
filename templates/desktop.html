@@ -1,64 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Birtdei</title
+    <title>Birtdei</title>
     <meta name="description" content="Todos los regalos que las marcas tienen para ti en tu cumpleaños" />
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="img/svg" href="/static/favicon/favicon.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="img/svg" href="/static/favicon/favicon.svg">
-    <link rel="stylesheet" href="/static/css/desktop.css">
-    <link rel="stylesheet" href="/static/css/reset.css">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6NL8DX650"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', '{{ ga4_property_id }}');
-    </script>
-
-    <!-- Vercel analytics -->
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
     
+    <script src="/static/js/confetti.js"></script>
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="stylesheet" href="/static/css/desktop.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6NL8DX650"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ ga4_property_id }}');
+    </script> -->
+
 </head>
 <body>
     <main>
-        <section class="sct1_content-main">
-            <div class="img-container">
-                <img src="/static/img/monkey-sad.gif" alt="monito triste">
+        <span class="overlay-confetti"></span>
+        <canvas class="confetti-desktop" id="confetti"></canvas>
+        <section class="brands-container">
+            <div class="brandsContainer-left">
+                <div class="brand1">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-mcdonalds.png" alt="Icono de Mc Donalds">
+                </div>
+                <div class="brand2">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-starbucks.png" alt="Icono de Starbucks">
+                </div>
+                <div class="brand3">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-chilis.png" alt="Icono de Chili's">
+                </div>
+                <div class="brand4">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-lego.png" alt="Icono de Lego">
+                </div>
+                <div class="brand5">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-juicylucy.png" alt="Icono de Juicy Lucy">
+                </div>
             </div>
-            <div class="txt-container">
-                <h1>Oye, lo siento...</h1>
-                <p>Por ahora, <span>Birtdei</span> solo está disponible en celulares. <br>Por favor, <span>ingresa a tu navegador favorito <br>
-                    desde tu celular</span> para disfrutarlo.<br></p>
+            <div class="brandsContainer-right">
+                <div class="brand1">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-adidas.png" alt="Icono de Adidas">
+                </div>
+                <div class="brand2">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-ihop.png" alt="Icono de Ihop">
+                </div>
+                <div class="brand3">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-fridays.png" alt="Icono de Fridays">
+                </div>
+                <div class="brand4">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-cineplanet.png" alt="Icono de Cineplanet">
+                </div>
+                <div class="brand5">
+                    <img src="/static/img/vdesk/icon-brands/vdesk_icon-mrjoy.png" alt="Icono de Mr. Joy">
+                </div>
+            </div>
+        </section>
 
+        <section class="contentHeader-container">
+            <div class="contentMain">
+                <img src="/static/svg/Posi-Wordmark-Birt.svg" alt="Logo de Birtdei">
+                <h1>Descubre todos los regalos<br>que las marcas tienen<br>para ti por tu cumpleaños</h1>
+                <div class="tagsMain">
+                    <span class="tag first">
+                        Productos 100% gratis
+                    </span>
+                    <span class="tag second">
+                        Descuentos exclusivos
+                    </span>
+                </div>
+            </div>
+            <div class="arrow-down">
+                <img src="/static/svg/arrow-down.svg" alt="Flecha divertida apuntando hacia abajo">
             </div>
         </section>
-        <section class="sct-bg-glass">
-            <!-- <div class="bg-glass-left">
-                <img src="/static/img/birtdei-logo-glass-left.svg">
-            </div>
-            <div class="bg-glass-right">
-                <img src="/static/img/birtdei-logo-glass-right.svg">
-            </div> -->
+        
+
+        <section class="iph14pro-container" alt="Imagen de un iPhone 14 Pro">
+                <div class="mockup">
+    
+                    <div class="statusBar">
+                        <div class="time">
+                            <p id="currentTime"></p>
+                        </div>
+                        
+                        <span class="notch"></span>
+                        <div class="levels">
+                            <img src="/static/svg/statusBar-levels.svg">
+                        </div>
+                    </div>
+    
+                    <div class="mainContent-container">
+    
+                        <div class="iframe-container">
+                            <iframe id="miIframe" src="http://www.birtdei.com"></iframe>
+                        </div>
+    
+                        <div class="mainContent">
+                            <h2>Tus cumpleaños<br>no volverán a ser<br>como antes...</h2>
+                            <button class="startButton" onclick="showIframe()">
+                                Empecemos
+                            </button>
+                        </div>
+    
+                    </div>
+    
+                    <span class="homeIndicator"></span>
+    
+                </div>
         </section>
+
+        <section class="cards-info">
+
+            <div class="card1">
+                <span class="card1-tag">Próximamente...</span>
+                <button class="close-button" onclick="closeCard1()">
+                    <img src="/static/svg/icon-close.svg" alt="Botón de cerrar">
+                </button>
+                <div class="card1-content">
+                    <p>Muy pronto la versión<br>completa de <span>Birtdei<br>para computadoras</span><br>estará disponible</p>
+                    <img src="/static/img/vdesk/emoji-1.png" alt="Emoji de persona con una computadora">
+                </div>
+                
+            </div>
+    
+            <div class="card2">
+                <span class="card2-tag">Mientras tanto...</span>
+                <button class="close-button" onclick="closeCard2()">
+                    <img src="/static/svg/icon-close.svg" alt="Botón de cerrar">
+                </button>
+                <div class="card2-content">
+                    <div class="content-text">
+                        <h3>Disfruta la experiencia<br>completa de Birtdei<br>en tu celular</h3>
+                        <p><span>Escanea el código QR</span> o ingresa a<br>birtdei.com desde tu celular</p>
+                    </div>
+                    <div class="content-codeqr">
+                        <img src="/static/svg/qr-code-birtdei.svg" alt="Código QR">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
     </main>
-
-    <!-- Vercel - Speed Insights -->
-    <script>
-        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
+<script src="/static/js/desktop.js"></script>
 </html>

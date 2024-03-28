@@ -3,7 +3,6 @@
 <head>
     <title>Birtdei</title>
     <meta name="description" content="Todos los regalos que las marcas tienen para ti en tu cumpleaños" />
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.birtdei.com/" />
@@ -26,9 +25,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@500;600;700;800&display=swap" rel="stylesheet">
 
+
     <script src="/static/js/confetti.js"></script>
     <link rel="stylesheet" href="/static/css/reset.css">
-    <link rel="stylesheet" href="/static/css/index1.css" >
+    <link rel="stylesheet" href="/static/css/index1.css">
     
     
     <link rel="preload" as="image" href="/static/img/s3-memoji1.png">
@@ -42,13 +42,18 @@
     <link rel="preload" as="style" href="/static/css/s3.4.css">
 
     <!-- Google tag (gtag.js) -->
+    <!-- Se agrego un setTimeout, para que se ejecute luego de 2 segundos y de esa forma dar tiempo a index1.html o index2.html
+    de redigir a birtdei.com/desktop y que de esa forma no se hagan dos llamadas a gtag.js -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6NL8DX650"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', '{{ ga4_property_id }}');
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '{{ ga4_property_id }}');
+            }, 2000);
+        });
     </script>
 
     <!-- Vercel analytics -->
@@ -59,10 +64,6 @@
 
 </head>
 <body id="body" class="hidden">
-    <section class="v-desktop">
-        <h1>Hello world</h1>
-        <iframe src="https://www.birtdei.com/" frameborder="0" width="390px" height="844px"></iframe>
-    </section>
  
     <section id="pg1" class="pg1-container" >
         <div class="header-container">

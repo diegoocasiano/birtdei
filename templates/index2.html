@@ -33,13 +33,18 @@
     <script src="/static/js/confetti.js"></script>
 
     <!-- Google tag (gtag.js) -->
+    <!-- Se agrego un setTimeout, para que se ejecute luego de 2 segundos y de esa forma dar tiempo a index1.html o index2.html
+    de redigir a birtdei.com/desktop y que de esa forma no se hagan dos llamadas a gtag.js -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6NL8DX650"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        gtag('config', '{{ ga4_property_id }}');
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '{{ ga4_property_id }}');
+            }, 2000);
+        });
     </script>
 
     <!-- Vercel analytics -->

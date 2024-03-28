@@ -1,34 +1,40 @@
+
+
 //Pg 1 - Pasar a la pg2 al hacer click en el btn-continuar
 const body = document.getElementById("body")
 const pg1 = document.getElementById("pg1")
 const pg1Btn = document.getElementById("pg1-btn")
 
 pg1Btn.addEventListener('click', function() {
-    body.classList.remove("hidden");
+    body.classList.add("hidden");
     pg1.classList.add("hidden");
 });
 
 //Pg 1 - Redirigir a la página desktop.html si el viewport es mayor a 500
- function redirectionToDesktop() {
+function redirectionToDesktop() {
      if (window.innerWidth > 500) {
-         window.location.href = '/error'
+         window.location.href = '/desktop'
      }
- }
- window.addEventListener('load', redirectionToDesktop);
- window.addEventListener('resize', redirectionToDesktop);
+}
+window.addEventListener('load', redirectionToDesktop);
+window.addEventListener('resize', redirectionToDesktop);
 
 //Pg 1 - Configuración del confetti
-var confettiSettings = {
-    target: 'confetti',
-    max: '75',
-    size: '1',
-    animate: true,
-    clock: 30,
-    props: ['circle','square'],
-    colors: [[248,79,57],[255,220,64],[0,148,255],[164,48,255],[255,117,17]]
-};
-var confetti = new ConfettiGenerator(confettiSettings);
-confetti.render();
+function initConfetti() {
+    var confettiSettings = {
+        target: 'confetti',
+        max: '70',
+        size: '1',
+        animate: true,
+        clock: 30,
+        props: ['circle','square'],
+        colors: [[248,79,57],[255,220,64],[0,148,255],[164,48,255],[255,117,17]]
+    };
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+}
+window.addEventListener('DOMContentLoaded', initConfetti);
+window.addEventListener('resize', initConfetti);
 
 
 ////Pg 2 - Script para el form de cumple
@@ -116,3 +122,77 @@ document.getElementById('mes').addEventListener('input', function() {
         document.getElementById('dia').focus();
     }
 });
+
+
+// function resizeIframe() {
+//     setTimeout(() => {
+//         var iframeContainer = document.querySelector('.iframe-container');
+//         var iframe = iframeContainer.querySelector('iframe');
+    
+//         var iframeContainerHeight = iframeContainer.getBoundingClientRect().height;
+//         var iframeContainerWidth = iframeContainer.getBoundingClientRect().width;
+    
+//         iframe.width = iframeContainerWidth;
+//         iframe.height = iframeContainerHeight;
+//     }, 600)
+    
+// }
+
+// Custom Cursor
+// let customCursor = document.querySelector('.customCursor');
+// let cursorX = 0;
+// let cursorY = 0;
+// let ticking = false;
+
+// function moveCursor(e) {
+//     cursorX = e.clientX;
+//     cursorY = e.clientY;
+
+//     // Se usa requestAnimationFrame para que no haya mucho lag entre el movimiento del mouse real y el custom
+//     if (!ticking) {
+//         window.requestAnimationFrame(function() {
+//             customCursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+//             ticking = false;
+//         });
+//         ticking = true;
+//     }
+// }
+
+// document.addEventListener('mousemove', moveCursor);
+
+
+// function adjustMain() {
+//     const container = document.querySelector('.iph14pro-container');
+//     const main = document.querySelector('main');
+
+//     const containerRect = container.getBoundingClientRect();
+//     const mainRect = main.getBoundingClientRect();
+
+//     const containerBottom = containerRect.bottom + parseInt(getComputedStyle(container).marginBottom);
+//     const mainBottom = mainRect.bottom;
+
+//     const distance = mainBottom - containerBottom;
+
+//     console.log('Distance:', distance);
+
+//     main.style.height = main.offsetHeight - distance + 'px';
+// }
+
+// window.addEventListener('resize', adjustMain);
+
+
+// function intentoScroll() {
+//     if (tryCount <= 2) { console.log('Intento:', tryCount)
+    
+//         setTimeout(() => {
+//             if (isScrolled && iph14proHeight !== iph14proContainer.getBoundingClientRect().height) { console.log('Intentando scroll nuevamente');
+                
+//                 scrollToIph14Pro();
+//                 isScrolled = false;
+//                 tryCount++;
+
+//             }
+//         }, 600); 
+//     }
+// }
+

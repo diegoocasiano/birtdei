@@ -229,7 +229,7 @@ def send_mail():
             return ('', 500) 
 
 
-@app.route('/error')
+@app.route('/desktop')
 def vDesktop():
     return render_template('desktop.html', ga4_property_id=ga4_property_id)
 

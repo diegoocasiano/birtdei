@@ -1,0 +1,95 @@
+html {
+    font-size: 100%;
+    font-family: 'Onest', sans-serif;
+}
+:root {
+    --Orange01-Birt: #FD3D24;
+    --Yellow-Birt: #FFDC40;
+  
+    --Blue01-Birt: #1D77FF;
+    --Blue02-Birt: #0094FF;
+    --Purple-Birt: #A430FF;
+    --Orange02-Birt: #FF7511;
+  
+    --Black-Birt: #252525;
+    --White-Birt: #FFFFFF;
+    --Gray-Birt: #555555;
+  
+    --Soft-Yellow01-Birt: #FFF9E3;
+    --Soft-Yellow02-Birt: #FFFCF0;
+  }
+
+body {
+    
+
+    
+    background-color: var(--Soft-Yellow01-Birt);
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.sct1_content-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+
+    margin-bottom: 50px;
+    z-index: 2;
+}
+.img-container {
+    width: 170px;
+    height: 170px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.sct1_content-main img {
+    width: 170px;
+}
+.txt-container {
+    margin-top: 25px;
+}
+.txt-container h1 {
+    font-size: 30px;
+    font-weight: 800;
+
+    color: var(--main-orange-01-birt, #F84F39);
+}
+.txt-container p {
+    margin-top: 12px;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 120%;
+}
+.txt-container p span {
+    font-weight: 700;
+}
+.txt-container .highlight {
+    font-weight: 700;
+    color: var(--complementary-orange-02-birt, #FF7511);
+
+}
+
+/* styles to bg glass */
+.sct-bg-glass {
+    position: absolute;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+    z-index: 1;
+
+
+    background-image: url('/static/img/birt-logo-glass.svg');
+    background-repeat: repeat;
+    background-size: 15%; 
+
+}
