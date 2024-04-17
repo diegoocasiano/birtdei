@@ -34,7 +34,7 @@ html {
     scroll lo detecta como si fuera en toda la página, por eso se esconde el
     toolbar del browser. Como solución puse 99.9svh, de esa forma casi parece 100svh pero el browser
     ya no piensa que se esta haciendo scroll en toda la página */
-    height: 99.9svh;
+    height: 103svh;
     overflow: scroll;
 
     padding-top: 81px;
