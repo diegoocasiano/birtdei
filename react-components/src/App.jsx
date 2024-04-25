@@ -224,10 +224,10 @@ function App() {
           }
         
           
-        {showModal && <ModalSelectCategory setShowModal={setShowModal} setDataSent={setDataSent} />}
+        {/* {showModal && <ModalSelectCategory setShowModal={setShowModal} setDataSent={setDataSent} />}
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
-          }
+          } */}
   
           <div className="main-cards-container">
             {dataRegalosList}
