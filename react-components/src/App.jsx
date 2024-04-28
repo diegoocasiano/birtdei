@@ -226,7 +226,7 @@ function App() {
           }
 
 
-          {/* {showModal && <ModalSelectCategory setShowModal={setShowModal} setDataSent={setDataSent} />} */}
+          {showModal && <ModalSelectCategory setShowModal={setShowModal} setDataSent={setDataSent} />}
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
           }
@@ -258,7 +258,7 @@ function App() {
                         onClick={handleInputClick}/>
 
 
-                        <button type='button'  className={buttonClass} onClick={handleSubmit} disabled={loading}>
+                        <button type='button' className={buttonClass} onClick={handleSubmit} disabled={loading}>
                           {loading && <div className="loader"></div>}
                           {!loading && buttonText}
                         </button>
