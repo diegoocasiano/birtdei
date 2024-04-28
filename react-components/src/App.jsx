@@ -39,35 +39,37 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    if (!emailFromForm || !namesFromForm) {
-      console.error('Email and names are required');
-      return;
-    }
-  
+
+    setLoading(true);
+
+    const formData = new FormData(document.getElementById('emailForm'));
+    const emailFromForm = formData.get('email');
+    const namesFromForm = formData.get('names');
+
+    // Enviar el correo al servidor Flask
     try {
       const response = await fetch('/enviar-correo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: emailFromForm, names: namesFromForm }),
+        body: JSON.stringify({ email: emailFromForm, names: namesFromForm } ),
       });
-  
+
       if (response.ok) {
-        console.log('Form data sent successfully');
+        console.log('form data sent successfully');
         setFormDataStored(true);
-        setEmailFromForm('');
-        setNamesFromForm('');
+        document.getElementById('names').value = '';
+        document.getElementById('email').value = '';
       } else {
-        console.error('Form data not sent');
+        console.error('form data not sent');
       }
     } catch (error) {
       console.error('Error sending form data: ', error);
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   // Cambiar apariencia del botón cuando el email ya se haya enviado
   const [buttonText, setButtonText] = useState('Dejar mi correo');
