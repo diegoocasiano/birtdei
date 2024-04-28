@@ -157,15 +157,27 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         }
       };
 
+
       useEffect(() => {
-        if (detallesWindowActive) {
-            document.addEventListener('click', handleOutsideClick);
+        // Esta función se ejecuta cuando se hace clic en el documento
+        function handleOutsideClick(event) {
+          // Si el nodo del DOM que estás observando existe y el evento no ocurrió dentro de este nodo
+          if (windowDetallesRef.current && !windowDetallesRef.current.contains(event.target)) {
+            // Aquí puedes manejar el clic fuera del componente
+            console.log('Clic fuera del componente');
+          }
         }
-        //si la ventanita ya se cerró, se detiene el escuchador de click
+      
+        // Si detallesWindowActive es true, añade el escuchador de eventos
+        if (detallesWindowActive) {
+          document.addEventListener('click', handleOutsideClick);
+        }
+      
+        // Cuando el componente se desmonte o detallesWindowActive cambie a false, elimina el escuchador de eventos
         return () => {
-            document.removeEventListener('click', handleOutsideClick);
+          document.removeEventListener('click', handleOutsideClick);
         };
-    }, [detallesWindowActive]);
+      }, [detallesWindowActive]);
 
 
     // Función que se realizará al hacer click en el button close
@@ -272,6 +284,7 @@ function CardDetalles({ toggleDetalles, nombreMarca, regaloFull, condicionesRega
         </div>
 
         <section 
+
             ref={windowDetallesRef} 
             className={`card-detalles-container ${detallesWindowActive ? 'active' : ''}`}
             style={{ height: newHeightCardDetalles(numeroSaltosLineaH2)}}
