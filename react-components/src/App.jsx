@@ -39,37 +39,35 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    setLoading(true);
-
-    const formData = new FormData(document.getElementById('emailForm'));
-    const emailFromForm = formData.get('email');
-    const namesFromForm = formData.get('names');
-
-    // Enviar el correo al servidor Flask
+  
+    if (!emailFromForm || !namesFromForm) {
+      console.error('Email and names are required');
+      return;
+    }
+  
     try {
       const response = await fetch('/enviar-correo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: emailFromForm, names: namesFromForm } ),
+        body: JSON.stringify({ email: emailFromForm, names: namesFromForm }),
       });
-
+  
       if (response.ok) {
-        console.log('form data sent successfully');
+        console.log('Form data sent successfully');
         setFormDataStored(true);
-        document.getElementById('names').value = '';
-        document.getElementById('email').value = '';
+        setEmailFromForm('');
+        setNamesFromForm('');
       } else {
-        console.error('form data not sent');
+        console.error('Form data not sent');
       }
     } catch (error) {
       console.error('Error sending form data: ', error);
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   // Cambiar apariencia del botón cuando el email ya se haya enviado
   const [buttonText, setButtonText] = useState('Dejar mi correo');
@@ -280,7 +278,7 @@ function App() {
                   </div>
                 </div>
                 <div className="footerContainer">
-                  <p>Diseñado por <a href="https://linktr.ee/diegocasiano">Diego Casiano</a></p>
+                  <p>Diseñado por <a href="https://www.diegocasiano.com">Diego Casiano</a></p>
                 </div>
               </div>
           </div>
