@@ -252,10 +252,10 @@ function App() {
                       <form className='content2' id='emailForm' onSubmit={handleSubmit}>
 
                         <input type="text" id="names" name="names" placeholder='Tu nombre y apellido' required
-                        onClick={handleInputClick}/>
+                        />
 
                         <input type="email" id="email" name="email" placeholder='Tu correo' required
-                        onClick={handleInputClick}/>
+                        />
 
 
                         <button type='submit' className={buttonClass} disabled={loading}>
