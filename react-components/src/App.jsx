@@ -256,7 +256,7 @@ function App() {
                         onClick={handleInputClick}/>
 
 
-                        <button type='submit' className={buttonClass} disabled={loading}>
+                        <button type='submit' className={buttonClass}>
                           {loading && <div className="loader"></div>}
                           {!loading && buttonText}
                         </button>
