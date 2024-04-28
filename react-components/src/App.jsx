@@ -249,13 +249,13 @@ function App() {
                         <h3><span>Déjanos tu correo</span> para avisarte<br/>cuando añadamos más regalos</h3>
                         <p>(Prometemos no enviar spam)</p>
                       </div>
-                      <form className='content2' id='emailForm' onSubmit={handleSubmit}>
+                      <form className='content2' id='emailForm' >
 
                         <input type="text" id="names" name="names" placeholder='Tu nombre y apellido' required
-                        />
+                        onClick={handleInputClick}/>
 
                         <input type="email" id="email" name="email" placeholder='Tu correo' required
-                        />
+                        onClick={handleInputClick}/>
 
 
                         <button type='submit' className={buttonClass} disabled={loading}>
