@@ -46,6 +46,8 @@ function App() {
     const emailFromForm = formData.get('email');
     const namesFromForm = formData.get('names');
 
+    console.log('handleSubmit ejecutado');
+
     // Enviar el correo al servidor Flask
     try {
       const response = await fetch('/enviar-correo', {
@@ -256,7 +258,7 @@ function App() {
                         onClick={handleInputClick}/>
 
 
-                        <button type='submit' className={buttonClass}>
+                        <button type='submit' className={buttonClass} disabled={loading}>
                           {loading && <div className="loader"></div>}
                           {!loading && buttonText}
                         </button>
