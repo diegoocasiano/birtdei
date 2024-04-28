@@ -8,7 +8,7 @@ import dataRegalos from './data/dataRegalos'
 import CardDetalles from './components/card-detalles/CardDetalles'
 
 function App() {
-  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/'; 
+  const imageBasePath = process.env.NODE_ENV === 'development' ? '/public/' : '/react-components/dist/';
 
   const emojiGift = `${imageBasePath}brand/emoji-gift.png`
   const emojiConfetti = `${imageBasePath}brand/emoji-confetti.png`
@@ -32,11 +32,11 @@ function App() {
     });
   }, [arrowRightUp, arrowRightWh , iconInfo, iconCheck, iconInsta])
 
-  
+
   // Lógica para enviar email
   const [loading, setLoading] = useState(false);
   const [formDataStored, setFormDataStored] = useState(false);
-    
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -46,7 +46,7 @@ function App() {
     const emailFromForm = formData.get('email');
     const namesFromForm = formData.get('names');
 
-    // Enviar el correo al servidor Flask
+    //Enviar el correo al servidor Flask
     try {
       const response = await fetch('/enviar-correo', {
         method: 'POST',
@@ -77,7 +77,7 @@ function App() {
 
   const formDataSentSuccessfully = () => {
     if (formDataStored) {
-      setButtonText('Listo!'); 
+      setButtonText('Listo!');
       setButtonClass('btn-submit sentEmail');
     }
   }
@@ -86,10 +86,10 @@ function App() {
       formDataSentSuccessfully();
     }
   }, [formDataStored]);
-  
+
   const handleInputClick = () => {
     setButtonClass('btn-submit');
-    setButtonText('Dejar mi correo'); 
+    setButtonText('Dejar mi correo');
     setFormDataStored(false);
   };
 
@@ -118,9 +118,9 @@ function App() {
         loadNextPage();
       }
     };
-  
+
     cardsContainer.addEventListener('scroll', handleScroll);
-  
+
     return () => {
       cardsContainer.removeEventListener('scroll', handleScroll);
     };
@@ -172,7 +172,7 @@ function App() {
 
   const [notifDotActive, setNotifDotActive] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
-  
+
   const toggleMenu = () => {
     setNotifDotActive(false)
     setMenuOpen(!menuOpen)
@@ -190,7 +190,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem('dataSent', JSON.stringify(dataSent));
   }, [dataSent]);
-  
+
   useEffect(() => {
     let timer;
     if (detallesOpen) {
@@ -201,7 +201,7 @@ function App() {
         setShowModal(true);
       }, 2000); // 2 segundos
     }
-    
+
     return () => clearTimeout(timer);
   }, [menuOpen, detallesOpen]);
 
@@ -222,13 +222,13 @@ function App() {
             linkInsta={marcaSeleccionada.linkInsta}
             toggleDetalles={toggleDetalles} />
           }
-        
-          
-        {/* {showModal && <ModalSelectCategory setShowModal={setShowModal} setDataSent={setDataSent} />}
+
+
+          {/* {showModal && <ModalSelectCategory setShowModal={setShowModal} setDataSent={setDataSent} />} */}
           { menuOpen && <Menu
             setMenuOpen={setMenuOpen}/>
-          } */}
-  
+          }
+
           <div className="main-cards-container">
             {dataRegalosList}
               <div className="finalHome-container">
@@ -255,13 +255,13 @@ function App() {
                         <input type="email" id="email" name="email" placeholder='Tu correo' required
                         onClick={handleInputClick}/>
 
-                        
+
                         <button type='submit' className={buttonClass} disabled={loading}>
                           {loading && <div className="loader"></div>}
                           {!loading && buttonText}
                         </button>
                       </form>
-                      
+
                     </div>
                     <div className="subsct2">
                       <h3><span>Danos tu opinión</span> para mejorar<br/>tu experiencia en Birtdei</h3>
@@ -284,11 +284,11 @@ function App() {
                 </div>
               </div>
           </div>
-          
+
       </main>
 
     </>
-    
+
   )
 };
 
