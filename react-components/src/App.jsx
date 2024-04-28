@@ -249,7 +249,7 @@ function App() {
                         <h3><span>Déjanos tu correo</span> para avisarte<br/>cuando añadamos más regalos</h3>
                         <p>(Prometemos no enviar spam)</p>
                       </div>
-                      <form className='content2' id='emailForm' >
+                      <form className='content2' id='emailForm'>
 
                         <input type="text" id="names" name="names" placeholder='Tu nombre y apellido' required
                         onClick={handleInputClick}/>
@@ -258,7 +258,7 @@ function App() {
                         onClick={handleInputClick}/>
 
 
-                        <button type='submit' className={buttonClass} disabled={loading}>
+                        <button type='button'  className={buttonClass} onClick={handleSubmit} disabled={loading}>
                           {loading && <div className="loader"></div>}
                           {!loading && buttonText}
                         </button>
