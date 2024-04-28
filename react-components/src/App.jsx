@@ -46,7 +46,7 @@ function App() {
     const emailFromForm = formData.get('email');
     const namesFromForm = formData.get('names');
 
-    //Enviar el correo al servidor Flask
+    // Enviar el correo al servidor Flask
     try {
       const response = await fetch('/enviar-correo', {
         method: 'POST',
