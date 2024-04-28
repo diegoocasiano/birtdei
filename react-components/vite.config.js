@@ -12,6 +12,7 @@ export default async () => {
     },
     build: {
       outDir: 'dist',
+      sourcemap: true,
       rollupOptions: {
         output: {
           entryFileNames: `index-v${numberVersion}.js`, 
