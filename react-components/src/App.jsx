@@ -32,12 +32,6 @@ function App() {
     });
   }, [arrowRightUp, arrowRightWh , iconInfo, iconCheck, iconInsta])
 
-  // Función para validar y sanitizar el correo electrónico
-  const sanitizeInput = (value) => {
-    // Elimina cualquier etiqueta HTML o script en el input
-    return value.replace(/<\/?[^>]+(>|$)/g, "").trim();
-  };
-
   // Lógica para enviar email
   const [loading, setLoading] = useState(false);
   const [formDataStored, setFormDataStored] = useState(false);
@@ -48,8 +42,8 @@ function App() {
     setLoading(true);
 
     const formData = new FormData(document.getElementById('emailForm'));
-    const emailFromForm = sanitizeInput(formData.get('email'));
-    const namesFromForm = sanitizeInput(formData.get('names'));
+    const emailFromForm = formData.get('email');
+    const namesFromForm = formData.get('names');
 
     console.log('handleSubmit ejecutado');
 

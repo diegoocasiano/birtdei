@@ -141,8 +141,8 @@ def home():
 def enviar_correo():
     if request.method == 'POST': 
         data = request.get_json() #Se obtiene el json que se envía desde el frontend
-        email = data.get('email') #Se obtiene el email del json
-        names = data.get('names') #Se obtiene el nombre del json
+        email = html.escape(data.get('email', '')) #Se obtiene el email del json
+        names = html.escape(data.get('names', '')) #Se obtiene el nombre del json
 
         # Registro de datos en Airtable
         BASE_ID = 'apps6RTIL11SBA533'
