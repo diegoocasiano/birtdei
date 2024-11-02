@@ -33,9 +33,6 @@ function App() {
   }, [arrowRightUp, arrowRightWh , iconInfo, iconCheck, iconInsta])
 
   // Función de sanitización
-  const sanitizeInput = (value) => {
-    return value.replace(/<[^>]*>?/gm, '');  // Elimina cualquier etiqueta HTML
-  };
 
   // Lógica para enviar email
   const [loading, setLoading] = useState(false);
@@ -47,8 +44,8 @@ function App() {
     setLoading(true);
 
     const formData = new FormData(document.getElementById('emailForm'));
-    const emailFromForm = sanitizeInput(formData.get('email'));
-    const namesFromForm = sanitizeInput(formData.get('names')); 
+    const emailFromForm = formData.get('email');
+    const namesFromForm = formData.get('names');
 
     console.log('handleSubmit ejecutado');
 
