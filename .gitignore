@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+birtdei-1.0
 dist-ssr
 *.local
 

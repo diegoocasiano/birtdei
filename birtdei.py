@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_from_directory, session
 from datetime import datetime
 import os
+import html
 from pyairtable import Api
 from flask import redirect, url_for
 from sendgrid import SendGridAPIClient
@@ -196,11 +197,27 @@ def feedback():
 
 
 def send_email(tipoFeedback, tituloFeedback, detallesFeedback, currentDate):
+    content = f"""
+    Nuevo Feedback para Birtdei:
+
+    Tipo de feedback:
+    {tipoFeedback}
+
+    Título del feedback:
+    {tituloFeedback}
+
+    Detalles del feedback:
+    {detallesFeedback}
+
+    Fecha y hora:
+    {currentDate}
+    """
+
     message = Mail(
         from_email=("biwerun@gmail.com", "Birtdei"),
         to_emails="dianlonso02@gmail.com",
         subject="Nuevo Feedback",
-        html_content=f"<h2>Nuevo Feedback para Birtdei</h2>\n\n<h3>Tipo de feedback:</h3>\n{tipoFeedback}\n\n<h3>Título del feedback:</h3>\n{tituloFeedback}\n\n<h3>Detalles del feedback:</h3>\n{detallesFeedback}\n\n<h3>Fecha y hora:</h3>\n{currentDate}"
+        plain_text_content=content  # Usamos texto plano en lugar de HTML para eliminar cualquier posibilidad de ejecución de código malicioso
     )
 
     try:
@@ -217,9 +234,9 @@ def send_email(tipoFeedback, tituloFeedback, detallesFeedback, currentDate):
 def send_mail():
     if request.method == 'POST':
         data = request.json
-        tipoFeedback = data.get('tipoFeedback')
-        tituloFeedback = data.get('tituloFeedback')
-        detallesFeedback = data.get('detallesFeedback')
+        tipoFeedback = html.escape(data.get('tipoFeedback', ''))
+        tituloFeedback = html.escape(data.get('tituloFeedback', ''))
+        detallesFeedback = html.escape(data.get('detallesFeedback', ''))
         currentDate = datetime.now().strftime("%d-%m-%Y - %H:%M")
 
         response = send_email(tipoFeedback, tituloFeedback, detallesFeedback, currentDate)

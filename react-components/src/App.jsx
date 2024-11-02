@@ -32,6 +32,10 @@ function App() {
     });
   }, [arrowRightUp, arrowRightWh , iconInfo, iconCheck, iconInsta])
 
+  // Función de sanitización
+  const sanitizeInput = (value) => {
+    return value.replace(/<[^>]*>?/gm, '');  // Elimina cualquier etiqueta HTML
+  };
 
   // Lógica para enviar email
   const [loading, setLoading] = useState(false);
@@ -43,8 +47,8 @@ function App() {
     setLoading(true);
 
     const formData = new FormData(document.getElementById('emailForm'));
-    const emailFromForm = formData.get('email');
-    const namesFromForm = formData.get('names');
+    const emailFromForm = sanitizeInput(formData.get('email'));
+    const namesFromForm = sanitizeInput(formData.get('names')); 
 
     console.log('handleSubmit ejecutado');
 
@@ -251,10 +255,10 @@ function App() {
                       </div>
                       <form className='content2' id='emailForm' onSubmit={handleSubmit}>
 
-                        <input type="text" id="names" name="names" placeholder='Tu nombre y apellido' required
+                        <input type="text" id="names" name="names" placeholder='Tu nombre y apellido' required maxLength="40"
                          onFocus={handleInputClick}/>
 
-                        <input type="email" id="email" name="email" placeholder='Tu correo' required
+                        <input type="email" id="email" name="email" placeholder='Tu correo' required maxLength="40"
                          onFocus={handleInputClick}/>
 
                         <button type='submit' className={buttonClass} disabled={loading}>
